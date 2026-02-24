@@ -1,41 +1,44 @@
 /* ==========================================================
-   KIRUBEL VISUALS — COMPLETE STYLESHEET (LIGHT + MAROON HERO)
-   Works with the bilingual index.html + script.js provided.
+   KIRUBEL VISUALS — COMPLETE styles.css (FINAL)
+   Light background + Maroon topbar/hero + Premium orange
+   Fixes: mobile topbar overlap + full layout styling
    ========================================================== */
 
 :root{
-  /* Brand (from your reference image) */
+  /* Brand */
   --maroon-950:#240004;
   --maroon-900:#340006;
   --maroon-800:#440008;
 
   /* Accent */
-  --accent:#D98200;
-  --accent-soft:#F3B15A;
+  --accent:#E18A00;          /* richer orange */
+  --accent-soft:#FFC06A;
 
   /* UI */
-  --bg:#f6f3f0;
+  --bg:#f8f5f2;              /* brighter warm background */
   --surface:#ffffff;
-  --surface2:#f2ece6;
+  --surface2:#f6efe9;
 
   --text:#121018;
   --muted: rgba(18,16,24,.68);
 
   --line: rgba(18,16,24,.10);
-  --shadow: 0 18px 60px rgba(18,16,24,.12);
-  --shadow-strong: 0 26px 80px rgba(18,16,24,.18);
+  --shadow: 0 16px 55px rgba(18,16,24,.10);
+  --shadow-strong: 0 26px 80px rgba(18,16,24,.16);
+
   --radius: 18px;
 }
 
+/* Reset / base */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
   background:
-    radial-gradient(900px 520px at 80% -10%, rgba(217,130,0,.08), transparent 60%),
-    radial-gradient(760px 460px at 10% 10%, rgba(52,0,6,.05), transparent 55%),
+    radial-gradient(900px 520px at 80% -10%, rgba(225,138,0,.07), transparent 60%),
+    radial-gradient(760px 460px at 10% 10%, rgba(52,0,6,.04), transparent 55%),
     var(--bg);
-  color:var(--text);
+  color: var(--text);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
@@ -47,59 +50,90 @@ h1,h2,h3{
   font-family: "Cormorant Garamond", serif;
   letter-spacing:.2px;
 }
-.muted{color:var(--muted); font-size:.95rem}
 
-/* ----------------------------------------------------------
-   Topbar (maroon)
----------------------------------------------------------- */
+.muted{color:var(--muted)}
+hr{border:none}
+
+/* ==========================================================
+   TOPBAR (fix overlap on mobile)
+   ========================================================== */
 .topbar{
-  border-bottom:1px solid rgba(255,255,255,.15);
   background: linear-gradient(90deg, var(--maroon-950), var(--maroon-900));
   color:#fff;
+  border-bottom: 1px solid rgba(255,255,255,.14);
 }
 .topbar__inner{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:12px; padding:10px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 0;
+  flex-wrap:wrap; /* key fix */
 }
-.toplink{color: rgba(255,255,255,.92); font-size:.92rem}
-.toplink:hover{opacity:.92}
+.topbar__left,
+.topbar__right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap; /* key fix */
+}
+.topbar__left{flex: 1 1 260px;}
+.topbar__right{flex: 1 1 260px; justify-content:flex-end;}
 
 .pill{
   border:1px solid rgba(255,255,255,.20);
+  background: rgba(255,255,255,.10);
+  color: rgba(255,255,255,.92);
   padding:.35rem .65rem;
   border-radius:999px;
-  color: rgba(255,255,255,.92);
-  background: rgba(255,255,255,.10);
   font-size:.86rem;
+  line-height:1.25;
+  max-width:100%;
+  white-space:normal; /* key fix */
 }
 
-/* Language switch (in topbar) */
+.toplink{
+  color: rgba(255,255,255,.92);
+  font-size:.92rem;
+  line-height:1.25;
+  white-space:normal; /* key fix */
+  text-align:right;
+}
+.toplink:hover{opacity:.92}
+
+/* Language switch */
 .langSwitch{
   display:inline-flex;
   border:1px solid rgba(255,255,255,.18);
   background: rgba(255,255,255,.08);
-  border-radius: 999px;
+  border-radius:999px;
   overflow:hidden;
 }
 .langBtn{
   border:0;
   background: transparent;
   color: rgba(255,255,255,.92);
-  font-weight: 900;
-  padding: .38rem .6rem;
+  font-weight:900;
+  padding:.38rem .6rem;
   cursor:pointer;
 }
 .langBtn.is-active{
-  background: rgba(217,130,0,.28);
-  color: rgba(255,255,255,.98);
+  background: rgba(225,138,0,.30);
+  color:#fff;
 }
 
-/* ----------------------------------------------------------
-   Header + Nav
----------------------------------------------------------- */
+/* Small screens: stack nicer */
+@media (max-width: 520px){
+  .topbar__right{justify-content:flex-start;}
+  .toplink{text-align:left;}
+}
+
+/* ==========================================================
+   HEADER + NAV (desktop + mobile panel)
+   ========================================================== */
 .header{
   position:sticky; top:0; z-index:50;
-  background: rgba(255,255,255,.82);
+  background: rgba(255,255,255,.84);
   backdrop-filter: blur(14px);
   border-bottom:1px solid var(--line);
 }
@@ -108,13 +142,14 @@ h1,h2,h3{
   padding:14px 0; gap:14px;
 }
 
+/* Brand */
 .brand{display:flex; align-items:center; gap:10px}
 .brand__mark{
   width:40px; height:40px;
   display:grid; place-items:center;
   border-radius:14px;
-  border:1px solid rgba(18,16,24,.14);
-  background: linear-gradient(180deg, rgba(217,130,0,.25), rgba(255,255,255,.92));
+  border:1px solid rgba(18,16,24,.12);
+  background: linear-gradient(180deg, rgba(225,138,0,.22), rgba(255,255,255,.95));
   color: rgba(18,16,24,.95);
   font-family: "Cormorant Garamond", serif;
   font-weight: 700;
@@ -125,15 +160,14 @@ h1,h2,h3{
   font-weight:800;
   letter-spacing: 1.5px;
   font-size: 15px;
-  color: rgba(18,16,24,.95);
 }
 .brand__sub{
   font-size: 11px;
   letter-spacing: 4px;
   opacity: .72;
-  color: rgba(18,16,24,.72);
 }
 
+/* Nav */
 .nav{display:flex; align-items:center; gap:16px}
 .nav a{
   position:relative;
@@ -142,8 +176,6 @@ h1,h2,h3{
   font-size:.95rem;
 }
 .nav a:hover{color: rgba(18,16,24,.95)}
-
-/* Luxury gold underline hover */
 .nav a::after{
   content:"";
   position:absolute;
@@ -163,19 +195,21 @@ h1,h2,h3{
   width:44px; height:44px;
   border-radius:14px;
   border:1px solid rgba(18,16,24,.12);
-  background: rgba(255,255,255,.88);
+  background: rgba(255,255,255,.92);
 }
 .nav__toggle span{
   display:block; height:2px; width:20px;
   margin:5px auto;
-  background: rgba(18,16,24,.82);
+  background: rgba(18,16,24,.80);
 }
 
-/* ----------------------------------------------------------
-   Buttons
----------------------------------------------------------- */
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:.85rem 1.1rem;
   border-radius:14px;
   border:1px solid rgba(18,16,24,.12);
@@ -186,32 +220,31 @@ h1,h2,h3{
 .btn--full{width:100%}
 
 .btn--primary{
-  border-color: rgba(217,130,0,.55);
-  background: linear-gradient(180deg, rgba(217,130,0,.98), rgba(217,130,0,.72));
-  color: #1a0f00;
-  box-shadow: 0 10px 24px rgba(217,130,0,.20);
+  border-color: rgba(225,138,0,.55);
+  background: linear-gradient(180deg, rgba(225,138,0,.98), rgba(200,115,0,.80));
+  color:#1a0f00;
+  box-shadow: 0 10px 24px rgba(225,138,0,.22);
 }
-.btn--primary:hover{filter: brightness(1.03); box-shadow: 0 16px 34px rgba(217,130,0,.26)}
+.btn--primary:hover{filter: brightness(1.03); box-shadow: 0 16px 34px rgba(225,138,0,.28)}
 
 .btn--ghost{
   background: rgba(255,255,255,.92);
   border-color: rgba(18,16,24,.12);
 }
 
-/* ----------------------------------------------------------
-   Hero
----------------------------------------------------------- */
+/* ==========================================================
+   HERO
+   ========================================================== */
 .hero{position:relative; overflow:hidden}
 .hero__bg{
   position:absolute; inset:0;
   background:
-    radial-gradient(900px 600px at 22% 18%, rgba(217,130,0,.14), transparent 60%),
-    radial-gradient(700px 520px at 78% 30%, rgba(255,255,255,.05), transparent 60%),
+    radial-gradient(900px 600px at 22% 18%, rgba(225,138,0,.14), transparent 60%),
+    radial-gradient(700px 520px at 78% 30%, rgba(255,255,255,.06), transparent 60%),
     linear-gradient(115deg, rgba(36,0,4,.95), rgba(52,0,6,.88)),
     url("assets/hero.jpg") center/cover no-repeat;
   opacity:1;
 }
-
 .hero__inner{
   position:relative;
   padding: clamp(60px, 7vw, 110px) 0;
@@ -230,7 +263,7 @@ h1,h2,h3{
 }
 .hero h1{
   margin:0 0 12px;
-  font-size: clamp(2.3rem, 3.6vw, 3.2rem);
+  font-size: clamp(2.2rem, 3.6vw, 3.2rem);
   line-height:1.02;
   color:#fff;
 }
@@ -257,20 +290,20 @@ h1,h2,h3{
 .trust__top{font-weight:900; letter-spacing:.5px; color:#fff}
 .trust__sub{color: rgba(255,255,255,.78); font-size:.9rem; margin-top:2px}
 
-/* ----------------------------------------------------------
-   Cards + Forms
----------------------------------------------------------- */
+/* ==========================================================
+   CARDS + FORMS
+   ========================================================== */
 .card{
   border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: var(--surface);
+  border: 1px solid rgba(18,16,24,.08);
+  background: rgba(255,255,255,.96);
   box-shadow: var(--shadow);
   padding: 16px;
   transition: transform .22s ease, box-shadow .22s ease;
 }
 .card:hover{transform: translateY(-4px); box-shadow: var(--shadow-strong)}
 
-/* Hero form */
+/* Hero form card */
 .card--glass{
   background: rgba(255,255,255,.94);
   border-color: rgba(255,255,255,.60);
@@ -292,20 +325,20 @@ input, textarea, select{
   outline:none;
 }
 input:focus, textarea:focus, select:focus{
-  border-color: rgba(217,130,0,.65);
+  border-color: rgba(225,138,0,.65);
 }
 
-/* ----------------------------------------------------------
-   Sections
----------------------------------------------------------- */
-.section{padding:80px 0}
+/* ==========================================================
+   SECTIONS
+   ========================================================== */
+.section{padding:84px 0}
 .section--alt{
-  background: linear-gradient(180deg, rgba(52,0,6,.04), rgba(52,0,6,0));
+  background: linear-gradient(180deg, rgba(52,0,6,.035), rgba(52,0,6,0));
 }
 .section__head{margin-bottom: 22px}
 .section__head p{margin:0; color: rgba(18,16,24,.70); line-height:1.6}
 
-/* Luxury underline on headings */
+/* Heading underline */
 .section__head h2{
   margin:0 0 8px;
   font-size: clamp(1.8rem, 2.3vw, 2.3rem);
@@ -335,42 +368,40 @@ input:focus, textarea:focus, select:focus{
 
 .ctaRow{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:16px}
 
-/* ----------------------------------------------------------
-   Pricing
----------------------------------------------------------- */
+/* ==========================================================
+   PRICING
+   ========================================================== */
 .pricing{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
 .priceCard{
   border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: var(--surface);
+  border: 1px solid rgba(18,16,24,.08);
+  background: rgba(255,255,255,.96);
   padding: 16px;
   box-shadow: var(--shadow);
   transition: transform .22s ease, box-shadow .22s ease;
 }
 .priceCard:hover{transform: translateY(-4px); box-shadow: var(--shadow-strong)}
 .priceCard--featured{
-  border-color: rgba(217,130,0,.30);
-  background: linear-gradient(180deg, rgba(217,130,0,.09), rgba(255,255,255,.96));
+  border-color: rgba(225,138,0,.26);
+  background: linear-gradient(180deg, rgba(225,138,0,.09), rgba(255,255,255,.96));
 }
 .priceTop{display:flex; align-items:center; justify-content:space-between; gap:10px}
 .badge{
   font-size:.75rem; font-weight:900;
   padding:.28rem .55rem;
   border-radius:999px;
-  border: 1px solid rgba(18,16,24,.10);
-  background: rgba(217,130,0,.18);
+  border: 1px solid rgba(18,16,24,.08);
+  background: rgba(225,138,0,.14);
   color: rgba(18,16,24,.92);
 }
-.badge--dark{
-  background: rgba(52,0,6,.08);
-}
+.badge--dark{background: rgba(52,0,6,.08)}
 
 .note{display:flex; align-items:center; gap:12px; margin-top: 18px}
 .note__line{height:1px; flex:1; background: rgba(52,0,6,.18)}
 
-/* ----------------------------------------------------------
-   Gallery
----------------------------------------------------------- */
+/* ==========================================================
+   GALLERY
+   ========================================================== */
 .gallery{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -385,9 +416,9 @@ input:focus, textarea:focus, select:focus{
   background: var(--surface2);
 }
 
-/* ----------------------------------------------------------
-   About
----------------------------------------------------------- */
+/* ==========================================================
+   ABOUT
+   ========================================================== */
 .about{
   display:grid;
   grid-template-columns: 1.15fr .85fr;
@@ -399,7 +430,7 @@ input:focus, textarea:focus, select:focus{
   display:grid; grid-template-columns: 60px 1fr;
   gap: 12px;
   border: 1px solid rgba(18,16,24,.10);
-  background: var(--surface);
+  background: rgba(255,255,255,.96);
   border-radius: 18px;
   padding: 14px;
 }
@@ -408,7 +439,7 @@ input:focus, textarea:focus, select:focus{
   display:grid; place-items:center;
   border-radius: 18px;
   border: 1px solid rgba(52,0,6,.18);
-  background: rgba(217,130,0,.14);
+  background: rgba(225,138,0,.14);
   font-weight:900;
   color: rgba(18,16,24,.92);
   font-family: "Cormorant Garamond", serif;
@@ -418,9 +449,9 @@ input:focus, textarea:focus, select:focus{
 .about__image img{height: 320px; width:100%; object-fit:cover}
 .about__caption{padding: 14px 16px}
 
-/* ----------------------------------------------------------
-   Contact
----------------------------------------------------------- */
+/* ==========================================================
+   CONTACT
+   ========================================================== */
 .contact{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
 .contactRow{
   margin-top: 12px;
@@ -431,12 +462,12 @@ input:focus, textarea:focus, select:focus{
 }
 .sep{border:none; border-top:1px solid rgba(18,16,24,.10); margin:18px 0}
 
-/* ----------------------------------------------------------
-   Footer
----------------------------------------------------------- */
+/* ==========================================================
+   FOOTER
+   ========================================================== */
 .footer{
   border-top: 1px solid rgba(18,16,24,.10);
-  background: rgba(255,255,255,.85);
+  background: rgba(255,255,255,.86);
   padding: 26px 0;
 }
 .footer__inner{
@@ -446,9 +477,9 @@ input:focus, textarea:focus, select:focus{
 .footer__links{display:flex; gap:12px; flex-wrap:wrap}
 .brand--footer .brand__mark{width:36px; height:36px}
 
-/* ----------------------------------------------------------
-   Fade-in (works with your IntersectionObserver JS)
----------------------------------------------------------- */
+/* ==========================================================
+   FADE-IN (for your scroll animation JS)
+   ========================================================== */
 .fade-in{
   opacity:0;
   transform: translateY(26px);
@@ -459,9 +490,9 @@ input:focus, textarea:focus, select:focus{
   transform: translateY(0);
 }
 
-/* ----------------------------------------------------------
-   Responsive
----------------------------------------------------------- */
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
 @media (max-width: 980px){
   .hero__inner{grid-template-columns:1fr}
   .grid--2{grid-template-columns:1fr}
@@ -473,6 +504,7 @@ input:focus, textarea:focus, select:focus{
 
 @media (max-width: 860px){
   .nav__toggle{display:inline-block}
+
   .nav{
     position:fixed;
     right:4vw;
@@ -488,11 +520,16 @@ input:focus, textarea:focus, select:focus{
     align-items:stretch;
     gap:10px;
     box-shadow: var(--shadow-strong);
+    z-index: 60;
   }
   .nav.is-open{display:flex}
-  .nav a{padding:10px 12px; border-radius:14px}
+
+  .nav a{
+    padding:10px 12px;
+    border-radius:14px;
+  }
   .nav a:hover{background: rgba(52,0,6,.05)}
-  .nav a::after{display:none} /* avoid underline inside mobile panel */
+  .nav a::after{display:none} /* prevent underline inside panel */
 }
 
 @media (max-width: 520px){
