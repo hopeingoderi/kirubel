@@ -595,3 +595,128 @@ input:focus, textarea:focus, select:focus{
 @media (max-width: 520px){
   .gallery{grid-template-columns:1fr}
 }
+
+/* ==========================================================
+   ULTRA-LUXURY UPGRADE PACK (paste at END of styles.css)
+   Swiss high-end wedding studio polish
+   ========================================================== */
+
+/* 1) Deeper luxury hero tone + better readability */
+.hero__bg{
+  background:
+    radial-gradient(1000px 680px at 20% 10%, rgba(225,138,0,.16), transparent 60%),
+    radial-gradient(900px 620px at 86% 22%, rgba(255,255,255,.07), transparent 62%),
+    linear-gradient(115deg, rgba(36,0,4,.92), rgba(52,0,6,.86)),
+    url("assets/hero.jpg") center/cover no-repeat;
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.hero h1{
+  text-shadow: 0 14px 40px rgba(0,0,0,.25);
+}
+
+.hero p{
+  text-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+/* 2) Trust badges: subtle floating + premium highlight */
+.trust__item{
+  box-shadow: 0 14px 44px rgba(0,0,0,.16);
+  backdrop-filter: blur(10px);
+  transform: translateZ(0);
+}
+.trust__item:hover{
+  transform: translateY(-3px);
+  border-color: rgba(225,138,0,.35);
+}
+
+/* soft float animation (very subtle) */
+@media (prefers-reduced-motion: no-preference){
+  .trust__item{
+    animation: floaty 7s ease-in-out infinite alternate;
+  }
+  .trust__item:nth-child(2){ animation-duration: 8.5s; }
+  .trust__item:nth-child(3){ animation-duration: 9.5s; }
+
+  @keyframes floaty{
+    from{ transform: translateY(0); }
+    to  { transform: translateY(-4px); }
+  }
+}
+
+/* 3) Topbar glass + cleaner language toggle */
+.topbar{
+  background: linear-gradient(90deg, rgba(36,0,4,.96), rgba(52,0,6,.92));
+}
+.langSwitch{
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.10);
+}
+.langBtn{
+  letter-spacing: .4px;
+}
+.langBtn.is-active{
+  background: linear-gradient(180deg, rgba(225,138,0,.42), rgba(225,138,0,.22));
+  border-left: 1px solid rgba(255,255,255,.10);
+  border-right: 1px solid rgba(255,255,255,.10);
+}
+
+/* 4) Portfolio hover: premium lift + gentle glow */
+.gallery img{
+  will-change: transform;
+}
+.gallery img:hover{
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 30px 90px rgba(18,16,24,.18);
+  border-color: rgba(225,138,0,.25);
+}
+
+/* 5) Make section headings more “editorial” */
+.section__head h2{
+  letter-spacing: .2px;
+}
+.section__head p{
+  max-width: 68ch;
+}
+
+/* 6) About: strengthen left cards glow (match portrait even better) */
+.step{
+  background:
+    radial-gradient(circle at 85% 18%, rgba(225,138,0,.15), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.97), rgba(246,239,233,.97));
+}
+.step:hover{
+  box-shadow: 0 28px 86px rgba(18,16,24,.16);
+}
+
+/* 7) Buttons: more “high-end” and tactile */
+.btn--primary{
+  box-shadow: 0 14px 32px rgba(225,138,0,.26);
+}
+.btn--primary:hover{
+  box-shadow: 0 22px 52px rgba(225,138,0,.32);
+}
+.btn--ghost{
+  background: rgba(255,255,255,.92);
+}
+.btn--ghost:hover{
+  background: rgba(255,255,255,.98);
+}
+
+/* 8) Smooth fade-in (works with JS below) */
+.fade{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+.fade.is-in{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 9) Mobile: prevent any topbar overlap + spacing */
+@media (max-width: 520px){
+  .topbar__inner{ gap: 8px; }
+  .pill{ font-size: .82rem; }
+  .toplink{ font-size: .88rem; }
+}
