@@ -448,7 +448,35 @@ input:focus, textarea:focus, select:focus{
 .about__image{padding:0; overflow:hidden}
 .about__image img{height: 320px; width:100%; object-fit:cover}
 .about__caption{padding: 14px 16px}
+/* ===== FIX PORTRAIT CROPPING + ADD POWER LOOK ===== */
 
+.about__image{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  padding: 0;
+  border: 1px solid rgba(18,16,24,.08);
+  box-shadow: 0 20px 60px rgba(18,16,24,.15);
+}
+
+.about__image img{
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: 50% 12%;  /* adjust if needed */
+  display: block;
+  border-radius: 18px 18px 0 0;
+}
+
+.about__image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(225,138,0,.25), transparent 55%),
+    linear-gradient(180deg, rgba(36,0,4,.08), rgba(36,0,4,.18));
+  pointer-events:none;
+}
 /* ==========================================================
    CONTACT
    ========================================================== */
@@ -535,3 +563,4 @@ input:focus, textarea:focus, select:focus{
 @media (max-width: 520px){
   .gallery{grid-template-columns:1fr}
 }
+
