@@ -3,12 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>KIRUBEL VISUALS — Luxury Wedding & Event Films | Switzerland</title>
   <meta name="description" content="Luxury Wedding & Event Films + Photography in Switzerland. Weddings, engagements, baptisms, celebrations and ceremonies — timeless visuals with elegance." />
 
+  <!-- Social share preview -->
+  <meta property="og:title" content="KIRUBEL VISUALS — Luxury Wedding & Event Films | Switzerland" />
+  <meta property="og:description" content="Luxury Wedding & Event Films + Photography in Switzerland — timeless visuals with elegance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/hero.jpg" />
+
+  <!-- Nice mobile browser color -->
+  <meta name="theme-color" content="#340006" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Preload hero image for faster first view -->
+  <link rel="preload" as="image" href="assets/hero.jpg">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -22,14 +36,16 @@
           Switzerland • Film + Photo • Luxury Visuals
         </span>
       </div>
-      <div class="topbar__right" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;">
+
+      <!-- ✅ removed inline style so CSS fully controls layout -->
+      <div class="topbar__right">
         <a class="toplink" href="tel:+41775035871" data-i18n="topbar.phone">
           WhatsApp/Call: +41 77 503 58 71
         </a>
 
         <!-- Language toggle -->
         <div class="langSwitch" role="group" aria-label="Language switch">
-          <button class="langBtn" type="button" data-lang="de" aria-pressed="true">DE</button>
+          <button class="langBtn is-active" type="button" data-lang="de" aria-pressed="true">DE</button>
           <button class="langBtn" type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
       </div>
@@ -57,7 +73,9 @@
         <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
-        <a class="btn btn--primary" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="nav.cta">
+
+        <!-- ✅ unified WhatsApp number -->
+        <a class="btn btn--primary" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="nav.cta">
           WhatsApp Inquiry
         </a>
       </nav>
@@ -81,7 +99,7 @@
         </p>
 
         <div class="hero__cta">
-          <a class="btn btn--primary" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="hero.cta1">
+          <a class="btn btn--primary" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="hero.cta1">
             Check Availability
           </a>
           <a class="btn btn--ghost" href="#collections" data-i18n="hero.cta2">View Collections</a>
@@ -195,7 +213,7 @@
       </div>
 
       <div class="ctaRow">
-        <a class="btn btn--primary" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="services.cta">
+        <a class="btn btn--primary" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="services.cta">
           Inquire Now
         </a>
         <span class="muted" data-i18n="services.note">Based in Switzerland • Available nationwide</span>
@@ -223,7 +241,7 @@
             <li data-i18n="collections.sig.li3">Edited photo gallery</li>
             <li data-i18n="collections.sig.li4">Private online delivery</li>
           </ul>
-          <a class="btn btn--ghost btn--full" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="collections.sig.cta">
+          <a class="btn btn--ghost btn--full" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="collections.sig.cta">
             Request details
           </a>
         </article>
@@ -239,7 +257,7 @@
             <li data-i18n="collections.pre.li3">Ceremony/speeches audio capture</li>
             <li data-i18n="collections.pre.li4">Priority editing</li>
           </ul>
-          <a class="btn btn--primary btn--full" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="collections.pre.cta">
+          <a class="btn btn--primary btn--full" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="collections.pre.cta">
             Check availability
           </a>
         </article>
@@ -255,7 +273,7 @@
             <li data-i18n="collections.leg.li3">Engagement session option</li>
             <li data-i18n="collections.leg.li4">Luxury presentation</li>
           </ul>
-          <a class="btn btn--ghost btn--full" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="collections.leg.cta">
+          <a class="btn btn--ghost btn--full" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="collections.leg.cta">
             Request details
           </a>
         </article>
@@ -326,7 +344,7 @@
           </div>
 
           <div class="ctaRow">
-            <a class="btn btn--primary" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="about.cta1">Book your date</a>
+            <a class="btn btn--primary" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="about.cta1">Book your date</a>
             <a class="btn btn--ghost" href="#contact" data-i18n="about.cta2">Contact</a>
           </div>
         </div>
@@ -354,7 +372,7 @@
         <div class="card">
           <h3 data-i18n="contact.wh.title">WhatsApp</h3>
           <p class="muted" data-i18n="contact.wh.sub">Fastest way to reach us.</p>
-          <a class="btn btn--primary btn--full" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="contact.wh.cta">
+          <a class="btn btn--primary btn--full" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="contact.wh.cta">
             Open WhatsApp
           </a>
           <div class="contactRow">
@@ -395,7 +413,7 @@
             <span class="brand__sub">VISUALS</span>
           </span>
         </div>
-        <p class="muted">© <span id="year"></span> kirubel.ch — <span data-i18n="footer.rights">All rights reserved.</span></p>
+        <p class="muted">©️ <span id="year"></span> kirubel.ch — <span data-i18n="footer.rights">All rights reserved.</span></p>
       </div>
 
       <div class="footer__links">
