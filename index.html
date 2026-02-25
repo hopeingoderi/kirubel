@@ -454,18 +454,25 @@
       </div>
     </div>
   </footer>
+  <!-- Premium Lightbox -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lbClose" type="button">×</button>
-  <button class="lbNav lbPrev" type="button">‹</button>
+  <button class="lbClose" type="button" aria-label="Close">×</button>
+  <button class="lbNav lbPrev" type="button" aria-label="Previous">‹</button>
 
-  <figure class="lbFigure">
-    <img class="lbImg" id="lbImg" alt="">
-    <figcaption class="lbCap" id="lbCap"></figcaption>
-  </figure>
+  <div class="lbShell">
+    <figure class="lbFigure">
+      <img class="lbImg" id="lbImg" alt="Preview" />
+      <figcaption class="lbCap" id="lbCap"></figcaption>
+    </figure>
 
-  <button class="lbNav lbNext" type="button">›</button>
+    <!-- Thumbnail strip -->
+    <div class="lbThumbs" id="lbThumbs" aria-label="Gallery thumbnails"></div>
+  </div>
+
+  <button class="lbNav lbNext" type="button" aria-label="Next">›</button>
 </div>
   <script src="script.js"></script>
 </body>
 </html>
+
 
