@@ -248,7 +248,7 @@ function setupWhatsAppForm() {
 document.addEventListener("DOMContentLoaded", () => {
   setupUI();
   setupWhatsAppForm();
-
+  setupLightbox();
   // Language buttons
   document.querySelectorAll(".langBtn").forEach((b) => {
     b.addEventListener("click", () => setLanguage(b.getAttribute("data-lang")));
@@ -257,3 +257,4 @@ document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("kv_lang") || "de";
   setLanguage(saved);
 });
+
