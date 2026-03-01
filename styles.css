@@ -1126,20 +1126,6 @@ textarea{ resize:vertical; }
   .lbThumb{ width:72px; height:52px; border-radius:12px; }
 }
 
-/* ==========================================================
-   FINAL FIX: Header NEVER hides (strongest safe solution)
-   ========================================================== */
-
-/* Use fixed header instead of sticky (sticky can fail with transforms) */
-.header{
-  position: fixed !important;
-  top: 0 !important;
-  left: 0;
-  right: 0;
-  z-index: 2147483647 !important;  /* max safe z-index */
-  isolation: isolate;
-  transform: translateZ(0);        /* keeps it above GPU layers */
-}
 
 /* Make sure content doesn't go under the fixed header */
 body{
@@ -1194,3 +1180,4 @@ body.nav-open{
   overflow: hidden;
   height: 100%;
 }
+
