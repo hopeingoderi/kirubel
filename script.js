@@ -1218,4 +1218,50 @@ document.addEventListener("DOMContentLoaded", ()=>{
   setLanguage(saved);
 });
 
+// ===== EMERGENCY: Mobile menu toggle (uses your IDs) =====
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("navToggle");
+  const nav = document.getElementById("mainNav");
+  const backdrop = document.getElementById("navBackdrop");
+
+  if (!toggle || !nav || !backdrop) return;
+
+  function openMenu() {
+    nav.classList.add("is-open");
+    backdrop.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    document.documentElement.classList.add("nav-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    nav.classList.remove("is-open");
+    backdrop.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    document.documentElement.classList.remove("nav-open");
+    document.body.style.overflow = "";
+  }
+
+  function toggleMenu() {
+    nav.classList.contains("is-open") ? closeMenu() : openMenu();
+  }
+
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  backdrop.addEventListener("click", closeMenu);
+
+  // Close when clicking any link inside the nav (mobile UX)
+  nav.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", closeMenu);
+  });
+
+  // Close on Escape
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+});
 
