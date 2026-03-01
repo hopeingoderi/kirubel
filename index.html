@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KIRUBEL VISUALS — Luxury Wedding & Event Films | Switzerland</title>
+  <title>Kirubel Photo & Video 4U — Luxury Wedding & Event Films | Switzerland</title>
   <meta name="description" content="Luxury Wedding & Event Films + Photography in Switzerland. Weddings, engagements, baptisms, celebrations and ceremonies — timeless visuals with elegance." />
 
-  <meta property="og:title" content="KIRUBEL VISUALS — Luxury Wedding & Event Films | Switzerland" />
+  <meta property="og:title" content="Kirubel Photo & Video 4U — Luxury Wedding & Event Films | Switzerland" />
   <meta property="og:description" content="Luxury Wedding & Event Films + Photography in Switzerland — timeless visuals with elegance." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/hero.jpg" />
+  <meta property="og:image" content="assets/hero1.jpg" />
 
   <meta name="theme-color" content="#120d10" />
 
@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="preload" as="image" href="assets/hero.jpg">
+  <link rel="preload" as="image" href="assets/hero1.jpg">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -31,7 +31,7 @@
       </div>
 
       <div class="topbar__right">
-        <a class="toplink" href="tel:+41775035871" data-i18n="topbar.phone">WhatsApp/Call: +41 77 503 58 71</a>
+        <a class="toplink" href="tel:+41765221262" data-i18n="topbar.phone">WhatsApp/Call: +41 76 522 12 62</a>
 
         <div class="langSwitch" role="group" aria-label="Language switch">
           <button class="langBtn is-active" type="button" data-lang="de" aria-pressed="true">DE</button>
@@ -44,39 +44,52 @@
   <!-- Header -->
   <header class="header" id="top">
     <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="KIRUBEL VISUALS Home">
-        <span class="brand__mark" aria-hidden="true">K</span>
+
+      <!-- Brand: Logo + Name -->
+      <a class="brand" href="#top" aria-label="Home" id="brandLink">
+        <img class="brand__logo" src="assets/logo.png" alt="Kirubel Photo & Video 4U logo">
         <span class="brand__text">
           <span class="brand__name">KIRUBEL</span>
-          <span class="brand__sub">VISUALS</span>
+          <span class="brand__sub">PHOTO &amp; VIDEO 4U</span>
         </span>
       </a>
 
-      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" id="navToggle">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav" aria-label="Main navigation">
+      <!-- ONE MENU ONLY -->
+      <nav class="nav" aria-label="Main navigation" id="mainNav">
         <a href="#services" data-i18n="nav.services">Services</a>
         <a href="#collections" data-i18n="nav.collections">Collections</a>
-        <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#showreel" data-i18n="nav.showreel">Showreel</a>
+        <a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
-        <a class="btn btn--primary shimmer" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="nav.cta">
+
+        <a class="btn btn--primary shimmer" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="nav.cta">
           WhatsApp Inquiry
         </a>
       </nav>
+
     </div>
   </header>
 
-  <!-- HERO (DARK LUXURY) -->
-  <section class="hero hero--dark">
-    <div class="hero__bg" aria-hidden="true"></div>
+  <!-- Mobile menu backdrop (JS toggles) -->
+  <div class="navBackdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <!-- HERO (Cinematic Slideshow) -->
+  <section class="hero hero--dark" id="hero">
+    <div class="heroSlideshow" aria-hidden="true">
+      <div class="heroSlide is-active" style="background-image:url('assets/hero1.jpg')"></div>
+      <div class="heroSlide" style="background-image:url('assets/hero2.jpg')"></div>
+      <div class="heroSlide" style="background-image:url('assets/hero3.jpg')"></div>
+    </div>
 
     <div class="container hero__inner">
       <div class="hero__copy">
         <div class="kicker" data-i18n="hero.kicker">Luxury Wedding & Event Films • Photography • Switzerland</div>
-
         <h1 data-i18n="hero.title">Cinematic Luxury — Timeless Visual Stories.</h1>
 
         <p data-i18n="hero.subtitle">
@@ -85,10 +98,10 @@
         </p>
 
         <div class="hero__cta">
-          <a class="btn btn--primary shimmer" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="hero.cta1">
+          <a class="btn btn--primary shimmer" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="hero.cta1">
             Check Availability
           </a>
-          <a class="btn btn--ghost" href="#portfolio" data-i18n="hero.cta2">View Portfolio</a>
+          <a class="btn btn--ghost" href="#gallery" data-i18n="hero.cta2">View Gallery</a>
         </div>
 
         <div class="trust">
@@ -148,19 +161,31 @@
     </div>
   </section>
 
-  <!-- CINEMATIC VIDEO SECTION -->
-  <section class="cinemaSection reveal">
-    <video autoplay muted loop playsinline class="cinemaVideo" poster="assets/hero.jpg">
-      <source src="assets/cinematic.mp4" type="video/mp4">
-    </video>
-    <div class="cinemaOverlay">
-      <div class="cinemaInner">
-        <h2 data-i18n="cinema.title">Cinematic Wedding Storytelling</h2>
-        <p data-i18n="cinema.subtitle">Emotion. Elegance. Timeless Art.</p>
+  <!-- SHOWREEL (Best practice: center cinematic frame, photo/video-ready) -->
+  <section class="section section--alt reveal" id="showreel">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="showreel.title">Showreel</h2>
+        <p data-i18n="showreel.subtitle">
+          A short cinematic selection — later you can switch from photos to 5–12 sec videos by editing one JS list.
+        </p>
+      </div>
+
+      <div class="showreelWrap">
+        <div class="showreelFrame">
+          <!-- JS will control this video element (or fallback image) -->
+          <video class="showreelMedia" id="showreelVideo" muted playsinline preload="metadata"></video>
+
+          <!-- Fallback if video fails (JS toggles) -->
+          <img class="showreelMedia is-hidden" id="showreelFallback" src="assets/showreel/slide1.jpg" alt="Showreel">
+        </div>
+
+        <div class="showreelHint" data-i18n="showreel.hint">
+          Tip: put your clips into <strong>assets/showreel/</strong> and edit the JS array.
+        </div>
       </div>
     </div>
   </section>
-
   <!-- Services -->
   <section class="section reveal" id="services">
     <div class="container">
@@ -212,7 +237,7 @@
       </div>
 
       <div class="ctaRow">
-        <a class="btn btn--primary shimmer" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="services.cta">
+        <a class="btn btn--primary shimmer" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="services.cta">
           Inquire Now
         </a>
         <span class="muted" data-i18n="services.note">Based in Switzerland • Available nationwide</span>
@@ -240,7 +265,7 @@
             <li data-i18n="collections.sig.li3">Edited photo gallery</li>
             <li data-i18n="collections.sig.li4">Private online delivery</li>
           </ul>
-          <a class="btn btn--ghost btn--full" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="collections.sig.cta">Request details</a>
+          <a class="btn btn--ghost btn--full" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="collections.sig.cta">Request details</a>
         </article>
 
         <article class="priceCard priceCard--featured">
@@ -254,7 +279,7 @@
             <li data-i18n="collections.pre.li3">Ceremony/speeches audio capture</li>
             <li data-i18n="collections.pre.li4">Priority editing</li>
           </ul>
-          <a class="btn btn--primary btn--full shimmer" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="collections.pre.cta">Check availability</a>
+          <a class="btn btn--primary btn--full shimmer" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="collections.pre.cta">Check availability</a>
         </article>
 
         <article class="priceCard">
@@ -268,7 +293,7 @@
             <li data-i18n="collections.leg.li3">Engagement session option</li>
             <li data-i18n="collections.leg.li4">Luxury presentation</li>
           </ul>
-          <a class="btn btn--ghost btn--full" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="collections.leg.cta">Request details</a>
+          <a class="btn btn--ghost btn--full" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="collections.leg.cta">Request details</a>
         </article>
       </div>
 
@@ -281,15 +306,15 @@
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section class="section reveal" id="portfolio">
+  <!-- Gallery -->
+  <section class="section reveal" id="gallery">
     <div class="container">
       <div class="section__head">
-        <h2 data-i18n="portfolio.title">Portfolio</h2>
-        <p data-i18n="portfolio.subtitle">A refined selection of moments — replace these with your best work.</p>
+        <h2 data-i18n="gallery.title">Gallery</h2>
+        <p data-i18n="gallery.subtitle">A refined selection of moments — replace these with your best work.</p>
       </div>
 
-      <div class="gallery" id="gallery">
+      <div class="galleryGrid" id="galleryGrid">
         <a class="gItem" href="assets/p1.jpg" data-caption="Wedding Portrait • Golden Hour">
           <img src="assets/p1.jpg" alt="Wedding Portrait" loading="lazy" decoding="async" width="1200" height="800">
         </a>
@@ -312,16 +337,96 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section class="section section--alt reveal" id="about">
+  <!-- Testimonials (photo + text luxury cards + slider) -->
+  <section class="section section--alt reveal" id="testimonials">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="testimonials.title">Testimonials</h2>
+        <p data-i18n="testimonials.subtitle">Real words from couples & families — crafted moments, delivered with care.</p>
+      </div>
+
+      <div class="tSlider" aria-label="Testimonials slider">
+        <button class="tNav tPrev" type="button" aria-label="Previous testimonial">‹</button>
+
+        <div class="tViewport">
+          <div class="tTrack" id="tTrack">
+            <article class="tCard">
+              <img class="tImg" src="assets/testimonials/t1.jpg" alt="Client best shot 1" loading="lazy">
+              <div class="tBody">
+                <div class="tStars">★★★★★</div>
+                <p class="tQuote" data-i18n="t.1.text">“Kirubel captured every emotion with elegance. The film felt like cinema — we cried watching it.”</p>
+                <div class="tMeta">
+                  <strong data-i18n="t.1.name">Maya & Jonas</strong><span data-i18n="t.1.loc">• Zürich</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="tCard">
+              <img class="tImg" src="assets/testimonials/t2.jpg" alt="Client best shot 2" loading="lazy">
+              <div class="tBody">
+                <div class="tStars">★★★★★</div>
+                <p class="tQuote" data-i18n="t.2.text">“So discreet and professional. Photos are luxury-level, and delivery was fast.”</p>
+                <div class="tMeta">
+                  <strong data-i18n="t.2.name">Sofia R.</strong><span data-i18n="t.2.loc">• Basel</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="tCard">
+              <img class="tImg" src="assets/testimonials/t3.jpg" alt="Client best shot 3" loading="lazy">
+              <div class="tBody">
+                <div class="tStars">★★★★★</div>
+                <p class="tQuote" data-i18n="t.3.text">“Best storyteller. He guided us calmly and made us look amazing without feeling posed.”</p>
+                <div class="tMeta">
+                  <strong data-i18n="t.3.name">Amina & Daniel</strong><span data-i18n="t.3.loc">• Bern</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="tCard">
+              <img class="tImg" src="assets/testimonials/t4.jpg" alt="Client best shot 4" loading="lazy">
+              <div class="tBody">
+                <div class="tStars">★★★★★</div>
+                <p class="tQuote" data-i18n="t.4.text">“The baptism photos are pure magic. Every detail, every smile — perfectly preserved.”</p>
+                <div class="tMeta">
+                  <strong data-i18n="t.4.name">Family K.</strong><span data-i18n="t.4.loc">• Luzern</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="tCard">
+              <img class="tImg" src="assets/testimonials/t5.jpg" alt="Client best shot 5" loading="lazy">
+              <div class="tBody">
+                <div class="tStars">★★★★★</div>
+                <p class="tQuote" data-i18n="t.5.text">“Premium quality, premium communication. A true artist — highly recommended.”</p>
+                <div class="tMeta">
+                  <strong data-i18n="t.5.name">Elena & Marc</strong><span data-i18n="t.5.loc">• Geneva</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <button class="tNav tNext" type="button" aria-label="Next testimonial">›</button>
+      </div>
+
+      <div class="tDots" id="tDots" aria-label="Testimonials dots"></div>
+    </div>
+  </section>
+
+  <!-- About (new friendly + trustworthy + 10 years + Bern) -->
+  <section class="section reveal" id="about">
     <div class="container">
       <div class="about">
         <div class="about__copy">
-          <div class="kicker">KIRUBEL VISUALS</div>
-          <h2 data-i18n="about.title">Elegant storytelling — created with intention.</h2>
+          <div class="kicker">KIRUBEL</div>
+          <h2 data-i18n="about.title">Friendly. Passionate. Dedicated to timeless stories.</h2>
+
           <p data-i18n="about.subtitle">
-            Every ceremony carries emotion that deserves to be preserved with grace.
-            Our approach is discreet, guided, and refined — so you can be fully present.
+            I have over 10 years of experience in photography and filmmaking, and I truly love what I do.
+            Creating radiant images and cinematic edits is part of my daily life — it’s in my mind and heart.
+            I’m friendly, calm, and respectful, so you can feel comfortable and fully present in your moment.
+            Based in the heart of Switzerland — Bern — and available across the country.
           </p>
 
           <div class="steps">
@@ -329,27 +434,29 @@
               <div class="step__n">01</div>
               <div>
                 <strong data-i18n="about.s1.title">Consultation</strong>
-                <div class="muted" data-i18n="about.s1.sub">We confirm vision, timing, and details.</div>
+                <div class="muted" data-i18n="about.s1.sub">We confirm your vision, timing, and important details.</div>
               </div>
             </div>
+
             <div class="step">
               <div class="step__n">02</div>
               <div>
                 <strong data-i18n="about.s2.title">Coverage</strong>
-                <div class="muted" data-i18n="about.s2.sub">Film + photo with calm, professional direction.</div>
+                <div class="muted" data-i18n="about.s2.sub">Discreet direction — natural moments with a luxury finish.</div>
               </div>
             </div>
+
             <div class="step">
               <div class="step__n">03</div>
               <div>
                 <strong data-i18n="about.s3.title">Editing & Delivery</strong>
-                <div class="muted" data-i18n="about.s3.sub">Luxury finish, clean audio, private delivery.</div>
+                <div class="muted" data-i18n="about.s3.sub">Cinematic color, clean sound, and a beautiful final delivery.</div>
               </div>
             </div>
           </div>
 
           <div class="ctaRow">
-            <a class="btn btn--primary shimmer" href="https://wa.me/41775035871" target="_blank" rel="noopener" data-i18n="about.cta1">Book your date</a>
+            <a class="btn btn--primary shimmer" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="about.cta1">Book your date</a>
             <a class="btn btn--ghost" href="#contact" data-i18n="about.cta2">Contact</a>
           </div>
         </div>
@@ -358,17 +465,16 @@
           <img src="assets/me.jpg" alt="Kirubel portrait" loading="lazy">
           <div class="about__caption">
             <strong>Kirubel</strong>
-            <div class="muted" data-i18n="about.caption">Film & Photography • Switzerland</div>
+            <div class="muted" data-i18n="about.caption">Film & Photography • Switzerland (Bern)</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BOLD LUXURY CONTACT + PAYMENT -->
+  <!-- Contact (Materials -> WhatsApp -> Email) — SAME luxury styling -->
   <section class="section contactLuxury reveal" id="contact">
     <div class="container">
-
       <div class="luxuryHeader">
         <h2 data-i18n="contactLuxury.title">Reserve Your Date</h2>
         <p data-i18n="contactLuxury.subtitle">
@@ -378,25 +484,43 @@
 
       <div class="luxuryCards">
 
-        <!-- WhatsApp -->
-        <div class="luxuryCard">
+        <!-- 1) Materials / Equipment (same card look) -->
+        <div class="card luxuryCard">
+          <div class="luxuryTopLine"></div>
+          <h3 data-i18n="materials.title">Materials / Equipment</h3>
+          <p data-i18n="materials.subtitle">Professional tools chosen for cinematic image quality and clean sound.</p>
+
+          <div class="matGrid">
+            <div class="matRow"><strong data-i18n="materials.camera">Camera</strong><span>4K / Low-light</span></div>
+            <div class="matRow"><strong data-i18n="materials.lenses">Lenses</strong><span>Prime + Zoom</span></div>
+            <div class="matRow"><strong data-i18n="materials.audio">Audio</strong><span>Lav + Recorder</span></div>
+            <div class="matRow"><strong data-i18n="materials.stabilize">Stabilization</strong><span>Gimbal + Tripod</span></div>
+          </div>
+
+          <p class="muted small matNote" data-i18n="materials.note">
+            Exact equipment can vary per event — always selected for the best final result.
+          </p>
+        </div>
+
+        <!-- 2) WhatsApp -->
+        <div class="card luxuryCard">
           <div class="luxuryTopLine"></div>
           <h3 data-i18n="contactLuxury.whTitle">Private WhatsApp</h3>
           <p data-i18n="contactLuxury.whText">Direct communication for availability checks and immediate assistance.</p>
 
           <a class="luxuryBtn shimmer"
-             href="https://wa.me/41775035871"
+             href="https://wa.me/41765221262"
              target="_blank"
              rel="noopener"
              data-i18n="contactLuxury.whBtn">
             Start Conversation
           </a>
 
-          <div class="luxuryMeta">+41 77 503 58 71</div>
+          <div class="luxuryMeta">+41 76 522 12 62</div>
         </div>
 
-        <!-- Email -->
-        <div class="luxuryCard luxuryCard--accent">
+        <!-- 3) Email -->
+        <div class="card luxuryCard luxuryCard--accent">
           <div class="luxuryTopLine"></div>
           <h3 data-i18n="contactLuxury.emTitle">Formal Inquiries</h3>
           <p data-i18n="contactLuxury.emText">For destination weddings, detailed proposals and official bookings.</p>
@@ -410,34 +534,6 @@
           <div class="luxuryMeta">Kirubielmdiachanel@gmail.com</div>
         </div>
 
-        <!-- Payment -->
-        <div class="luxuryCard luxuryCard--payment">
-          <div class="luxuryTopLine"></div>
-          <h3 data-i18n="payment.title">Payment</h3>
-          <p data-i18n="payment.subtitle">Scan with TWINT or use bank transfer.</p>
-
-          <div class="qrWrap">
-            <img src="assets/kirubel-twint-qr.png" alt="TWINT payment QR code" loading="lazy">
-          </div>
-
-          <div class="payInfo">
-            <div class="payLine"><strong data-i18n="payment.twintLabel">TWINT:</strong> <span>+41 77 503 58 71</span></div>
-
-            <!-- Replace these two lines with your real details -->
-            <div class="payLine"><strong data-i18n="payment.nameLabel">Name:</strong> <span>PASTE YOUR FULL NAME HERE</span></div>
-            <div class="payLine"><strong data-i18n="payment.ibanLabel">IBAN:</strong> <span id="ibanText">PASTE YOUR IBAN HERE</span></div>
-
-            <button class="btn btn--ghost btn--full copyBtn"
-                    type="button"
-                    data-copy="PASTE YOUR IBAN HERE"
-                    data-i18n="payment.copyIban">
-              Copy IBAN
-            </button>
-
-            <p class="muted small" data-i18n="payment.note">Tip: add your event date in the payment note.</p>
-          </div>
-        </div>
-
       </div>
 
       <div class="luxuryTrust">
@@ -445,28 +541,37 @@
         <span data-i18n="contactLuxury.t2">• Discreet & Professional</span>
         <span data-i18n="contactLuxury.t3">• Response within 24 Hours</span>
       </div>
-
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
+
+      <!-- LEFT: logo + partners -->
       <div class="footer__brand">
-        <div class="brand brand--footer">
-          <span class="brand__mark" aria-hidden="true">K</span>
-          <span class="brand__text">
-            <span class="brand__name">KIRUBEL</span>
-            <span class="brand__sub">VISUALS</span>
-          </span>
+        <a class="footerLogo" href="#top" aria-label="Home">
+          <img src="assets/logo.png" alt="Kirubel Photo & Video 4U logo">
+        </a>
+
+        <p class="muted">
+          ©️ <span id="year"></span> kirubel.ch — <span data-i18n="footer.rights">All rights reserved.</span>
+        </p>
+
+        <div class="partners">
+          <span class="partners__label" data-i18n="footer.partners">Partners:</span>
+          <a class="partnerLink" href="https://www.haben-beauty.ch/" target="_blank" rel="noopener">Haben Beauty</a>
+          <a class="partnerLink" href="https://roraproduction.com" target="_blank" rel="noopener">Rora Production</a>
         </div>
-        <p class="muted">© <span id="year"></span> kirubel.ch — <span data-i18n="footer.rights">All rights reserved.</span></p>
       </div>
 
+      <!-- RIGHT: links -->
       <div class="footer__links">
         <a href="#services" data-i18n="nav.services">Services</a>
         <a href="#collections" data-i18n="nav.collections">Collections</a>
-        <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#showreel" data-i18n="nav.showreel">Showreel</a>
+        <a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </div>
     </div>
@@ -475,7 +580,6 @@
   <!-- Premium Lightbox -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lbClose" type="button" aria-label="Close (Esc)">×</button>
-
     <button class="lbNav lbPrev" type="button" aria-label="Previous">‹</button>
     <button class="lbNav lbNext" type="button" aria-label="Next">›</button>
 
@@ -501,4 +605,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
