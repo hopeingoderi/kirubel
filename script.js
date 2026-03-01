@@ -358,6 +358,36 @@ function setupNav(){
   const brand = document.querySelector(".brand");
 
   if (!nav || !toggle) return;
+  const toggle = document.querySelector('.nav__toggle');
+const nav = document.querySelector('.nav');
+
+if (!toggle || !nav) {
+  console.log('Missing .nav__toggle or .nav');
+} else {
+  const openMenu = () => {
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.documentElement.classList.add('nav-open');
+    document.body.classList.add('nav-open');
+  };
+
+  const closeMenu = () => {
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.documentElement.classList.remove('nav-open');
+    document.body.classList.remove('nav-open');
+  };
+
+  const toggleMenu = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    nav.classList.contains('is-open') ? closeMenu() : openMenu();
+  };
+
+  // iOS Safari reliability: bind both
+  toggle.addEventListener('click', toggleMenu);
+  toggle.addEventListener('touchend', toggleMenu, { passive: false });
+}
 
   // backdrop (created once)
   let backdrop = document.querySelector(".navBackdrop");
@@ -1217,3 +1247,4 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const saved = localStorage.getItem("kv_lang") || "de";
   setLanguage(saved);
 });
+
