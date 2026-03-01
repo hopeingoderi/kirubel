@@ -1151,32 +1151,46 @@ main, section, .section, .hero, .showreelFrame, .tSlider, .lightbox{
   position: relative;
   z-index: 0;
 }
-/* =========================
-   FIX: iPhone menu clickable + clean stacking
-   ========================= */
+/* ==========================================================
+   CLEAN HEADER + MOBILE MENU FIX (Safari Safe)
+   ========================================================== */
 
+/* Fixed header */
 .header{
   position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1200;              /* sane value */
-  background: rgba(248,242,234,.90);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* sane stacking */
+  background: rgba(248,242,234,.95);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
 
-/* keep content below fixed header */
-body{ padding-top: var(--headerH); }
-
-/* mobile menu layers must be ABOVE header */
-.navBackdrop{ z-index: 1300; }
-.nav{ z-index: 1400; }
-
-/* make sure the hamburger is always tappable */
-.nav__toggle{
-  position: relative;
-  z-index: 1500;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+/* Prevent content from hiding under fixed header */
+body{
+  padding-top: var(--headerH);
 }
 
+/* Make sure mobile layers are ABOVE header */
+.navBackdrop{
+  z-index: 2000;
+}
 
+.nav{
+  z-index: 2100;
+}
+
+.nav__toggle{
+  position: relative;
+  z-index: 2200;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Lock scroll when menu open */
+html.nav-open,
+body.nav-open{
+  overflow: hidden;
+  height: 100%;
+}
