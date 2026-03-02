@@ -234,7 +234,6 @@ function setLanguage(lang) {
 
   applyTranslations(safe);
 }
-
 function setupNav() {
   const toggle = document.getElementById("navToggle");
   const nav = document.getElementById("mainNav");
@@ -249,35 +248,29 @@ function setupNav() {
     nav.classList.add("is-open");
     backdrop.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
-    backdrop.setAttribute("aria-hidden", "false");
-    document.body.classList.add("nav-open");
+    document.body.style.overflow = "hidden";
   };
 
   const closeMenu = () => {
     nav.classList.remove("is-open");
     backdrop.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
-    backdrop.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("nav-open");
+    document.body.style.overflow = "";
   };
 
-  const toggleMenu = () => {
+  const toggleMenu = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     nav.classList.contains("is-open") ? closeMenu() : openMenu();
   };
 
-  // IMPORTANT: click only (avoid pointerup/touch double behavior on iOS)
-  toggle.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    toggleMenu();
-  });
+  // IMPORTANT: use CLICK only (pointer events can fail on some iOS/Safari setups)
+  toggle.addEventListener("click", toggleMenu);
 
-  backdrop.addEventListener("click", (e) => {
-    e.preventDefault();
-    closeMenu();
-  });
+  backdrop.addEventListener("click", closeMenu);
 
-  // Close on nav link click (mobile)
   nav.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", () => {
       if (isMobile()) closeMenu();
@@ -288,18 +281,12 @@ function setupNav() {
     if (e.key === "Escape") closeMenu();
   });
 
-  // Brand click toggles menu on mobile
   if (brand) {
     brand.addEventListener("click", (e) => {
-      if (isMobile()) {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleMenu();
-      }
+      if (isMobile()) toggleMenu(e);
     });
   }
 
-  // If resized to desktop, always reset
   window.addEventListener("resize", () => {
     if (!isMobile()) closeMenu();
   });
