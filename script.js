@@ -245,12 +245,12 @@ function setupNav() {
   const isMobile = () => window.matchMedia("(max-width: 980px)").matches;
 
   const openMenu = () => {
+    if (!isMobile()) return;
     nav.classList.add("is-open");
     backdrop.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
     backdrop.setAttribute("aria-hidden", "false");
-    document.documentElement.classList.add("nav-open");
-    document.body.classList.add("nav-open");
+    document.body.style.overflow = "hidden";
   };
 
   const closeMenu = () => {
@@ -258,23 +258,15 @@ function setupNav() {
     backdrop.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
     backdrop.setAttribute("aria-hidden", "true");
-    document.documentElement.classList.remove("nav-open");
-    document.body.classList.remove("nav-open");
+    document.body.style.overflow = "";
   };
 
-  // prevent double-fire (iOS can trigger pointer+click)
-  let lock = false;
-  const safeToggle = (e) => {
+  // ✅ iPhone-safe: CLICK ONLY (no pointerup, no double listeners)
+  toggle.addEventListener("click", (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    if (lock) return;
-    lock = true;
-    setTimeout(() => (lock = false), 350);
-
     nav.classList.contains("is-open") ? closeMenu() : openMenu();
-  };
-    // click only iPhone safe
-  toggle.addEventListener("click", safeToggle);
+  });
+
   backdrop.addEventListener("click", closeMenu);
 
   // Close when clicking menu links on mobile
@@ -289,7 +281,7 @@ function setupNav() {
     if (e.key === "Escape") closeMenu();
   });
 
-  // If resized to desktop, force close and restore scroll
+  // If resized to desktop, force close
   window.addEventListener("resize", () => {
     if (!isMobile()) closeMenu();
   });
@@ -713,6 +705,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("kv_lang") || "de";
   setLanguage(saved);
 });
+
 
 
 
