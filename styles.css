@@ -265,50 +265,58 @@ body > *{ position:relative; z-index:2; }
 .shimmer:hover::after{ animation: shimmer 1.2s ease forwards; }
 @keyframes shimmer{ 100%{ left:120%; } }
 
-/* Luxury mobile slide-in nav + backdrop */
+/* ===== MOBILE MENU (iPhone SAFE) ===== */
+
 .navBackdrop{
-  position:fixed;
-  inset:0;
+  position: fixed;
+  inset: 0;
   background: rgba(10,8,12,.55);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  opacity:0;
-  pointer-events:none;
+  opacity: 0;
+  pointer-events: none;
   transition: opacity .22s ease;
-  z-index:2000;
+  z-index: 4000;               /* backdrop BELOW menu */
 }
+
 .navBackdrop.is-open{
-  opacity:1;
-  pointer-events:auto;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (max-width:980px){
-  .nav__toggle{ display:block; }
-
   .nav{
-    position:fixed;
-    top:0; right:0;
-    height:100dvh;
-    width:min(360px, 92vw);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;             /* iPhone safe */
+    width: min(360px, 92vw);
     padding: calc(var(--headerH) + 20px) 18px 18px;
-    background: rgba(248,242,234,.96);
-    border-left:1px solid rgba(18,16,24,.10);
-    box-shadow:-30px 0 120px rgba(18,16,24,.20);
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px;
+    background: #f4efe8;       /* SOLID background (no transparent blur bugs) */
+    border-left: 1px solid rgba(18,16,24,.10);
+    box-shadow: -30px 0 120px rgba(18,16,24,.20);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
     transform: translateX(104%);
     transition: transform .28s cubic-bezier(.16,1,.3,1);
-    z-index:3000;
-  }
-  .nav.is-open{ transform: translateX(0); }
 
-  .nav a{ width:100%; padding:12px 10px; border-radius:14px; }
-  .nav a:not(.btn):hover{
-    background: rgba(225,138,0,.10);
-    border:1px solid rgba(225,138,0,.18);
+    z-index: 5000;             /* menu ABOVE backdrop */
+    -webkit-overflow-scrolling: touch;
   }
-  .nav a.btn{ width:100%; }
+
+  .nav.is-open{
+    transform: translateX(0);
+  }
+
+  /* keep toggle above everything */
+  .nav__toggle{
+    position: relative;
+    z-index: 6000;
+  }
 }
 
 /* =======================
@@ -1151,3 +1159,4 @@ main, section, .section, .hero, .showreelFrame, .tSlider, .lightbox{
   position: relative;
   z-index: 0;
 }
+
