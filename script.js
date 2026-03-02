@@ -235,9 +235,6 @@ function setLanguage(lang) {
   applyTranslations(safe);
 }
 
-// -------------------
-// Mobile nav (FIXED)
-// -------------------
 function setupNav() {
   const toggle = document.getElementById("navToggle");
   const nav = document.getElementById("mainNav");
@@ -266,21 +263,17 @@ function setupNav() {
     nav.classList.contains("is-open") ? closeMenu() : openMenu();
   };
 
-  // iPhone: click is ok, but this makes it extra reliable
+  // Use pointerup (works on iPhone + desktop) — avoid click+touch double issues
   const onToggle = (e) => {
     e.preventDefault();
     e.stopPropagation();
     toggleMenu();
   };
 
-// Use pointer events (best for iPhone + desktop). No double-fire.
-toggle.addEventListener("pointerup", onToggle);
+  toggle.addEventListener("pointerup", onToggle);
+  backdrop.addEventListener("pointerup", closeMenu);
 
-backdrop.addEventListener("pointerup", (e) => {
-  e.preventDefault();
-  closeMenu();
-});
-
+  // Close on link click (mobile)
   nav.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", () => {
       if (isMobile()) closeMenu();
@@ -291,7 +284,7 @@ backdrop.addEventListener("pointerup", (e) => {
     if (e.key === "Escape" && nav.classList.contains("is-open")) closeMenu();
   });
 
-  // Logo: desktop scroll top; mobile toggles menu
+  // Brand click toggles menu on mobile
   if (brand) {
     brand.addEventListener("click", (e) => {
       if (isMobile()) {
@@ -724,4 +717,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("kv_lang") || "de";
   setLanguage(saved);
 });
+
 
