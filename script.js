@@ -273,13 +273,9 @@ function setupNav() {
 
     nav.classList.contains("is-open") ? closeMenu() : openMenu();
   };
-
-  // Use pointerup when available, click fallback
-  toggle.addEventListener("pointerup", safeToggle);
+    // click only iPhone safe
   toggle.addEventListener("click", safeToggle);
-
   backdrop.addEventListener("click", closeMenu);
-  backdrop.addEventListener("pointerup", closeMenu);
 
   // Close when clicking menu links on mobile
   nav.querySelectorAll('a[href^="#"]').forEach((a) => {
@@ -717,6 +713,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("kv_lang") || "de";
   setLanguage(saved);
 });
+
 
 
 
