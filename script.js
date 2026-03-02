@@ -249,31 +249,35 @@ function setupNav() {
     nav.classList.add("is-open");
     backdrop.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
-    document.body.style.overflow = "hidden";
+    backdrop.setAttribute("aria-hidden", "false");
+    document.body.classList.add("nav-open");
   };
 
   const closeMenu = () => {
     nav.classList.remove("is-open");
     backdrop.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
+    backdrop.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("nav-open");
   };
 
   const toggleMenu = () => {
     nav.classList.contains("is-open") ? closeMenu() : openMenu();
   };
 
-  // Use pointerup (works on iPhone + desktop) — avoid click+touch double issues
-  const onToggle = (e) => {
+  // IMPORTANT: click only (avoid pointerup/touch double behavior on iOS)
+  toggle.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
     toggleMenu();
-  };
+  });
 
-  toggle.addEventListener("pointerup", onToggle);
-  backdrop.addEventListener("pointerup", closeMenu);
+  backdrop.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeMenu();
+  });
 
-  // Close on link click (mobile)
+  // Close on nav link click (mobile)
   nav.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", () => {
       if (isMobile()) closeMenu();
@@ -281,7 +285,7 @@ function setupNav() {
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && nav.classList.contains("is-open")) closeMenu();
+    if (e.key === "Escape") closeMenu();
   });
 
   // Brand click toggles menu on mobile
@@ -289,11 +293,13 @@ function setupNav() {
     brand.addEventListener("click", (e) => {
       if (isMobile()) {
         e.preventDefault();
+        e.stopPropagation();
         toggleMenu();
       }
     });
   }
 
+  // If resized to desktop, always reset
   window.addEventListener("resize", () => {
     if (!isMobile()) closeMenu();
   });
@@ -717,5 +723,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("kv_lang") || "de";
   setLanguage(saved);
 });
+
 
 
