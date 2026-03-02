@@ -234,11 +234,11 @@ function setLanguage(lang) {
 
   applyTranslations(safe);
 }
+
 function setupNav() {
   const toggle = document.getElementById("navToggle");
   const nav = document.getElementById("mainNav");
   const backdrop = document.getElementById("navBackdrop");
-  const brand = document.querySelector(".brand");
 
   if (!toggle || !nav || !backdrop) return;
 
@@ -248,45 +248,52 @@ function setupNav() {
     nav.classList.add("is-open");
     backdrop.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
-    document.body.style.overflow = "hidden";
+    backdrop.setAttribute("aria-hidden", "false");
+    document.documentElement.classList.add("nav-open");
+    document.body.classList.add("nav-open");
   };
 
   const closeMenu = () => {
     nav.classList.remove("is-open");
     backdrop.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
+    backdrop.setAttribute("aria-hidden", "true");
+    document.documentElement.classList.remove("nav-open");
+    document.body.classList.remove("nav-open");
   };
 
-  const toggleMenu = (e) => {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+  // prevent double-fire (iOS can trigger pointer+click)
+  let lock = false;
+  const safeToggle = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (lock) return;
+    lock = true;
+    setTimeout(() => (lock = false), 350);
+
     nav.classList.contains("is-open") ? closeMenu() : openMenu();
   };
 
-  // IMPORTANT: use CLICK only (pointer events can fail on some iOS/Safari setups)
-  toggle.addEventListener("click", toggleMenu);
+  // Use pointerup when available, click fallback
+  toggle.addEventListener("pointerup", safeToggle);
+  toggle.addEventListener("click", safeToggle);
 
   backdrop.addEventListener("click", closeMenu);
+  backdrop.addEventListener("pointerup", closeMenu);
 
+  // Close when clicking menu links on mobile
   nav.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", () => {
       if (isMobile()) closeMenu();
     });
   });
 
+  // ESC closes
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
 
-  if (brand) {
-    brand.addEventListener("click", (e) => {
-      if (isMobile()) toggleMenu(e);
-    });
-  }
-
+  // If resized to desktop, force close and restore scroll
   window.addEventListener("resize", () => {
     if (!isMobile()) closeMenu();
   });
@@ -710,6 +717,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("kv_lang") || "de";
   setLanguage(saved);
 });
+
 
 
 
