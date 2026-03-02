@@ -273,11 +273,13 @@ function setupNav() {
     toggleMenu();
   };
 
-  toggle.addEventListener("click", onToggle);
-  toggle.addEventListener("touchend", onToggle, { passive: false });
+// Use pointer events (best for iPhone + desktop). No double-fire.
+toggle.addEventListener("pointerup", onToggle);
 
-  backdrop.addEventListener("click", closeMenu);
-  backdrop.addEventListener("touchend", closeMenu, { passive: true });
+backdrop.addEventListener("pointerup", (e) => {
+  e.preventDefault();
+  closeMenu();
+});
 
   nav.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", () => {
@@ -722,3 +724,4 @@ document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("kv_lang") || "de";
   setLanguage(saved);
 });
+
