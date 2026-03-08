@@ -1152,115 +1152,63 @@ main, section, .section, .hero, .showreelFrame, .tSlider, .lightbox{
   z-index: 0;
 }
 
-/* ===== CLEAN RECOVERY FIXES ===== */
-.is-hidden{ display:none !important; }
-
-html.nav-open,
-body.nav-open{
-  overflow:hidden;
-}
-
-main, section, .section, .hero, .showreelFrame, .tSlider{
-  position:relative;
-  z-index:0;
-}
-.lightbox{
-  z-index:100000 !important;
-}
-
-.header{
-  position:sticky !important;
-  top:0 !important;
-  z-index:1200 !important;
-  isolation:auto !important;
-  transform:none !important;
-}
-
-body{
-  padding-top:0 !important;
-}
-
-.navBackdrop{
-  z-index:2000 !important;
-}
-
+/* ===== mobile recovery fixes ===== */
+.navMobileOnly{display:none;}
+.hero__ghost{color:#1b1214 !important; background:rgba(255,255,255,.92) !important;}
+.serviceCard{position:relative; overflow:hidden;}
+.serviceCard::before{content:""; position:absolute; inset:auto -40px -40px auto; width:120px; height:120px; background:radial-gradient(circle, rgba(225,138,0,.18), transparent 65%);}
 @media (max-width:980px){
+  .topbar{display:none;}
+  .header{position:sticky !important; top:0; z-index:100000 !important; isolation:isolate;}
+  .header__inner{height:92px; gap:10px;}
+  .brand{min-width:0; flex:1 1 auto;}
+  .brand__logo{height:52px;}
+  .brand__name{font-size:16px;}
+  .brand__sub{font-size:10px; letter-spacing:2px;}
   .nav__toggle{
-    display:inline-flex !important;
-    align-items:center;
-    justify-content:center;
+    display:grid !important;
+    place-items:center;
+    flex:0 0 64px;
+    width:64px; height:64px;
+    margin-left:auto;
     position:relative;
-    z-index:2200 !important;
-    width:52px;
-    height:52px;
-    background:rgba(255,255,255,.95);
-    border:1px solid rgba(18,16,24,.14);
-    box-shadow:0 12px 34px rgba(18,16,24,.14);
-    -webkit-tap-highlight-color: transparent;
+    z-index:100002 !important;
+    background:rgba(255,255,255,.96);
+    border:1px solid rgba(18,16,24,.10);
+    box-shadow:0 14px 36px rgba(18,16,24,.12);
   }
-
-  .nav__toggle span{
-    width:22px;
-    height:2px;
-    margin:3px 0;
-    background:#1a1717;
-  }
-
+  .nav__toggle span{width:24px; height:2.5px; margin:4px auto;}
+  .navBackdrop{z-index:100000 !important;}
   .nav{
-    position:fixed !important;
-    top:0;
-    right:0;
-    width:min(360px, 88vw);
-    height:100dvh;
+    top:0; right:0;
+    width:min(86vw,360px);
     padding:110px 18px 24px;
-    background:rgba(248,242,234,.98);
-    border-left:1px solid rgba(18,16,24,.10);
-    box-shadow:-30px 0 120px rgba(18,16,24,.20);
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px;
-    transform:translateX(110%) !important;
-    transition:transform .28s cubic-bezier(.16,1,.3,1);
-    z-index:2100 !important;
-    overflow-y:auto;
-    -webkit-overflow-scrolling:touch;
+    z-index:100001 !important;
+    transform:translateX(110%);
   }
-
-  .nav.is-open{
-    transform:translateX(0) !important;
-  }
-
-  .nav a{
+  .nav.is-open{transform:translateX(0);}
+  .navMobileOnly{
+    display:grid;
+    gap:14px;
     width:100%;
-    padding:12px 10px;
-    border-radius:14px;
+    padding:0 0 10px;
+    margin:0 0 8px;
+    border-bottom:1px solid rgba(18,16,24,.08);
   }
-
-  .nav a.btn{
-    width:100%;
-  }
-}
-
-@media (min-width:981px){
-  .nav{
-    position:static !important;
-    transform:none !important;
-    height:auto !important;
-    width:auto !important;
-    background:transparent !important;
-    box-shadow:none !important;
-    border:0 !important;
-    padding:0 !important;
-    overflow:visible !important;
-    z-index:auto !important;
-  }
-
-  .nav__toggle{
-    display:none !important;
-  }
-
-  .navBackdrop{
-    display:none !important;
-  }
+  .navPhone{font-weight:900; font-size:1rem;}
+  .navLang{justify-self:start;}
+  .hero{padding-top:26px;}
+  .hero__inner{grid-template-columns:1fr;}
+  .hero__card{order:2;}
+  .hero__copy{order:1;}
+  .hero h1{font-size:clamp(2.6rem, 11vw, 4rem);}
+  .hero p{font-size:1.25rem; line-height:1.5;}
+  .trust__item{min-width:unset; width:100%;}
+  .hero__cta{gap:14px;}
+  .hero__cta .btn{min-height:64px; width:100%; font-size:1.05rem;}
+  .hero__card .card{padding:18px;}
+  .showreelMedia{height:46vh;}
+  .galleryGrid{grid-template-columns:1fr;}
+  .gItem img{height:420px; object-fit:cover;}
+  .about__image img{height:400px;}
 }
