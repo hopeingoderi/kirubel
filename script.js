@@ -1,318 +1,173 @@
-const WHATSAPP_NUMBER = "41765221262";
+const WHATSAPP_NUMBER = '41765221262';
 
 const I18N = {
   de: {
-    "topbar.pill": "Schweiz • Film + Foto • Luxury Visuals",
-    "topbar.phone": "WhatsApp/Anruf: +41 76 522 12 62",
-    "nav.services": "Services",
-    "nav.collections": "Pakete",
-    "nav.gallery": "Galerie",
-    "nav.showreel": "Showreel",
-    "nav.testimonials": "Testimonials",
-    "nav.about": "Über mich",
-    "nav.contact": "Kontakt",
-    "nav.cta": "WhatsApp Anfrage",
-    "hero.kicker": "Luxury Hochzeitsfotografie • Schweiz",
-    "hero.title": "Cinematic Luxury — zeitlose Visual Stories.",
-    "hero.subtitle": "Elegante Hochzeiten, traditionelle Looks und emotionale Portraits — modern, hochwertig und mit viel Gefühl erzählt.",
-    "hero.cta1": "Galerie ansehen",
-    "hero.cta2": "Datum reservieren",
-    "trust.a.title": "Diskret",
-    "trust.a.sub": "Professionelle Präsenz",
-    "trust.b.title": "Cineastisch",
-    "trust.b.sub": "Elegantes Storytelling",
-    "trust.c.title": "Zuverlässig",
-    "trust.c.sub": "Strukturierter Ablauf",
-    "form.title": "Schnellanfrage",
-    "form.subtitle": "Datum + Ort senden. Ich antworte schnell.",
-    "form.name.label": "Name",
-    "form.name.ph": "Dein Name",
-    "form.type.label": "Event-Typ",
-    "form.date.label": "Datum",
-    "form.location.label": "Ort",
-    "form.location.ph": "Bern / Zürich / ...",
-    "form.msg.label": "Nachricht",
-    "form.msg.ph": "Stunden, Wünsche, Sprache usw.",
-    "form.submit": "Per WhatsApp senden",
-    "services.title": "Services",
-    "services.subtitle": "Luxury Coverage für Hochzeiten und Life-Events — Film + Foto mit Eleganz.",
-    "collections.title": "Pakete",
-    "collections.subtitle": "Drei Luxus-Pakete — Details klären wir im Gespräch.",
-    "collections.addons": "Add-ons: Drohne (wo erlaubt), Extra-Stunden, Same-Week Teaser, Raw Footage, Second Shooter.",
-    "gallery.title": "Galerie",
-    "gallery.subtitle": "Eine feine Auswahl an Momenten — mit deinen echten Bildern.",
-    "showreel.title": "Showreel",
-    "showreel.subtitle": "Kurze cineastische Highlights mit echtem Demo-Video und Bildvorschau.",
-    "testimonials.title": "Testimonials",
-    "testimonials.subtitle": "Ein paar Worte von Kunden — echte Erlebnisse, echte Momente.",
-    "about.title": "Elegant. Freundlich. Mit Herz.",
-    "about.subtitle": "Seit über 10 Jahren begleite ich Hochzeiten und Events mit Ruhe, Respekt und echter Leidenschaft. Zuhause bin ich im Herzen der Schweiz: Bern.",
-    "contactLuxury.title": "Datum reservieren",
-    "contactLuxury.subtitle": "Ich nehme pro Jahr nur eine limitierte Anzahl an Hochzeiten & Zeremonien an — für volle künstlerische Hingabe.",
-    "footer.rights": "Alle Rechte vorbehalten.",
-    "footer.partners": "Partner:"
+    'topbar.pill': 'Schweiz • Film + Foto • Luxury Visuals',
+    'topbar.phone': 'WhatsApp/Anruf: +41 76 522 12 62',
+    'nav.services': 'Services',
+    'nav.showreel': 'Showreel',
+    'nav.gallery': 'Galerie',
+    'nav.testimonials': 'Testimonials',
+    'nav.about': 'Über mich',
+    'nav.contact': 'Kontakt',
+    'hero.kicker': 'Luxury Hochzeitsfotografie • Schweiz',
+    'hero.title': 'Cinematic Luxury — zeitlose Visual Stories.',
+    'hero.text': 'Elegante Hochzeiten, traditionelle Looks und emotionale Portraits — modern, hochwertig und mit viel Gefühl erzählt.',
+    'hero.cta1': 'Galerie ansehen',
+    'hero.cta2': 'Datum reservieren',
+    'trust.1t': 'Diskret', 'trust.1s': 'Professionelle Präsenz',
+    'trust.2t': 'Cineastisch', 'trust.2s': 'Elegantes Storytelling',
+    'trust.3t': 'Zuverlässig', 'trust.3s': 'Strukturierter Ablauf',
+    'form.title': 'Schnellanfrage','form.text':'Datum + Ort senden. Ich antworte schnell.','form.name':'Name','form.type':'Event-Typ','form.date':'Datum','form.place':'Ort','form.message':'Nachricht','form.submit':'Per WhatsApp senden',
+    'services.eyebrow':'Services','services.title':'Mehr Premium. Mehr Klarheit. Mehr Vertrauen.','services.text':'Leistungen klar präsentiert, elegant gestaltet und mit starkem Premium-Gefühl für Brautpaare in der Schweiz.',
+    'services.badge1':'Hochzeiten','services.badge2':'Tradition','services.badge3':'Editorial',
+    'services.s1t':'Ganztägige Begleitung','services.s1d':'Vom Getting Ready bis zur Feier — ruhige Begleitung, starke Momente und elegante Bildsprache.','services.s1l1':'Emotionale Reportage','services.s1l2':'Portraits mit Führung','services.s1l3':'Luxuriöse Auswahl & Bearbeitung',
+    'services.s2t':'Traditionelle Looks','services.s2d':'Kulturelle Kleidung, edle Details und zeitlose Portraits mit Respekt und moderner Veredelung.','services.s2l1':'Saubere Farben','services.s2l2':'Premium Retusche','services.s2l3':'Starke Close-ups',
+    'services.s3t':'Editorial Portraits','services.s3d':'Für Paare, die ihre Hochzeit mit einem luxuriösen, modernen und selbstbewussten Look zeigen möchten.','services.s3l1':'Magazin-Feeling','services.s3l2':'Feine Komposition','services.s3l3':'Eleganter Abschluss',
+    'showreel.eyebrow':'Showreel','showreel.title':'Premium Preview','showreel.text':'Eine ruhige, hochwertige Vorschau deiner Bildsprache — optimiert für Smartphone und Desktop.','showreel.caption':'Hochwertige Hochzeitsreportagen, klassische Eleganz und starke Momente für eine luxuriöse Präsentation.',
+    'gallery.eyebrow':'Galerie','gallery.title':'Echte Bilder. Premium Look.','gallery.text':'Eine ausgewählte Galerie mit 15 echten Bildern, hochwertigem Crop und klickbarer Lightbox.',
+    'testimonials.eyebrow':'Testimonials','testimonials.title':'Worte, die Vertrauen geben','testimonials.text':'Eine etwas luxuriösere Präsentation mit Bild, Bewertung und ruhigem Layout.',
+    'testimonials.q1':'„Kirubel captured every emotion with elegance and peace. The result feels premium and timeless.“',
+    'testimonials.q2':'„Traditional photos and modern editing together — exactly the confidence and beauty we wanted.“',
+    'testimonials.q3':'„Very calm guidance, professional presence and a wow result on both phone and desktop.“','testimonials.q4':'„We loved the balance of romance, culture and clean premium editing. The photos feel rich and alive.“',
+    'about.eyebrow':'Über mich','about.title':'Freundlich. Elegant. Mit Herz.','about.text':'Kirubel Photo & Video 4U steht für moderne Hochzeitsfotografie mit ruhiger Begleitung, starker Bildsprache und einem Premium-Look, der auf Smartphone und Desktop sauber funktioniert.','about.noteTitle':'Warum diese Version besser ist','about.li1':'Mobiler Hero jetzt edler und ruhiger','about.li2':'Services wirken stärker und hochwertiger','about.li3':'Hamburger-Menü bleibt sichtbar','about.li4':'Galerie und Testimonials sind wieder vollständig',
+    'contact.eyebrow':'Kontakt','contact.title':'Datum reservieren','contact.text':'Schreib direkt per WhatsApp oder Telefon für Verfügbarkeit, Preise und Buchung.',
+    'footer.partners':'Partner:','footer.rights':'Alle Rechte vorbehalten.'
   },
   en: {
-    "topbar.pill": "Switzerland • Film + Photo • Luxury Visuals",
-    "topbar.phone": "WhatsApp/Call: +41 76 522 12 62",
-    "nav.services": "Services",
-    "nav.collections": "Collections",
-    "nav.gallery": "Gallery",
-    "nav.showreel": "Showreel",
-    "nav.testimonials": "Testimonials",
-    "nav.about": "About",
-    "nav.contact": "Contact",
-    "nav.cta": "WhatsApp Inquiry",
-    "hero.kicker": "Luxury Wedding Photography • Switzerland",
-    "hero.title": "Cinematic Luxury — Timeless Visual Stories.",
-    "hero.subtitle": "Elegant weddings, traditional looks and emotional portraits — modern, premium and crafted with real feeling.",
-    "hero.cta1": "View Gallery",
-    "hero.cta2": "Reserve Your Date",
-    "trust.a.title": "Discreet",
-    "trust.a.sub": "Professional presence",
-    "trust.b.title": "Cinematic",
-    "trust.b.sub": "Elegant storytelling",
-    "trust.c.title": "Reliable",
-    "trust.c.sub": "Structured workflow",
-    "form.title": "Quick Inquiry",
-    "form.subtitle": "Send date + location. I reply fast.",
-    "form.name.label": "Name",
-    "form.name.ph": "Your name",
-    "form.type.label": "Event type",
-    "form.date.label": "Date",
-    "form.location.label": "Location",
-    "form.location.ph": "Bern / Zürich / ...",
-    "form.msg.label": "Message",
-    "form.msg.ph": "Hours, wishes, language, etc.",
-    "form.submit": "Send via WhatsApp",
-    "services.title": "Services",
-    "services.subtitle": "Luxury coverage for weddings and life-events — film + photography with elegance.",
-    "collections.title": "Collections",
-    "collections.subtitle": "Three luxury collections — details are confirmed in consultation.",
-    "collections.addons": "Add-ons: drone (where allowed), extra hours, same-week teaser, raw footage, second shooter.",
-    "gallery.title": "Gallery",
-    "gallery.subtitle": "A refined selection of moments — now with your real images.",
-    "showreel.title": "Showreel",
-    "showreel.subtitle": "Short cinematic highlights with a real demo video and image preview.",
-    "testimonials.title": "Testimonials",
-    "testimonials.subtitle": "A few words from clients — real experiences, real moments.",
-    "about.title": "Elegant. Friendly. Heart-led.",
-    "about.subtitle": "For over 10 years I have covered weddings and events with calm, respect and real passion. Based in the heart of Switzerland: Bern.",
-    "contactLuxury.title": "Reserve Your Date",
-    "contactLuxury.subtitle": "I take a limited number of weddings and ceremonies each year for full artistic dedication.",
-    "footer.rights": "All rights reserved.",
-    "footer.partners": "Partners:"
+    'topbar.pill': 'Switzerland • Film + Photo • Luxury Visuals',
+    'topbar.phone': 'WhatsApp/Call: +41 76 522 12 62',
+    'nav.services': 'Services','nav.showreel': 'Showreel','nav.gallery': 'Gallery','nav.testimonials':'Testimonials','nav.about':'About','nav.contact':'Contact',
+    'hero.kicker':'Luxury Wedding Photography • Switzerland','hero.title':'Cinematic Luxury — timeless visual stories.','hero.text':'Elegant weddings, traditional looks and emotional portraits — modern, premium and full of feeling.','hero.cta1':'View gallery','hero.cta2':'Reserve your date',
+    'trust.1t':'Discreet','trust.1s':'Professional presence','trust.2t':'Cinematic','trust.2s':'Elegant storytelling','trust.3t':'Reliable','trust.3s':'Structured process',
+    'form.title':'Quick inquiry','form.text':'Send date + location. I reply quickly.','form.name':'Name','form.type':'Event type','form.date':'Date','form.place':'Location','form.message':'Message','form.submit':'Send via WhatsApp',
+    'services.eyebrow':'Services','services.title':'More premium. More clarity. More confidence.','services.text':'Services presented clearly, elegantly and with a strong premium feeling for couples in Switzerland.',
+    'services.badge1':'Weddings','services.badge2':'Tradition','services.badge3':'Editorial',
+    'services.s1t':'Full-day coverage','services.s1d':'From getting ready to celebration — calm guidance, strong moments and elegant visual language.','services.s1l1':'Emotional reportage','services.s1l2':'Directed portraits','services.s1l3':'Luxury selection & editing',
+    'services.s2t':'Traditional looks','services.s2d':'Cultural clothing, refined details and timeless portraits handled with respect and modern finishing.','services.s2l1':'Clean colors','services.s2l2':'Premium retouching','services.s2l3':'Strong close-ups',
+    'services.s3t':'Editorial portraits','services.s3d':'For couples who want to show their wedding with a luxurious, modern and confident look.','services.s3l1':'Magazine feel','services.s3l2':'Fine composition','services.s3l3':'Elegant finish',
+    'showreel.eyebrow':'Showreel','showreel.title':'Premium preview','showreel.text':'A calm, high-quality preview of your visual language — optimized for smartphone and desktop.','showreel.caption':'High-end wedding storytelling, classic elegance and strong moments for a luxurious presentation.',
+    'gallery.eyebrow':'Gallery','gallery.title':'Real images. Premium look.','gallery.text':'A selected gallery with 15 real images, refined crop and clickable lightbox.',
+    'testimonials.eyebrow':'Testimonials','testimonials.title':'Words that build trust','testimonials.text':'A more luxurious presentation with image, rating and calm layout.',
+    'testimonials.q1':'“Kirubel captured every emotion with elegance and peace. The result feels premium and timeless.”',
+    'testimonials.q2':'“Traditional photos and modern editing together — exactly the confidence and beauty we wanted.”',
+    'testimonials.q3':'“Very calm guidance, professional presence and a wow result on both phone and desktop.”','testimonials.q4':'“We loved the balance of romance, culture and clean premium editing. The photos feel rich and alive.”',
+    'about.eyebrow':'About','about.title':'Friendly. Elegant. Heart-led.','about.text':'Kirubel Photo & Video 4U stands for modern wedding photography with calm guidance, strong visual language and a premium look that works cleanly on smartphone and desktop.','about.noteTitle':'Why this version is better','about.li1':'Mobile hero feels more refined','about.li2':'Service cards look stronger and more premium','about.li3':'Hamburger menu stays visible','about.li4':'Gallery and testimonials are fully restored',
+    'contact.eyebrow':'Contact','contact.title':'Reserve your date','contact.text':'Write directly on WhatsApp or call for availability, pricing and booking.',
+    'footer.partners':'Partners:','footer.rights':'All rights reserved.'
   }
 };
 
-function applyTranslations(lang) {
+function applyTranslations(lang){
   const dict = I18N[lang] || I18N.en;
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    if (dict[key]) el.textContent = dict[key];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n; if(dict[k]) el.textContent = dict[k];
   });
-  document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
-    const key = el.getAttribute("data-i18n-ph");
-    if (dict[key]) el.setAttribute("placeholder", dict[key]);
-  });
-  const sel = document.getElementById("eventTypeSelect");
-  if (sel) {
+  const sel = document.getElementById('eventTypeSelect');
+  if(sel){
     const current = sel.value;
-    const opts = lang === "de" ? ["Hochzeit", "Verlobung", "Taufe", "Feier/Event", "Anderes"] : ["Wedding", "Engagement", "Baptism", "Celebration/Event", "Other"];
-    sel.innerHTML = "";
-    opts.forEach((v) => {
-      const o = document.createElement("option");
-      o.value = v;
-      o.textContent = v;
-      sel.appendChild(o);
-    });
-    if (current) sel.value = current;
+    const opts = lang === 'de' ? ['Hochzeit','Traditionell','Verlobung','Anderes'] : ['Wedding','Traditional','Engagement','Other'];
+    sel.innerHTML='';
+    opts.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;sel.appendChild(o)});
+    if(current) sel.value=current;
   }
 }
 
-function setLanguage(lang) {
-  const safe = lang === "en" ? "en" : "de";
-  localStorage.setItem("kv_lang", safe);
-  document.documentElement.setAttribute("lang", safe);
-  document.querySelectorAll(".langBtn").forEach((b) => {
-    const active = b.getAttribute("data-lang") === safe;
-    b.classList.toggle("is-active", active);
-    b.setAttribute("aria-pressed", String(active));
+function setLanguage(lang){
+  const safe = lang === 'en' ? 'en' : 'de';
+  localStorage.setItem('kv_lang', safe);
+  document.documentElement.lang = safe;
+  document.querySelectorAll('.langBtn').forEach(btn => {
+    const active = btn.dataset.lang === safe;
+    btn.classList.toggle('is-active', active);
+    btn.setAttribute('aria-pressed', String(active));
   });
   applyTranslations(safe);
 }
 
-function setupNav() {
-  const toggle = document.getElementById("navToggle");
-  const nav = document.getElementById("mainNav");
-  const backdrop = document.getElementById("navBackdrop");
-  if (!toggle || !nav || !backdrop) return;
-
+function setupNav(){
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  const backdrop = document.getElementById('navBackdrop');
+  if(!toggle || !nav || !backdrop) return;
+  const isMobile = () => window.innerWidth <= 980;
   const closeMenu = () => {
-    nav.classList.remove("is-open");
-    backdrop.classList.remove("is-open");
-    toggle.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("nav-open");
+    nav.classList.remove('is-open'); backdrop.classList.remove('is-open');
+    document.body.classList.remove('nav-open'); toggle.setAttribute('aria-expanded', 'false');
   };
   const openMenu = () => {
-    nav.classList.add("is-open");
-    backdrop.classList.add("is-open");
-    toggle.setAttribute("aria-expanded", "true");
-    document.body.classList.add("nav-open");
+    if(!isMobile()) return;
+    nav.classList.add('is-open'); backdrop.classList.add('is-open');
+    document.body.classList.add('nav-open'); toggle.setAttribute('aria-expanded', 'true');
   };
+  toggle.addEventListener('click', e => {
+    e.preventDefault(); e.stopPropagation();
+    nav.classList.contains('is-open') ? closeMenu() : openMenu();
+  });
+  backdrop.addEventListener('click', closeMenu);
+  nav.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => { if(isMobile()) closeMenu(); }));
+  window.addEventListener('resize', () => { if(!isMobile()) closeMenu(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
+}
 
-  toggle.addEventListener("click", (e) => {
+function setupYear(){ const y = document.getElementById('year'); if(y) y.textContent = new Date().getFullYear(); }
+
+function setupForm(){
+  const form = document.getElementById('leadForm');
+  if(!form) return;
+  form.addEventListener('submit', e => {
     e.preventDefault();
-    nav.classList.contains("is-open") ? closeMenu() : openMenu();
-  });
-  backdrop.addEventListener("click", closeMenu);
-  nav.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("click", closeMenu));
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 980) closeMenu();
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
+    const fd = new FormData(form);
+    const msg = `Hallo Kirubel,%0A%0AName: ${fd.get('name')}%0AEvent: ${fd.get('type')}%0ADate: ${fd.get('date')}%0ALocation: ${fd.get('location')}%0AMessage: ${fd.get('msg')}`;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank', 'noopener');
   });
 }
 
-function setupHeroSlideshow() {
-  const slides = [...document.querySelectorAll(".heroSlide")];
-  const dots = [...document.querySelectorAll(".heroDot")];
-  if (!slides.length) return;
+function setupShowreel(){
+  const slides = Array.from(document.querySelectorAll('.showreel__img'));
+  const dotsWrap = document.getElementById('showreelDots');
+  if(!slides.length || !dotsWrap) return;
   let idx = 0;
-  const activate = (i) => {
-    idx = (i + slides.length) % slides.length;
-    slides.forEach((s, n) => s.classList.toggle("is-active", n === idx));
-    dots.forEach((d, n) => d.classList.toggle("is-active", n === idx));
-  };
-  dots.forEach((d, i) => d.addEventListener("click", () => activate(i)));
-  setInterval(() => activate(idx + 1), 5200);
-}
-
-function setupWhatsAppForm() {
-  const form = document.getElementById("leadForm");
-  if (!form) return;
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const lang = localStorage.getItem("kv_lang") || "de";
-    const header = lang === "de" ? "Hallo Kirubel, ich möchte anfragen:" : "Hi Kirubel, I would like to inquire:";
-    const message = `${header}\n\nName: ${data.get("name")}\nEvent: ${data.get("type")}\nDate: ${data.get("date")}\nLocation: ${data.get("location")}\nMessage: ${data.get("msg")}`;
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+  const dots = slides.map((_, i) => {
+    const b = document.createElement('button');
+    if(i===0) b.classList.add('is-active');
+    b.addEventListener('click', ()=>activate(i));
+    dotsWrap.appendChild(b); return b;
   });
+  function activate(i){ idx=i; slides.forEach((s,n)=>s.classList.toggle('is-active', n===idx)); dots.forEach((d,n)=>d.classList.toggle('is-active', n===idx)); }
+  setInterval(()=>activate((idx+1)%slides.length), 4200);
 }
 
-function setupTestimonials() {
-  const track = document.getElementById("tTrack");
-  const dotsWrap = document.getElementById("tDots");
-  if (!track || !dotsWrap) return;
-  const cards = Array.from(track.querySelectorAll(".tCard"));
+function setupTestimonials(){
+  const track = document.getElementById('testimonialTrack');
+  if(!track) return;
+  const cards = Array.from(track.children); let idx = 0;
+  const apply = ()=> track.style.transform = `translateX(${-idx*100}%)`;
+  document.getElementById('tPrev')?.addEventListener('click', ()=>{ idx=(idx-1+cards.length)%cards.length; apply(); });
+  document.getElementById('tNext')?.addEventListener('click', ()=>{ idx=(idx+1)%cards.length; apply(); });
+  setInterval(()=>{ idx=(idx+1)%cards.length; apply(); }, 5500);
+}
+
+function setupLightbox(){
+  const items = Array.from(document.querySelectorAll('.galleryItem'));
+  const box = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  if(!items.length || !box || !img) return;
   let idx = 0;
-  dotsWrap.innerHTML = "";
-  const dots = cards.map((_, i) => {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "tDot" + (i === 0 ? " is-active" : "");
-    b.addEventListener("click", () => go(i));
-    dotsWrap.appendChild(b);
-    return b;
-  });
-  const apply = () => {
-    track.style.transform = `translateX(${-idx * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle("is-active", i === idx));
-  };
-  const go = (i) => { idx = (i + cards.length) % cards.length; apply(); };
-  document.querySelector(".tPrev")?.addEventListener("click", () => go(idx - 1));
-  document.querySelector(".tNext")?.addEventListener("click", () => go(idx + 1));
-  setInterval(() => go(idx + 1), 5200);
+  const open = i => { idx=i; img.src = items[idx].href; box.classList.add('is-open'); box.setAttribute('aria-hidden', 'false'); document.body.style.overflow='hidden'; };
+  const close = ()=>{ box.classList.remove('is-open'); box.setAttribute('aria-hidden', 'true'); document.body.style.overflow=''; };
+  const prev = ()=> open((idx-1+items.length)%items.length);
+  const next = ()=> open((idx+1)%items.length);
+  items.forEach((a,i)=>a.addEventListener('click', e=>{ e.preventDefault(); open(i); }));
+  document.getElementById('lightboxClose')?.addEventListener('click', close);
+  document.getElementById('lightboxPrev')?.addEventListener('click', prev);
+  document.getElementById('lightboxNext')?.addEventListener('click', next);
+  box.addEventListener('click', e=>{ if(e.target===box) close(); });
+  document.addEventListener('keydown', e=>{ if(!box.classList.contains('is-open')) return; if(e.key==='Escape') close(); if(e.key==='ArrowLeft') prev(); if(e.key==='ArrowRight') next(); });
 }
 
-function setupLightbox() {
-  const items = Array.from(document.querySelectorAll(".gItem"));
-  const lb = document.getElementById("lightbox");
-  const img = document.getElementById("lbImg");
-  const cap = document.getElementById("lbCap");
-  const thumbsWrap = document.getElementById("lbThumbs");
-  const btnClose = lb?.querySelector(".lbClose");
-  const btnPrev = lb?.querySelector(".lbPrev");
-  const btnNext = lb?.querySelector(".lbNext");
-  const btnZoom = document.getElementById("lbZoom");
-  const btnPlay = document.getElementById("lbPlay");
-  if (!items.length || !lb || !img || !cap || !thumbsWrap) return;
-
-  let index = 0; let timer = null; let scale = 1;
-  const buildThumbs = () => {
-    thumbsWrap.innerHTML = "";
-    items.forEach((a, i) => {
-      const btn = document.createElement("button");
-      btn.type = "button"; btn.className = "lbThumb";
-      const t = document.createElement("img");
-      t.src = a.getAttribute("href");
-      btn.appendChild(t);
-      btn.addEventListener("click", () => open(i));
-      thumbsWrap.appendChild(btn);
-    });
-  };
-  const setActiveThumb = () => [...thumbsWrap.children].forEach((b, i) => b.classList.toggle("is-active", i === index));
-  const open = (i) => {
-    index = i;
-    const el = items[index];
-    img.src = el.getAttribute("href");
-    cap.textContent = el.getAttribute("data-caption") || "Preview";
-    scale = 1; img.style.transform = "scale(1)";
-    lb.classList.add("is-open");
-    document.body.style.overflow = "hidden";
-    setActiveThumb();
-  };
-  const close = () => {
-    lb.classList.remove("is-open");
-    document.body.style.overflow = "";
-    stopPlay();
-  };
-  const prev = () => open((index - 1 + items.length) % items.length);
-  const next = () => open((index + 1) % items.length);
-  const startPlay = () => {
-    stopPlay();
-    timer = setInterval(next, 2800);
-    btnPlay.textContent = "Pause";
-  };
-  const stopPlay = () => {
-    if (timer) clearInterval(timer);
-    timer = null;
-    if (btnPlay) btnPlay.textContent = "Play";
-  };
-
-  buildThumbs();
-  items.forEach((a, i) => a.addEventListener("click", (e) => { e.preventDefault(); open(i); }));
-  btnClose?.addEventListener("click", close);
-  btnPrev?.addEventListener("click", prev);
-  btnNext?.addEventListener("click", next);
-  btnPlay?.addEventListener("click", () => timer ? stopPlay() : startPlay());
-  btnZoom?.addEventListener("click", () => {
-    scale = scale === 1 ? 1.75 : 1;
-    img.style.transform = `scale(${scale})`;
-    btnZoom.textContent = scale === 1 ? "Zoom" : "Reset";
-  });
-  document.addEventListener("keydown", (e) => {
-    if (!lb.classList.contains("is-open")) return;
-    if (e.key === "Escape") close();
-    if (e.key === "ArrowLeft") prev();
-    if (e.key === "ArrowRight") next();
-  });
-}
-
-function setupYear() {
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  setupYear();
-  setupNav();
-  setupHeroSlideshow();
-  setupWhatsAppForm();
-  setupTestimonials();
-  setupLightbox();
-  document.querySelectorAll(".langBtn").forEach((b) => b.addEventListener("click", () => setLanguage(b.getAttribute("data-lang"))));
-  setLanguage(localStorage.getItem("kv_lang") || "de");
+document.addEventListener('DOMContentLoaded', () => {
+  setupNav(); setupYear(); setupForm(); setupShowreel(); setupTestimonials(); setupLightbox();
+  document.querySelectorAll('.langBtn').forEach(btn => btn.addEventListener('click', ()=>setLanguage(btn.dataset.lang)));
+  setLanguage(localStorage.getItem('kv_lang') || 'de');
 });
