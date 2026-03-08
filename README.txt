@@ -1,16 +1,22 @@
-Kirubel Premium V3
+Kirubel Premium v5
 
-Replace on your website:
+Replace these in your current website:
 - index.html
 - styles.css
 - script.js
-- assets folder
+- entire assets folder
 
-This version fixes:
-1. missing footer
-2. mobile topbar/header overlap
-3. clearer hamburger button
-4. white button text visibility
-5. better photo crop positions in gallery/showreel
+This v5 restores:
+- main menu
+- language buttons
+- services
+- packages
+- gallery
+- showreel
+- testimonials
+- about
+- contact
+- partners and footer
+- gallery lightbox with Zoom and Play
 
-Upload all files, then clear browser/site cache and refresh.
+Important: upload the included assets folder too.
