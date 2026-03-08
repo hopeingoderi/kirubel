@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kirubel Photo & Video 4U — Luxury Wedding Photography</title>
-  <meta name="description" content="Luxury wedding photography and visual storytelling in Switzerland.">
-  <meta name="theme-color" content="#111111">
+  <title>Kirubel Photo & Video 4U — Premium Wedding Films & Photography</title>
+  <meta name="description" content="Luxury wedding photography and cinematic films in Switzerland. Real couples, elegant storytelling, premium visual memories.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,129 +13,148 @@
 <body>
   <div class="topbar">
     <div class="container topbar__inner">
-      <div class="pill" data-i18n="topbar.pill">Schweiz • Film + Foto • Luxury Visuals</div>
-      <div class="topbar__right">
-        <a class="toplink" href="tel:+41765221262" data-i18n="topbar.phone">WhatsApp/Anruf: +41 76 522 12 62</a>
-        <div class="langSwitch" aria-label="Language switch">
-          <button class="langBtn is-active" type="button" data-lang="de" aria-pressed="true">DE</button>
-          <button class="langBtn" type="button" data-lang="en" aria-pressed="false">EN</button>
-        </div>
-      </div>
+      <span class="topbar__pill">Schweiz • Film + Foto • Luxury Visuals</span>
+      <a href="https://wa.me/41765221262" target="_blank" rel="noopener">WhatsApp/Call: +41 76 522 12 62</a>
     </div>
   </div>
 
-  <header class="header">
+  <header class="site-header">
     <div class="container header__inner">
       <a class="brand" href="#top">
-        <div class="brand__mark">K</div>
-        <div class="brand__text">
-          <span class="brand__name">KIRUBEL</span>
-          <span class="brand__sub">PHOTO &amp; VIDEO 4U</span>
+        <img src="assets/ui/logo.png" alt="Kirubel Photo & Video 4U logo">
+        <div>
+          <strong>KIRUBEL</strong>
+          <span>PHOTO &amp; VIDEO 4U</span>
         </div>
       </a>
 
-      <button class="navToggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav" id="mainNav" aria-label="Main navigation">
-        <a href="#top" data-i18n="nav.home">Home</a>
-        <a href="#showreel" data-i18n="nav.showreel">Showreel</a>
-        <a href="#gallery" data-i18n="nav.gallery">Galerie</a>
-        <a href="#about" data-i18n="nav.about">Über mich</a>
-        <a href="#contact" class="btn btn--small" data-i18n="nav.contact">Kontakt</a>
+      <nav class="nav" id="mainNav">
+        <a href="#showreel">Showreel</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a class="nav__cta" href="https://wa.me/41765221262" target="_blank" rel="noopener">Book Now</a>
       </nav>
     </div>
   </header>
 
-  <div class="navBackdrop" id="navBackdrop" aria-hidden="true"></div>
+  <div class="nav-backdrop" id="navBackdrop"></div>
 
   <main id="top">
     <section class="hero">
       <div class="hero__bg"></div>
-      <div class="container hero__inner">
-        <div class="hero__copy">
-          <div class="kicker" data-i18n="hero.kicker">Luxury Hochzeitsfotografie • Schweiz</div>
-          <h1 data-i18n="hero.title">Cinematic Luxury — zeitlose Visual Stories.</h1>
-          <p data-i18n="hero.text">Elegante Hochzeiten, traditionelle Looks und emotionale Portraits — modern, hochwertig und mit viel Gefühl erzählt.</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#gallery" data-i18n="hero.cta1">Galerie ansehen</a>
-            <a class="btn btn--ghost" href="#contact" data-i18n="hero.cta2">Verfügbarkeit prüfen</a>
-          </div>
+      <div class="container hero__content">
+        <p class="eyebrow">Luxury wedding photography • Switzerland</p>
+        <h1>Cinematic Luxury — timeless visual stories.</h1>
+        <p class="hero__lead">Elegant weddings, traditional looks and emotional portraits — modern, premium and crafted with real feeling.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#gallery">Galerie ansehen</a>
+          <a class="btn btn--ghost btn--ghost-dark" href="#contact">Book Inquiry</a>
         </div>
       </div>
     </section>
 
-    <section class="section section--dark" id="showreel">
+    <section class="section" id="showreel">
       <div class="container">
-        <div class="sectionHead">
-          <p class="eyebrow" data-i18n="showreel.eyebrow">Showreel</p>
-          <h2 data-i18n="showreel.title">Ausgewählte Highlights</h2>
-          <p data-i18n="showreel.text">Eine ruhige, hochwertige Vorschau deiner Bildsprache — optimiert für Smartphone und Desktop.</p>
+        <div class="section__head">
+          <p class="eyebrow eyebrow--dark">Premium highlight</p>
+          <h2>Showreel</h2>
+          <p>One real demo video plus a luxury image preview of your wedding storytelling — optimized for smartphone and desktop.</p>
         </div>
 
         <div class="showreel">
-          <div class="showreel__slides">
-            <img src="assets/showreel/showreel-1.jpg" class="showreel__img is-active" alt="Wedding highlight 1">
-            <img src="assets/showreel/showreel-2.jpg" class="showreel__img" alt="Wedding highlight 2">
-            <img src="assets/showreel/showreel-3.jpg" class="showreel__img" alt="Wedding highlight 3">
+          <video controls playsinline preload="metadata" poster="assets/showreel/s1.jpg">
+            <source src="assets/showreel/kirubel-demo.mp4" type="video/mp4">
+          </video>
+
+          <div class="showreel__grid">
+            <img class="showreel__img showreel__img--top" src="assets/showreel/s1.jpg" alt="Wedding portfolio preview 1">
+            <img class="showreel__img showreel__img--middle" src="assets/showreel/s2.jpg" alt="Wedding portfolio preview 2">
+            <img class="showreel__img showreel__img--bottom" src="assets/showreel/s3.jpg" alt="Wedding portfolio preview 3">
           </div>
-          <div class="showreel__dots" id="showreelDots"></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="gallery">
+    <section class="section section--soft" id="gallery">
       <div class="container">
-        <div class="sectionHead">
-          <p class="eyebrow" data-i18n="gallery.eyebrow">Galerie</p>
-          <h2 data-i18n="gallery.title">Echte Momente. Echte Geschichten.</h2>
-          <p data-i18n="gallery.text">Hier sind deine echten Bilder als luxuriöse, klickbare Galerie mit Lightbox.</p>
+        <div class="section__head">
+          <p class="eyebrow eyebrow--dark">Real portfolio</p>
+          <h2>Gallery</h2>
+          <p>Your actual wedding and traditional photography, arranged in a cleaner luxury grid. Tap any photo to open it.</p>
         </div>
 
-        <div class="galleryGrid">
-          <a class="galleryItem" href="assets/gallery/gallery01.jpg"><img src="assets/gallery/gallery01.jpg" alt="Wedding photo 1"></a>
-          <a class="galleryItem" href="assets/gallery/gallery02.jpg"><img src="assets/gallery/gallery02.jpg" alt="Wedding photo 2"></a>
-          <a class="galleryItem" href="assets/gallery/gallery03.jpg"><img src="assets/gallery/gallery03.jpg" alt="Wedding photo 3"></a>
-          <a class="galleryItem" href="assets/gallery/gallery04.jpg"><img src="assets/gallery/gallery04.jpg" alt="Wedding photo 4"></a>
-          <a class="galleryItem" href="assets/gallery/gallery05.jpg"><img src="assets/gallery/gallery05.jpg" alt="Wedding photo 5"></a>
-          <a class="galleryItem" href="assets/gallery/gallery06.jpg"><img src="assets/gallery/gallery06.jpg" alt="Wedding photo 6"></a>
-          <a class="galleryItem" href="assets/gallery/gallery07.jpg"><img src="assets/gallery/gallery07.jpg" alt="Wedding photo 7"></a>
-          <a class="galleryItem" href="assets/gallery/gallery08.jpg"><img src="assets/gallery/gallery08.jpg" alt="Wedding photo 8"></a>
-          <a class="galleryItem" href="assets/gallery/gallery09.jpg"><img src="assets/gallery/gallery09.jpg" alt="Wedding photo 9"></a>
-          <a class="galleryItem" href="assets/gallery/gallery10.jpg"><img src="assets/gallery/gallery10.jpg" alt="Wedding photo 10"></a>
+        <div class="gallery">
+          <button class="gallery__item gallery__item--pos-center" data-full="assets/gallery/g1.jpg" data-caption="Wedding portrait on the bench">
+            <img src="assets/gallery/g1.jpg" alt="Bride and groom on bench">
+          </button>
+          <button class="gallery__item tall gallery__item--pos-top" data-full="assets/gallery/g2.jpg" data-caption="Elegant walk together">
+            <img src="assets/gallery/g2.jpg" alt="Bride and groom walking">
+          </button>
+          <button class="gallery__item gallery__item--pos-center" data-full="assets/gallery/g3.jpg" data-caption="Traditional portrait">
+            <img src="assets/gallery/g3.jpg" alt="Traditional couple portrait">
+          </button>
+          <button class="gallery__item wide gallery__item--pos-right" data-full="assets/gallery/g4.jpg" data-caption="Bouquet portrait">
+            <img src="assets/gallery/g4.jpg" alt="Bride and groom bouquet portrait">
+          </button>
+          <button class="gallery__item gallery__item--pos-right" data-full="assets/gallery/g5.jpg" data-caption="Ring and emotion close-up">
+            <img src="assets/gallery/g5.jpg" alt="Close-up wedding portrait">
+          </button>
+          <button class="gallery__item gallery__item--pos-center" data-full="assets/gallery/g6.jpg" data-caption="Field portrait">
+            <img src="assets/gallery/g6.jpg" alt="Bride and groom in field">
+          </button>
+          <button class="gallery__item tall gallery__item--pos-center" data-full="assets/gallery/g7.jpg" data-caption="Traditional luxury styling">
+            <img src="assets/gallery/g7.jpg" alt="Traditional fashion portrait">
+          </button>
+          <button class="gallery__item wide gallery__item--pos-center" data-full="assets/gallery/g8.jpg" data-caption="Fountain portrait">
+            <img src="assets/gallery/g8.jpg" alt="Bride and groom by fountain">
+          </button>
+          <button class="gallery__item gallery__item--pos-center" data-full="assets/gallery/g9.jpg" data-caption="Detail shot">
+            <img src="assets/gallery/g9.jpg" alt="Wedding watch detail">
+          </button>
+          <button class="gallery__item wide gallery__item--pos-center" data-full="assets/gallery/g10.jpg" data-caption="Bridal preparation">
+            <img src="assets/gallery/g10.jpg" alt="Bridal team portrait">
+          </button>
         </div>
       </div>
     </section>
 
-    <section class="section section--soft" id="about">
-      <div class="container about">
-        <div>
-          <p class="eyebrow" data-i18n="about.eyebrow">About</p>
-          <h2 data-i18n="about.title">Freundlich. Elegant. Mit Herz.</h2>
-          <p data-i18n="about.text">Kirubel Photo & Video 4U steht für moderne Hochzeitsfotografie mit ruhiger Begleitung, starker Bildsprache und luxuriöser Präsentation. Die Seite ist bewusst leicht, schnell und mobilfreundlich aufgebaut.</p>
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow eyebrow--dark">Why this version feels better</p>
+          <h2>Cleaner, calmer, more premium</h2>
         </div>
-        <div class="aboutCard">
-          <div class="aboutCard__line"></div>
-          <strong data-i18n="about.noteTitle">Was jetzt verbessert wurde</strong>
-          <ul>
-            <li data-i18n="about.li1">Smartphone-Menü stabil</li>
-            <li data-i18n="about.li2">Galerie klickbar auf Mobile</li>
-            <li data-i18n="about.li3">Showreel mit echten Bildern</li>
-            <li data-i18n="about.li4">Kompatibel als sauberes ZIP-Paket</li>
-          </ul>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Smartphone menu fixed</h3>
+            <p>The mobile menu now sits clearly above the header area and opens with one clean toggle system only.</p>
+          </article>
+          <article class="card">
+            <h3>Gallery works on tap</h3>
+            <p>The photos open in a simple fullscreen lightbox that works on mobile and desktop without duplicate click conflicts.</p>
+          </article>
+          <article class="card">
+            <h3>Real portfolio visuals</h3>
+            <p>Your actual wedding images now carry the design instead of placeholders, so the brand feels authentic and premium.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--dark" id="contact">
-      <div class="container contactBox">
+    <section class="section section--contact" id="contact">
+      <div class="container contact">
         <div>
-          <p class="eyebrow" data-i18n="contact.eyebrow">Kontakt</p>
-          <h2 data-i18n="contact.title">Datum reservieren</h2>
-          <p data-i18n="contact.text">Schreib direkt per WhatsApp oder Telefon für Verfügbarkeit, Preise und Buchung.</p>
+          <p class="eyebrow">Kontakt</p>
+          <h2>Datum reservieren</h2>
+          <p>Schreib direkt per WhatsApp oder Telefon für Verfügbarkeit, Preise und Buchung.</p>
         </div>
-        <div class="contactActions">
+        <div class="contact__actions">
           <a class="btn btn--primary" href="https://wa.me/41765221262" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn btn--ghost btn--ghost-dark" href="tel:+41765221262">+41 76 522 12 62</a>
         </div>
@@ -144,11 +162,26 @@
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <strong>Kirubel Photo &amp; Video 4U</strong>
+        <p>Premium wedding photography and cinematic storytelling in Switzerland.</p>
+      </div>
+      <div class="site-footer__links">
+        <a href="#showreel">Showreel</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox__close" id="lightboxClose" aria-label="Close">×</button>
-    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous">‹</button>
-    <img class="lightbox__img" id="lightboxImg" alt="">
-    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next">›</button>
+    <figure class="lightbox__figure">
+      <img id="lightboxImg" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
   </div>
 
   <script src="script.js"></script>
