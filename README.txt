@@ -1,16 +1,19 @@
-Use this package as the recovered base from your old beautiful version.
+Kirubel fixed from your old perfect version
 
-What I fixed:
-- smartphone hamburger menu
-- desktop menu visibility
-- removed duplicate JavaScript blocks that were breaking the site
-- kept the premium gallery lightbox with Preview / Zoom / Play
-- restored missing placeholder assets so the site can open safely
+What was fixed:
+- smartphone hamburger menu now opens correctly
+- mobile backdrop + slide-in menu layering fixed
+- duplicate JavaScript blocks removed
+- gallery lightbox loop bug cleaned
+- fallback showreel images/video prepared
+- gallery extended to 15 images
 
-Notes:
-- I kept the original structure of your old beautiful version.
-- The old uploaded zip did not contain enough real gallery assets to expand safely to 15 unique images, so I preserved the current main gallery structure.
-- If your own computer has a fuller assets folder, you can copy it over this package.
+Use:
+Replace your whole project with this package, or at least replace:
+- index.html
+- styles.css
+- script.js
+- assets folder
 
-Replace the whole folder contents on your hosting.
-Then clear browser cache on iPhone Safari before testing.
+Important:
+Clear cache on iPhone Safari or test in a Private tab.

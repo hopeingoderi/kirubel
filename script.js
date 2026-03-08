@@ -386,11 +386,10 @@ function setupNav(){
       e.preventDefault();
       e.stopPropagation();
     }
-    if (nav.classList.contains("is-open")) closeMenu();
-    else openMenu();
+    nav.classList.contains("is-open") ? closeMenu() : openMenu();
   };
 
-  // click only is more stable on iPhone Safari than click+touch/pointer together
+  // iPhone-safe: click only, no pointer/touch double firing
   toggle.addEventListener("click", toggleMenu, { passive:false });
   backdrop.addEventListener("click", closeMenu);
 
@@ -406,15 +405,17 @@ function setupNav(){
 
   if (brand){
     brand.addEventListener("click", (e)=>{
-      if (isMobile()){
+      if (isMobile() && nav.classList.contains("is-open")){
         e.preventDefault();
-        toggleMenu(e);
+        closeMenu();
       }
     });
   }
 
   window.addEventListener("resize", ()=>{
-    if (!isMobile()) closeMenu();
+    if (!isMobile()){
+      closeMenu();
+    }
   });
 }
 
@@ -574,68 +575,80 @@ function setupHeroSlideshow(){
 // -------------------
 function setupShowreel(){
   const vid = document.getElementById("showreelVideo");
+  const fallback = document.getElementById("showreelFallback");
   if (!vid) return;
 
-  // ✅ EDIT ONLY THIS LIST (add 4–5 short videos 5–12 sec)
-  // Put files in: assets/showreel/
-  const SHOWREEL_VIDEOS = [
+  const VIDEO_CANDIDATES = [
     "assets/showreel/v1.mp4",
     "assets/showreel/v2.mp4",
     "assets/showreel/v3.mp4",
-    "assets/showreel/v4.mp4"
-  ].filter(Boolean);
+    "assets/showreel/v4.mp4",
+    "assets/showreel/clip1.mp4",
+    "assets/showreel/clip2.mp4",
+    "assets/showreel/clip3.mp4"
+  ];
 
-  // fallback (if you haven't added videos yet)
-  if (!SHOWREEL_VIDEOS.length) return;
+  const FALLBACK_IMAGES = [
+    "assets/p1.jpg",
+    "assets/p2.jpg",
+    "assets/p3.jpg"
+  ];
 
-  // autoplay best practice
-  vid.muted = true;
-  vid.playsInline = true;
-  vid.setAttribute("playsinline","");
+  let imgIndex = 0;
+  let imgTimer = null;
 
-  let i = 0;
-  let pre = null;
+  const showImageMode = ()=>{
+    vid.classList.add("is-hidden");
+    if (fallback){
+      fallback.classList.remove("is-hidden");
+      fallback.src = FALLBACK_IMAGES[imgIndex];
+      if (imgTimer) clearInterval(imgTimer);
+      imgTimer = setInterval(()=>{
+        imgIndex = (imgIndex + 1) % FALLBACK_IMAGES.length;
+        fallback.src = FALLBACK_IMAGES[imgIndex];
+      }, 3200);
+    }
+  };
 
-  const canPlay = () =>
-    new Promise((resolve)=> {
+  const tryVideo = (srcIndex = 0)=>{
+    if (srcIndex >= VIDEO_CANDIDATES.length){
+      showImageMode();
+      return;
+    }
+
+    const src = VIDEO_CANDIDATES[srcIndex];
+    vid.muted = true;
+    vid.playsInline = true;
+    vid.setAttribute("playsinline", "");
+    vid.classList.remove("is-hidden");
+    if (fallback) fallback.classList.add("is-hidden");
+
+    const onError = ()=>{
+      vid.removeEventListener("error", onError);
+      tryVideo(srcIndex + 1);
+    };
+
+    const onCanPlay = ()=>{
+      vid.removeEventListener("error", onError);
       const p = vid.play();
-      if (p && typeof p.then === "function"){
-        p.then(resolve).catch(()=> resolve());
-      } else resolve();
-    });
+      if (p && typeof p.catch === "function"){
+        p.catch(()=> tryVideo(srcIndex + 1));
+      }
+    };
 
-  const swapTo = async (src)=>{
-    // preload next video
-    if (pre) pre.src = "";
-    pre = document.createElement("video");
-    pre.src = src;
-    pre.preload = "auto";
-    pre.muted = true;
-    pre.playsInline = true;
-
-    // set current
+    vid.addEventListener("error", onError, { once:true });
+    vid.addEventListener("canplay", onCanPlay, { once:true });
     vid.src = src;
     vid.load();
-    await canPlay();
   };
 
-  const next = async ()=>{
-    i = (i + 1) % SHOWREEL_VIDEOS.length;
-    await swapTo(SHOWREEL_VIDEOS[i]);
-  };
-
-  // when ends -> next
   vid.addEventListener("ended", ()=>{
-    next();
+    vid.currentTime = 0;
+    const p = vid.play();
+    if (p && typeof p.catch === "function") p.catch(()=>{});
   });
 
-  // if error -> skip
-  vid.addEventListener("error", ()=>{
-    next();
-  });
-
-  // start
-  swapTo(SHOWREEL_VIDEOS[0]);
+  tryVideo(0);
 }
 
 // -------------------
@@ -749,14 +762,14 @@ function setupLightbox(){
   // Slideshow
   let timer = null;
   const startSlideshow = ()=>{
-    if (timer) return;
+    stopSlideshow();
     timer = setInterval(()=> next(), 3600);
-    if (btnPlay) btnPlay.textContent = "Pause";
+    if (btnPlay) btnPlay.textContent = (localStorage.getItem("kv_lang")==="de") ? "Pause" : "Pause";
   };
   const stopSlideshow = ()=>{
     if (timer) clearInterval(timer);
     timer = null;
-    if (btnPlay) btnPlay.textContent = "Play";
+    if (btnPlay) btnPlay.textContent = (localStorage.getItem("kv_lang")==="de") ? "Play" : "Play";
   };
   const toggleSlideshow = ()=> timer ? stopSlideshow() : startSlideshow();
 
@@ -833,7 +846,6 @@ function setupLightbox(){
 
     const pre = new Image();
     pre.onload = ()=>{
-      if (!lb.classList.contains("is-open")) return;
       img.src = href;
       img.alt = caption || "Preview";
       requestAnimationFrame(()=>{
@@ -960,3 +972,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const saved = localStorage.getItem("kv_lang") || "de";
   setLanguage(saved);
 });
+
+// =====================================================
+// Premium Lightbox (thumbs + loader + zoom + slideshow)
+// Requires your existing lightbox HTML ids:
+// #lightbox, #lbImg, #lbCap, #lbThumbs, #lbZoom, #lbPlay
+// Gallery items are: .gItem (anchor with href)
+// Optional: data-thumb on .gItem (else uses href)
+// =====================================================
