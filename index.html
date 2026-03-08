@@ -1,23 +1,39 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kirubel Photo & Video 4U — Premium Wedding Photography Switzerland</title>
-  <meta name="description" content="Premium wedding photography and cinematic visual storytelling in Switzerland.">
-  <meta name="theme-color" content="#1b1417">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kirubel Photo & Video 4U — Luxury Wedding & Event Films | Switzerland</title>
+  <meta name="description" content="Luxury Wedding & Event Films + Photography in Switzerland. Weddings, engagements, baptisms, celebrations and ceremonies — timeless visuals with elegance." />
+
+  <meta property="og:title" content="Kirubel Photo & Video 4U — Luxury Wedding & Event Films | Switzerland" />
+  <meta property="og:description" content="Luxury Wedding & Event Films + Photography in Switzerland — timeless visuals with elegance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/hero1.jpg" />
+
+  <meta name="theme-color" content="#120d10" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="assets/hero1.jpg">
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+
+  <!-- Topbar -->
   <div class="topbar">
     <div class="container topbar__inner">
-      <div class="pill" data-i18n="topbar.pill">Schweiz • Film + Foto • Luxury Visuals</div>
+      <div class="topbar__left">
+        <span class="pill" data-i18n="topbar.pill">Switzerland • Film + Photo • Luxury Visuals</span>
+      </div>
+
       <div class="topbar__right">
-        <a class="toplink" href="tel:+41765221262" data-i18n="topbar.phone">WhatsApp/Anruf: +41 76 522 12 62</a>
-        <div class="langSwitch" aria-label="Language switch">
+        <a class="toplink" href="tel:+41765221262" data-i18n="topbar.phone">WhatsApp/Call: +41 76 522 12 62</a>
+
+        <div class="langSwitch" role="group" aria-label="Language switch">
           <button class="langBtn is-active" type="button" data-lang="de" aria-pressed="true">DE</button>
           <button class="langBtn" type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
@@ -25,274 +41,565 @@
     </div>
   </div>
 
+  <!-- Header -->
   <header class="header" id="top">
     <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="Home">
-        <div class="brand__mark">K</div>
-        <div class="brand__text">
+
+      <!-- Brand: Logo + Name -->
+      <a class="brand" href="#top" aria-label="Home" id="brandLink">
+        <img class="brand__logo" src="assets/logo.png" alt="Kirubel Photo & Video 4U logo">
+        <span class="brand__text">
           <span class="brand__name">KIRUBEL</span>
           <span class="brand__sub">PHOTO &amp; VIDEO 4U</span>
-        </div>
+        </span>
       </a>
 
-      <button class="navToggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" id="navToggle">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <!-- ONE MENU ONLY -->
+      <nav class="nav" aria-label="Main navigation" id="mainNav">
         <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#collections" data-i18n="nav.collections">Collections</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
         <a href="#showreel" data-i18n="nav.showreel">Showreel</a>
-        <a href="#gallery" data-i18n="nav.gallery">Galerie</a>
         <a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
-        <a href="#about" data-i18n="nav.about">Über mich</a>
-        <a href="#contact" class="btn btn--small" data-i18n="nav.contact">Kontakt</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+
+        <a class="btn btn--primary shimmer" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="nav.cta">
+          WhatsApp Inquiry
+        </a>
       </nav>
+
     </div>
   </header>
 
+  <!-- Mobile menu backdrop (JS toggles) -->
   <div class="navBackdrop" id="navBackdrop" aria-hidden="true"></div>
 
-  <main>
-    <section class="hero">
-      <picture class="hero__picture">
-        <source media="(max-width: 980px)" srcset="assets/hero-mobile.jpg">
-        <img src="assets/hero-desktop.jpg" alt="Luxury wedding photography in Switzerland" class="hero__image">
-      </picture>
-      <div class="hero__overlay"></div>
-      <div class="container hero__inner">
-        <div class="hero__copy">
-          <div class="kicker" data-i18n="hero.kicker">Luxury Hochzeitsfotografie • Schweiz</div>
-          <h1 data-i18n="hero.title">Cinematic Luxury — zeitlose Visual Stories.</h1>
-          <p data-i18n="hero.text">Elegante Hochzeiten, traditionelle Looks und emotionale Portraits — modern, hochwertig und mit viel Gefühl erzählt.</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#gallery" data-i18n="hero.cta1">Galerie ansehen</a>
-            <a class="btn btn--ghost" href="#contact" data-i18n="hero.cta2">Datum reservieren</a>
+  <!-- HERO (Cinematic Slideshow) -->
+  <section class="hero hero--dark" id="hero">
+    <div class="heroSlideshow" aria-hidden="true">
+      <div class="heroSlide is-active" style="background-image:url('assets/hero1.jpg')"></div>
+      <div class="heroSlide" style="background-image:url('assets/hero2.jpg')"></div>
+      <div class="heroSlide" style="background-image:url('assets/hero3.jpg')"></div>
+    </div>
+
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <div class="kicker" data-i18n="hero.kicker">Luxury Wedding & Event Films • Photography • Switzerland</div>
+        <h1 data-i18n="hero.title">Cinematic Luxury — Timeless Visual Stories.</h1>
+
+        <p data-i18n="hero.subtitle">
+          Weddings, engagements, baptisms and celebrations — captured with elegance,
+          cinematic depth and a refined, discreet approach.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary shimmer" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="hero.cta1">
+            Check Availability
+          </a>
+          <a class="btn btn--ghost" href="#gallery" data-i18n="hero.cta2">View Gallery</a>
+        </div>
+
+        <div class="trust">
+          <div class="trust__item">
+            <div class="trust__top" data-i18n="trust.a.title">Discreet</div>
+            <div class="trust__sub" data-i18n="trust.a.sub">Professional presence</div>
           </div>
-          <div class="trustGrid">
-            <div class="trustCard"><strong data-i18n="trust.1t">Diskret</strong><span data-i18n="trust.1s">Professionelle Präsenz</span></div>
-            <div class="trustCard"><strong data-i18n="trust.2t">Cineastisch</strong><span data-i18n="trust.2s">Elegantes Storytelling</span></div>
-            <div class="trustCard"><strong data-i18n="trust.3t">Zuverlässig</strong><span data-i18n="trust.3s">Strukturierter Ablauf</span></div>
+          <div class="trust__item">
+            <div class="trust__top" data-i18n="trust.b.title">Cinematic</div>
+            <div class="trust__sub" data-i18n="trust.b.sub">Elegant storytelling</div>
+          </div>
+          <div class="trust__item">
+            <div class="trust__top" data-i18n="trust.c.title">Reliable</div>
+            <div class="trust__sub" data-i18n="trust.c.sub">Structured workflow</div>
           </div>
         </div>
-        <div class="hero__form glassCard">
-          <h3 data-i18n="form.title">Schnellanfrage</h3>
-          <p data-i18n="form.text">Datum + Ort senden. Ich antworte schnell.</p>
+      </div>
+
+      <div class="hero__card">
+        <div class="card card--glass">
+          <h3 data-i18n="form.title">Quick Inquiry</h3>
+          <p class="muted" data-i18n="form.subtitle">Send date + location. We reply fast.</p>
+
           <form id="leadForm">
-            <label><span data-i18n="form.name">Name</span><input type="text" name="name" placeholder="Dein Name" required></label>
-            <label><span data-i18n="form.type">Event-Typ</span>
-              <select name="type" id="eventTypeSelect"></select>
+            <label>
+              <span data-i18n="form.name.label">Name</span>
+              <input name="name" type="text" placeholder="Your name" required data-i18n-ph="form.name.ph" />
             </label>
-            <label><span data-i18n="form.date">Datum</span><input type="date" name="date" required></label>
-            <label><span data-i18n="form.place">Ort</span><input type="text" name="location" placeholder="Bern / Zürich / ..." required></label>
-            <label><span data-i18n="form.message">Nachricht</span><textarea name="msg" rows="3" placeholder="Stunden, Wünsche, Sprache usw."></textarea></label>
-            <button class="btn btn--primary btn--block" type="submit" data-i18n="form.submit">Per WhatsApp senden</button>
+
+            <label>
+              <span data-i18n="form.type.label">Event type</span>
+              <select name="type" required id="eventTypeSelect"></select>
+            </label>
+
+            <label>
+              <span data-i18n="form.date.label">Date</span>
+              <input name="date" type="date" required />
+            </label>
+
+            <label>
+              <span data-i18n="form.location.label">Location</span>
+              <input name="location" type="text" placeholder="Zürich / Basel / ..." required data-i18n-ph="form.location.ph" />
+            </label>
+
+            <label>
+              <span data-i18n="form.msg.label">Message</span>
+              <textarea name="msg" rows="3" placeholder="Hours, wishes, language, etc." required data-i18n-ph="form.msg.ph"></textarea>
+            </label>
+
+            <button class="btn btn--primary btn--full shimmer" type="submit" data-i18n="form.submit">
+              Send via WhatsApp
+            </button>
+            <small class="muted" data-i18n="form.note">WhatsApp opens with your message prefilled.</small>
           </form>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section servicesSection" id="services">
-      <div class="container">
-        <div class="sectionHead">
-          <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
-          <h2 data-i18n="services.title">Mehr Premium. Mehr Klarheit. Mehr Vertrauen.</h2>
-          <p data-i18n="services.text">Leistungen klar präsentiert, elegant gestaltet und mit starkem Premium-Gefühl für Brautpaare in der Schweiz.</p>
+  <!-- SHOWREEL (Best practice: center cinematic frame, photo/video-ready) -->
+  <section class="section section--alt reveal" id="showreel">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="showreel.title">Showreel</h2>
+        <p data-i18n="showreel.subtitle">
+          A short cinematic selection — later you can switch from photos to 5–12 sec videos by editing one JS list.
+        </p>
+      </div>
+
+      <div class="showreelWrap">
+        <div class="showreelFrame">
+          <!-- JS will control this video element (or fallback image) -->
+          <video class="showreelMedia" id="showreelVideo" muted playsinline preload="metadata"></video>
+
+          <!-- Fallback if video fails (JS toggles) -->
+          <img class="showreelMedia is-hidden" id="showreelFallback" src="assets/showreel/slide1.jpg" alt="Showreel">
         </div>
-        <div class="servicesGrid">
-          <article class="serviceCard featured">
-            <div class="serviceCard__top"><span class="serviceBadge" data-i18n="services.badge1">Hochzeiten</span><span class="serviceIcon">✦</span></div>
-            <h3 data-i18n="services.s1t">Ganztägige Begleitung</h3>
-            <p data-i18n="services.s1d">Vom Getting Ready bis zur Feier — ruhige Begleitung, starke Momente und elegante Bildsprache.</p>
-            <ul>
-              <li data-i18n="services.s1l1">Emotionale Reportage</li>
-              <li data-i18n="services.s1l2">Portraits mit Führung</li>
-              <li data-i18n="services.s1l3">Luxuriöse Auswahl & Bearbeitung</li>
-            </ul>
-          </article>
-          <article class="serviceCard">
-            <div class="serviceCard__top"><span class="serviceBadge" data-i18n="services.badge2">Tradition</span><span class="serviceIcon">◆</span></div>
-            <h3 data-i18n="services.s2t">Traditionelle Looks</h3>
-            <p data-i18n="services.s2d">Kulturelle Kleidung, edle Details und zeitlose Portraits mit Respekt und moderner Veredelung.</p>
-            <ul>
-              <li data-i18n="services.s2l1">Saubere Farben</li>
-              <li data-i18n="services.s2l2">Premium Retusche</li>
-              <li data-i18n="services.s2l3">Starke Close-ups</li>
-            </ul>
-          </article>
-          <article class="serviceCard">
-            <div class="serviceCard__top"><span class="serviceBadge" data-i18n="services.badge3">Editorial</span><span class="serviceIcon">◈</span></div>
-            <h3 data-i18n="services.s3t">Editorial Portraits</h3>
-            <p data-i18n="services.s3d">Für Paare, die ihre Hochzeit mit einem luxuriösen, modernen und selbstbewussten Look zeigen möchten.</p>
-            <ul>
-              <li data-i18n="services.s3l1">Magazin-Feeling</li>
-              <li data-i18n="services.s3l2">Feine Komposition</li>
-              <li data-i18n="services.s3l3">Eleganter Abschluss</li>
-            </ul>
-          </article>
+
+        <div class="showreelHint" data-i18n="showreel.hint">
+          Tip: put your clips into <strong>assets/showreel/</strong> and edit the JS array.
         </div>
       </div>
-    </section>
-
-    <section class="section section--dark" id="showreel">
-      <div class="container">
-        <div class="sectionHead">
-          <p class="eyebrow" data-i18n="showreel.eyebrow">Showreel</p>
-          <h2 data-i18n="showreel.title">Premium Preview</h2>
-          <p data-i18n="showreel.text">Eine ruhige, hochwertige Vorschau deiner Bildsprache — optimiert für Smartphone und Desktop.</p>
-        </div>
-        <div class="showreel">
-          <div class="showreel__slides" id="showreelSlides">
-            <img src="assets/showreel/s1.jpg" class="showreel__img is-active" alt="Showreel 1">
-            <img src="assets/showreel/s2.jpg" class="showreel__img" alt="Showreel 2">
-            <img src="assets/showreel/s3.jpg" class="showreel__img" alt="Showreel 3">
-            <img src="assets/showreel/s4.jpg" class="showreel__img" alt="Showreel 4">
-            <img src="assets/showreel/s5.jpg" class="showreel__img" alt="Showreel 5">
-          </div>
-          <div class="showreel__content">
-            <p data-i18n="showreel.caption">Hochwertige Hochzeitsreportagen, klassische Eleganz und starke Momente für eine luxuriöse Präsentation.</p>
-            <div class="showreel__dots" id="showreelDots"></div>
-          </div>
-        </div>
+    </div>
+  </section>
+  <!-- Services -->
+  <section class="section reveal" id="services">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="services.title">Services</h2>
+        <p data-i18n="services.subtitle">Luxury coverage for weddings and life events — film + photography, delivered with elegance.</p>
       </div>
-    </section>
 
-    <section class="section" id="gallery">
-      <div class="container">
-        <div class="sectionHead">
-          <p class="eyebrow" data-i18n="gallery.eyebrow">Galerie</p>
-          <h2 data-i18n="gallery.title">Echte Bilder. Premium Look.</h2>
-          <p data-i18n="gallery.text">Eine ausgewählte Galerie mit 15 echten Bildern, hochwertigem Crop und klickbarer Lightbox.</p>
-        </div>
-        <div class="galleryGrid" id="galleryGrid">
-          <a class="galleryItem portrait" href="assets/gallery/g1.jpg"><img src="assets/gallery/g1.jpg" alt="Gallery 1"></a>
-          <a class="galleryItem landscape" href="assets/gallery/g2.jpg"><img src="assets/gallery/g2.jpg" alt="Gallery 2"></a>
-          <a class="galleryItem portrait" href="assets/gallery/g3.jpg"><img src="assets/gallery/g3.jpg" alt="Gallery 3"></a>
-          <a class="galleryItem landscape" href="assets/gallery/g4.jpg"><img src="assets/gallery/g4.jpg" alt="Gallery 4"></a>
-          <a class="galleryItem portrait" href="assets/gallery/g5.jpg"><img src="assets/gallery/g5.jpg" alt="Gallery 5"></a>
-          <a class="galleryItem portrait" href="assets/gallery/g6.jpg"><img src="assets/gallery/g6.jpg" alt="Gallery 6"></a>
-          <a class="galleryItem portrait" href="assets/gallery/g7.jpg"><img src="assets/gallery/g7.jpg" alt="Gallery 7"></a>
-          <a class="galleryItem portrait" href="assets/gallery/g8.jpg"><img src="assets/gallery/g8.jpg" alt="Gallery 8"></a>
-          <a class="galleryItem portrait" href="assets/gallery/g9.jpg"><img src="assets/gallery/g9.jpg" alt="Gallery 9"></a>
-          <a class="galleryItem portrait" href="assets/gallery/g10.jpg"><img src="assets/gallery/g10.jpg" alt="Gallery 10"></a>
-          <a class="galleryItem landscape" href="assets/gallery/g11.jpg"><img src="assets/gallery/g11.jpg" alt="Gallery 11"></a>
-          <a class="galleryItem portrait" href="assets/gallery/g12.jpg"><img src="assets/gallery/g12.jpg" alt="Gallery 12"></a>
-          <a class="galleryItem portrait" href="assets/gallery/g13.jpg"><img src="assets/gallery/g13.jpg" alt="Gallery 13"></a>
-          <a class="galleryItem portrait" href="assets/gallery/g14.jpg"><img src="assets/gallery/g14.jpg" alt="Gallery 14"></a>
-          <a class="galleryItem landscape" href="assets/gallery/g15.jpg"><img src="assets/gallery/g15.jpg" alt="Gallery 15"></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--soft" id="testimonials">
-      <div class="container">
-        <div class="sectionHead">
-          <p class="eyebrow" data-i18n="testimonials.eyebrow">Testimonials</p>
-          <h2 data-i18n="testimonials.title">Worte, die Vertrauen geben</h2>
-          <p data-i18n="testimonials.text">Eine etwas luxuriösere Präsentation mit Bild, Bewertung und ruhigem Layout.</p>
-        </div>
-        <div class="testimonialSlider">
-          <button class="sliderArrow prev" id="tPrev" aria-label="Previous">‹</button>
-          <div class="testimonialTrackWrap">
-            <div class="testimonialTrack" id="testimonialTrack">
-            <article class="testimonialCard">
-              <img src="assets/testimonials/t1.jpg" alt="Testimonial 1">
-              <div>
-                <div class="stars">★★★★★</div>
-                <p data-i18n="testimonials.q1">„Kirubel captured every emotion with elegance and peace. The result feels premium and timeless.“</p>
-                <strong>Maya &amp; Jonas</strong> <span>• Zürich</span>
-              </div>
-            </article>
-            <article class="testimonialCard">
-              <img src="assets/testimonials/t2.jpg" alt="Testimonial 2">
-              <div>
-                <div class="stars">★★★★★</div>
-                <p data-i18n="testimonials.q2">„Traditional photos and modern editing together — exactly the confidence and beauty we wanted.“</p>
-                <strong>Helen &amp; Nahom</strong> <span>• Bern</span>
-              </div>
-            </article>
-            <article class="testimonialCard">
-              <img src="assets/testimonials/t3.jpg" alt="Testimonial 3">
-              <div>
-                <div class="stars">★★★★★</div>
-                <p data-i18n="testimonials.q3">„Very calm guidance, professional presence and a wow result on both phone and desktop.“</p>
-                <strong>Rahel &amp; Samuel</strong> <span>• Basel</span>
-              </div>
-            </article>
-            <article class="testimonialCard">
-              <img src="assets/testimonials/t4.jpg" alt="Testimonial 4">
-              <div>
-                <div class="stars">★★★★★</div>
-                <p>“We loved the balance of romance, culture and clean premium editing. The photos feel rich and alive.”</p>
-                <strong>Meron &amp; David</strong> <span>• Lausanne</span>
-              </div>
-            </article>
-          </div>
-        </div>
-        <button class="sliderArrow next" id="tNext" aria-label="Next">›</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container aboutGrid">
-        <div>
-          <p class="eyebrow" data-i18n="about.eyebrow">Über mich</p>
-          <h2 data-i18n="about.title">Freundlich. Elegant. Mit Herz.</h2>
-          <p data-i18n="about.text">Kirubel Photo & Video 4U steht für moderne Hochzeitsfotografie mit ruhiger Begleitung, starker Bildsprache und einem Premium-Look, der auf Smartphone und Desktop sauber funktioniert.</p>
-        </div>
-        <div class="aboutPanel">
-          <div class="aboutPanel__line"></div>
-          <strong data-i18n="about.noteTitle">Warum diese Version besser ist</strong>
-          <ul>
-            <li data-i18n="about.li1">Mobiler Hero jetzt edler und ruhiger</li>
-            <li data-i18n="about.li2">Services wirken stärker und hochwertiger</li>
-            <li data-i18n="about.li3">Hamburger-Menü bleibt sichtbar</li>
-            <li data-i18n="about.li4">Galerie und Testimonials sind wieder vollständig</li>
+      <div class="grid grid--2">
+        <article class="card">
+          <h3 data-i18n="services.wedding.title">Wedding Stories</h3>
+          <ul class="list">
+            <li data-i18n="services.wedding.li1">Full-day film & photo coverage</li>
+            <li data-i18n="services.wedding.li2">Cinematic highlight film</li>
+            <li data-i18n="services.wedding.li3">Elegant portrait session</li>
+            <li data-i18n="services.wedding.li4">Ceremony & speeches capture</li>
           </ul>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <section class="section section--dark" id="contact">
-      <div class="container contactBox">
-        <div>
-          <p class="eyebrow" data-i18n="contact.eyebrow">Kontakt</p>
-          <h2 data-i18n="contact.title">Datum reservieren</h2>
-          <p data-i18n="contact.text">Schreib direkt per WhatsApp oder Telefon für Verfügbarkeit, Preise und Buchung.</p>
-        </div>
-        <div class="contactActions">
-          <a class="btn btn--primary" href="https://wa.me/41765221262" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn btn--ghost btn--ghost-dark" href="tel:+41765221262">+41 76 522 12 62</a>
-        </div>
-      </div>
-      <div class="container partnersRow">
-        <span data-i18n="footer.partners">Partner:</span>
-        <a href="https://www.haben-beauty.ch/" target="_blank" rel="noopener">Haben Beauty</a>
-        <a href="https://roraproduction.com" target="_blank" rel="noopener">Rora Production</a>
-      </div>
-    </section>
-  </main>
+        <article class="card">
+          <h3 data-i18n="services.engagement.title">Engagement Sessions</h3>
+          <ul class="list">
+            <li data-i18n="services.engagement.li1">Romantic short film + fine portraits</li>
+            <li data-i18n="services.engagement.li2">Outdoor / city / destination</li>
+            <li data-i18n="services.engagement.li3">Guided posing & direction</li>
+            <li data-i18n="services.engagement.li4">Perfect for invitations & socials</li>
+          </ul>
+        </article>
 
+        <article class="card">
+          <h3 data-i18n="services.baptism.title">Baptism & Ceremonies</h3>
+          <ul class="list">
+            <li data-i18n="services.baptism.li1">Respectful documentation</li>
+            <li data-i18n="services.baptism.li2">Family portraits</li>
+            <li data-i18n="services.baptism.li3">Short cinematic film option</li>
+            <li data-i18n="services.baptism.li4">Clean audio capture</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="services.celebrations.title">Celebrations</h3>
+          <ul class="list">
+            <li data-i18n="services.celebrations.li1">Birthdays, congratulations, private events</li>
+            <li data-i18n="services.celebrations.li2">Discreet, elegant coverage</li>
+            <li data-i18n="services.celebrations.li3">Highlights + gallery</li>
+            <li data-i18n="services.celebrations.li4">Fast preview option</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="ctaRow">
+        <a class="btn btn--primary shimmer" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="services.cta">
+          Inquire Now
+        </a>
+        <span class="muted" data-i18n="services.note">Based in Switzerland • Available nationwide</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collections -->
+  <section class="section section--alt reveal" id="collections">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="collections.title">Collections</h2>
+        <p data-i18n="collections.subtitle">Three luxury collections — tailored to your day. Exact details are confirmed in consultation.</p>
+      </div>
+
+      <div class="pricing">
+        <article class="priceCard">
+          <div class="priceTop">
+            <h3 data-i18n="collections.sig.title">Signature</h3>
+            <span class="badge" data-i18n="collections.sig.badge">Most Requested</span>
+          </div>
+          <ul class="list">
+            <li data-i18n="collections.sig.li1">Up to 10 hours coverage</li>
+            <li data-i18n="collections.sig.li2">Highlight film (4–8 min)</li>
+            <li data-i18n="collections.sig.li3">Edited photo gallery</li>
+            <li data-i18n="collections.sig.li4">Private online delivery</li>
+          </ul>
+          <a class="btn btn--ghost btn--full" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="collections.sig.cta">Request details</a>
+        </article>
+
+        <article class="priceCard priceCard--featured">
+          <div class="priceTop">
+            <h3 data-i18n="collections.pre.title">Prestige</h3>
+            <span class="badge badge--dark" data-i18n="collections.pre.badge">Best Value</span>
+          </div>
+          <ul class="list">
+            <li data-i18n="collections.pre.li1">Up to 12 hours coverage</li>
+            <li data-i18n="collections.pre.li2">Highlight film + social teaser</li>
+            <li data-i18n="collections.pre.li3">Ceremony/speeches audio capture</li>
+            <li data-i18n="collections.pre.li4">Priority editing</li>
+          </ul>
+          <a class="btn btn--primary btn--full shimmer" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="collections.pre.cta">Check availability</a>
+        </article>
+
+        <article class="priceCard">
+          <div class="priceTop">
+            <h3 data-i18n="collections.leg.title">Legacy</h3>
+            <span class="badge" data-i18n="collections.leg.badge">Luxury Story</span>
+          </div>
+          <ul class="list">
+            <li data-i18n="collections.leg.li1">Up to 14 hours coverage</li>
+            <li data-i18n="collections.leg.li2">Highlight + extended film</li>
+            <li data-i18n="collections.leg.li3">Engagement session option</li>
+            <li data-i18n="collections.leg.li4">Luxury presentation</li>
+          </ul>
+          <a class="btn btn--ghost btn--full" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="collections.leg.cta">Request details</a>
+        </article>
+      </div>
+
+      <div class="note">
+        <span class="note__line" aria-hidden="true"></span>
+        <p class="muted" data-i18n="collections.addons">
+          Add-ons: drone (where permitted), extra hours, same-week teaser, raw footage, second shooter.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section reveal" id="gallery">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="gallery.title">Gallery</h2>
+        <p data-i18n="gallery.subtitle">A refined selection of moments — replace these with your best work.</p>
+      </div>
+
+      <div class="galleryGrid" id="galleryGrid">
+        <a class="gItem" href="assets/p1.jpg" data-caption="Wedding Portrait • Golden Hour">
+          <img src="assets/p1.jpg" alt="Wedding Portrait" loading="lazy" decoding="async" width="1200" height="800">
+        </a>
+        <a class="gItem" href="assets/p2.jpg" data-caption="Reception • Luxury Details">
+          <img src="assets/p2.jpg" alt="Reception details" loading="lazy" decoding="async" width="1200" height="800">
+        </a>
+        <a class="gItem" href="assets/p3.jpg" data-caption="Celebration • Sparkler Night">
+          <img src="assets/p3.jpg" alt="Sparkler moment" loading="lazy" decoding="async" width="1200" height="800">
+        </a>
+        <a class="gItem" href="assets/p4.jpg" data-caption="Baptism • Gentle New Life">
+          <img src="assets/p4.jpg" alt="Baptism ceremony" loading="lazy" decoding="async" width="1200" height="800">
+        </a>
+        <a class="gItem" href="assets/p5.jpg" data-caption="Engagement • City Romance">
+          <img src="assets/p5.jpg" alt="Engagement session" loading="lazy" decoding="async" width="1200" height="800">
+        </a>
+        <a class="gItem" href="assets/p6.jpg" data-caption="Behind the Scenes • Cinematic Film">
+          <img src="assets/p6.jpg" alt="Behind the scenes filming" loading="lazy" decoding="async" width="1200" height="800">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (photo + text luxury cards + slider) -->
+  <section class="section section--alt reveal" id="testimonials">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="testimonials.title">Testimonials</h2>
+        <p data-i18n="testimonials.subtitle">Real words from couples & families — crafted moments, delivered with care.</p>
+      </div>
+
+      <div class="tSlider" aria-label="Testimonials slider">
+        <button class="tNav tPrev" type="button" aria-label="Previous testimonial">‹</button>
+
+        <div class="tViewport">
+          <div class="tTrack" id="tTrack">
+            <article class="tCard">
+              <img class="tImg" src="assets/testimonials/t1.jpg" alt="Client best shot 1" loading="lazy">
+              <div class="tBody">
+                <div class="tStars">★★★★★</div>
+                <p class="tQuote" data-i18n="t.1.text">“Kirubel captured every emotion with elegance. The film felt like cinema — we cried watching it.”</p>
+                <div class="tMeta">
+                  <strong data-i18n="t.1.name">Maya & Jonas</strong><span data-i18n="t.1.loc">• Zürich</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="tCard">
+              <img class="tImg" src="assets/testimonials/t2.jpg" alt="Client best shot 2" loading="lazy">
+              <div class="tBody">
+                <div class="tStars">★★★★★</div>
+                <p class="tQuote" data-i18n="t.2.text">“So discreet and professional. Photos are luxury-level, and delivery was fast.”</p>
+                <div class="tMeta">
+                  <strong data-i18n="t.2.name">Sofia R.</strong><span data-i18n="t.2.loc">• Basel</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="tCard">
+              <img class="tImg" src="assets/testimonials/t3.jpg" alt="Client best shot 3" loading="lazy">
+              <div class="tBody">
+                <div class="tStars">★★★★★</div>
+                <p class="tQuote" data-i18n="t.3.text">“Best storyteller. He guided us calmly and made us look amazing without feeling posed.”</p>
+                <div class="tMeta">
+                  <strong data-i18n="t.3.name">Amina & Daniel</strong><span data-i18n="t.3.loc">• Bern</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="tCard">
+              <img class="tImg" src="assets/testimonials/t4.jpg" alt="Client best shot 4" loading="lazy">
+              <div class="tBody">
+                <div class="tStars">★★★★★</div>
+                <p class="tQuote" data-i18n="t.4.text">“The baptism photos are pure magic. Every detail, every smile — perfectly preserved.”</p>
+                <div class="tMeta">
+                  <strong data-i18n="t.4.name">Family K.</strong><span data-i18n="t.4.loc">• Luzern</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="tCard">
+              <img class="tImg" src="assets/testimonials/t5.jpg" alt="Client best shot 5" loading="lazy">
+              <div class="tBody">
+                <div class="tStars">★★★★★</div>
+                <p class="tQuote" data-i18n="t.5.text">“Premium quality, premium communication. A true artist — highly recommended.”</p>
+                <div class="tMeta">
+                  <strong data-i18n="t.5.name">Elena & Marc</strong><span data-i18n="t.5.loc">• Geneva</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <button class="tNav tNext" type="button" aria-label="Next testimonial">›</button>
+      </div>
+
+      <div class="tDots" id="tDots" aria-label="Testimonials dots"></div>
+    </div>
+  </section>
+
+  <!-- About (new friendly + trustworthy + 10 years + Bern) -->
+  <section class="section reveal" id="about">
+    <div class="container">
+      <div class="about">
+        <div class="about__copy">
+          <div class="kicker">KIRUBEL</div>
+          <h2 data-i18n="about.title">Friendly. Passionate. Dedicated to timeless stories.</h2>
+
+          <p data-i18n="about.subtitle">
+            I have over 10 years of experience in photography and filmmaking, and I truly love what I do.
+            Creating radiant images and cinematic edits is part of my daily life — it’s in my mind and heart.
+            I’m friendly, calm, and respectful, so you can feel comfortable and fully present in your moment.
+            Based in the heart of Switzerland — Bern — and available across the country.
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step__n">01</div>
+              <div>
+                <strong data-i18n="about.s1.title">Consultation</strong>
+                <div class="muted" data-i18n="about.s1.sub">We confirm your vision, timing, and important details.</div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step__n">02</div>
+              <div>
+                <strong data-i18n="about.s2.title">Coverage</strong>
+                <div class="muted" data-i18n="about.s2.sub">Discreet direction — natural moments with a luxury finish.</div>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step__n">03</div>
+              <div>
+                <strong data-i18n="about.s3.title">Editing & Delivery</strong>
+                <div class="muted" data-i18n="about.s3.sub">Cinematic color, clean sound, and a beautiful final delivery.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn btn--primary shimmer" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="about.cta1">Book your date</a>
+            <a class="btn btn--ghost" href="#contact" data-i18n="about.cta2">Contact</a>
+          </div>
+        </div>
+
+        <div class="about__image card">
+          <img src="assets/me.jpg" alt="Kirubel portrait" loading="lazy">
+          <div class="about__caption">
+            <strong>Kirubel</strong>
+            <div class="muted" data-i18n="about.caption">Film & Photography • Switzerland (Bern)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact (Materials -> WhatsApp -> Email) — SAME luxury styling -->
+  <section class="section contactLuxury reveal" id="contact">
+    <div class="container">
+      <div class="luxuryHeader">
+        <h2 data-i18n="contactLuxury.title">Reserve Your Date</h2>
+        <p data-i18n="contactLuxury.subtitle">
+          I accept a limited number of weddings and ceremonies each year to ensure full artistic dedication.
+        </p>
+      </div>
+
+      <div class="luxuryCards">
+
+        <!-- 1) Materials / Equipment (same card look) -->
+        <div class="card luxuryCard">
+          <div class="luxuryTopLine"></div>
+          <h3 data-i18n="materials.title">Materials / Equipment</h3>
+          <p data-i18n="materials.subtitle">Professional tools chosen for cinematic image quality and clean sound.</p>
+
+          <div class="matGrid">
+            <div class="matRow"><strong data-i18n="materials.camera">Camera</strong><span>4K / Low-light</span></div>
+            <div class="matRow"><strong data-i18n="materials.lenses">Lenses</strong><span>Prime + Zoom</span></div>
+            <div class="matRow"><strong data-i18n="materials.audio">Audio</strong><span>Lav + Recorder</span></div>
+            <div class="matRow"><strong data-i18n="materials.stabilize">Stabilization</strong><span>Gimbal + Tripod</span></div>
+          </div>
+
+          <p class="muted small matNote" data-i18n="materials.note">
+            Exact equipment can vary per event — always selected for the best final result.
+          </p>
+        </div>
+
+        <!-- 2) WhatsApp -->
+        <div class="card luxuryCard">
+          <div class="luxuryTopLine"></div>
+          <h3 data-i18n="contactLuxury.whTitle">Private WhatsApp</h3>
+          <p data-i18n="contactLuxury.whText">Direct communication for availability checks and immediate assistance.</p>
+
+          <a class="luxuryBtn shimmer"
+             href="https://wa.me/41765221262"
+             target="_blank"
+             rel="noopener"
+             data-i18n="contactLuxury.whBtn">
+            Start Conversation
+          </a>
+
+          <div class="luxuryMeta">+41 76 522 12 62</div>
+        </div>
+
+        <!-- 3) Email -->
+        <div class="card luxuryCard luxuryCard--accent">
+          <div class="luxuryTopLine"></div>
+          <h3 data-i18n="contactLuxury.emTitle">Formal Inquiries</h3>
+          <p data-i18n="contactLuxury.emText">For destination weddings, detailed proposals and official bookings.</p>
+
+          <a class="luxuryBtn luxuryBtn--outline shimmer"
+             href="mailto:Kirubielmdiachanel@gmail.com?subject=Luxury Wedding Inquiry - kirubel.ch"
+             data-i18n="contactLuxury.emBtn">
+            Send Email
+          </a>
+
+          <div class="luxuryMeta">Kirubielmdiachanel@gmail.com</div>
+        </div>
+
+      </div>
+
+      <div class="luxuryTrust">
+        <span data-i18n="contactLuxury.t1">• Switzerland Based</span>
+        <span data-i18n="contactLuxury.t2">• Discreet & Professional</span>
+        <span data-i18n="contactLuxury.t3">• Response within 24 Hours</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div>
-        <strong>Kirubel Photo &amp; Video 4U</strong>
-        <p>© <span id="year"></span> kirubel.ch — <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span></p>
+
+      <!-- LEFT: logo + partners -->
+      <div class="footer__brand">
+        <a class="footerLogo" href="#top" aria-label="Home">
+          <img src="assets/logo.png" alt="Kirubel Photo & Video 4U logo">
+        </a>
+
+        <p class="muted">
+          ©️ <span id="year"></span> kirubel.ch — <span data-i18n="footer.rights">All rights reserved.</span>
+        </p>
+
+        <div class="partners">
+          <span class="partners__label" data-i18n="footer.partners">Partners:</span>
+          <a class="partnerLink" href="https://www.haben-beauty.ch/" target="_blank" rel="noopener">Haben Beauty</a>
+          <a class="partnerLink" href="https://roraproduction.com" target="_blank" rel="noopener">Rora Production</a>
+        </div>
       </div>
-      <div class="footerLinks">
+
+      <!-- RIGHT: links -->
+      <div class="footer__links">
         <a href="#services" data-i18n="nav.services">Services</a>
-        <a href="#gallery" data-i18n="nav.gallery">Galerie</a>
+        <a href="#collections" data-i18n="nav.collections">Collections</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#showreel" data-i18n="nav.showreel">Showreel</a>
         <a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
-        <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </div>
     </div>
   </footer>
 
+  <!-- Premium Lightbox -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox__close" id="lightboxClose" aria-label="Close">×</button>
-    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous">‹</button>
-    <img class="lightbox__img" id="lightboxImg" alt="">
-    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next">›</button>
+    <button class="lbClose" type="button" aria-label="Close (Esc)">×</button>
+    <button class="lbNav lbPrev" type="button" aria-label="Previous">‹</button>
+    <button class="lbNav lbNext" type="button" aria-label="Next">›</button>
+
+    <div class="lbShell" role="dialog" aria-modal="true" aria-label="Image preview">
+      <figure class="lbFigure">
+        <div class="lbLoader" aria-hidden="true">
+          <div class="lbSpinner"></div>
+          <div class="lbLoadText">Loading…</div>
+        </div>
+        <img class="lbImg" id="lbImg" alt="">
+        <figcaption class="lbCap" id="lbCap"></figcaption>
+      </figure>
+
+      <div class="lbControls">
+        <button class="lbBtn shimmer" id="lbZoom" type="button" data-i18n="lb.zoom">Zoom</button>
+        <button class="lbBtn shimmer" id="lbPlay" type="button" data-i18n="lb.pause">Pause</button>
+      </div>
+
+      <div class="lbThumbs" id="lbThumbs" aria-label="Gallery thumbnails"></div>
+    </div>
   </div>
 
   <script src="script.js"></script>
