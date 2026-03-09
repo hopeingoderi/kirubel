@@ -1,4 +1,15 @@
-Kirubel Final Luxury Polish Version
+Kirubel Photo & Video 4U - Swiss Luxury Final
+
+What was improved:
+- cleaned brand presentation with your logo mark in the header and full logo in the footer
+- sticky header that hides on scroll down and returns on scroll up
+- premium Swiss-inspired dark/gold color palette
+- uniform gallery with only real original photos
+- lightbox preview with zoom in, zoom out, reset and swipe
+- 5 testimonial cards with reviewer photos (editable sample text)
+- improved contact form styling with visible select and date picker
+- footer with copyright and email
+- DE / EN translation kept
 
 Files:
 - index.html
@@ -6,16 +17,6 @@ Files:
 - script.js
 - assets/
 
-Highlights:
-- uses your real logo
-- uses only real original photos
-- no screenshot images
-- mobile hamburger menu
-- DE / EN language switch
-- contact form near the end
-- clickable gallery with preview + zoom in/out + reset
-- lighter performance and cleaner layout
-
-Contact:
-- Email: info@kirubel.ch
-- WhatsApp: +41 76 522 12 62
+Contact used:
+- info@kirubel.ch
+- +41 76 522 12 62

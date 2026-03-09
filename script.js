@@ -1,82 +1,112 @@
-
 const translations = {
   en: {
-    "topbar.left":"Switzerland • Weddings • Culture • Portraits",
+    "topbar.copy":"Switzerland • Weddings • Culture • Portraits",
     "brand.sub":"Wedding • Culture • Portrait Storytelling",
-    "nav.services":"Services","nav.packages":"Packages","nav.gallery":"Gallery","nav.showreel":"Showreel","nav.testimonials":"Testimonials","nav.about":"About me","nav.contact":"Contact","nav.cta":"WhatsApp Inquiry",
+    "nav.services":"Services","nav.packages":"Packages","nav.gallery":"Gallery","nav.showreel":"Showreel","nav.testimonials":"Testimonials","nav.about":"About","nav.contact":"Contact","nav.cta":"WhatsApp Inquiry",
     "hero.eyebrow":"Kirubel Photo & Video 4U • Switzerland",
-    "hero.title":"Elegant visual storytelling for weddings, culture and meaningful moments.",
-    "hero.text":"A refined visual brand built to capture beauty, dignity, joy and identity with a premium cinematic feel.",
+    "hero.title":"Elegant visual storytelling for weddings, culture and unforgettable human moments.",
+    "hero.text":"A refined premium visual brand created to capture beauty, dignity, joy and identity with a calm Swiss-luxury feel.",
     "hero.cta1":"Send inquiry","hero.cta2":"View gallery",
-    "hero.point1":"Elegant wedding and engagement storytelling","hero.point2":"Respectful love for culture and identity","hero.point3":"Natural portraits with refined editing",
-    "services.eyebrow":"Services","services.title":"Coverage designed around calm direction, strong emotion and polished delivery.",
-    "services.card1.title":"Weddings","services.card1.text":"Full wedding coverage with portraits, details, ceremony and joyful celebration moments.",
-    "services.card2.title":"Culture-led storytelling","services.card2.text":"Beautiful coverage of traditional attire, family honour and meaningful cultural identity.",
-    "services.card3.title":"Portraits","services.card3.text":"Refined portraits for couples, bridal beauty, personal branding and milestone moments.",
-    "packages.eyebrow":"Packages","packages.title":"Simple collections to start the conversation.","packages.badge":"Most requested",
-    "packages.one.title":"Signature","packages.one.li1":"Elegant ceremony and portrait coverage","packages.one.li2":"Edited online gallery","packages.one.li3":"Ideal for intimate events",
-    "packages.two.title":"Premium","packages.two.li1":"Wedding story from preparation to celebration","packages.two.li2":"Portrait direction and highlight moments","packages.two.li3":"Refined image selection and premium edit",
-    "packages.three.title":"Culture & Portrait","packages.three.li1":"Traditional dress and family storytelling","packages.three.li2":"Portrait-focused session","packages.three.li3":"Beautiful final gallery for sharing",
-    "gallery.eyebrow":"Gallery","gallery.title":"A curated gallery from Kirubel’s visual world.","gallery.sub":"Open any image for preview, zoom in, zoom out and move through the gallery easily.","gallery.preview":"Preview","gallery.reset":"Reset",
-    "showreel.eyebrow":"Showreel","showreel.title":"Photography with a cinematic eye.","showreel.text":"Your strongest wedding film or teaser can be placed here later. For now, the website stays fast and polished, ready for your next final upgrade.","showreel.cta":"Ask for film coverage",
-    "testimonials.eyebrow":"Testimonials","testimonials.title":"A client experience built on trust, calm and care.","testimonials.q1":"“Warm direction, beautiful presence and images that felt both elegant and personal.”","testimonials.n1":"Wedding client","testimonials.q2":"“The cultural details were captured with real respect and a premium artistic touch.”","testimonials.n2":"Portrait client","testimonials.q3":"“Fast communication, calm workflow and photos that made the whole day feel alive again.”","testimonials.n3":"Event client",
-    "about.eyebrow":"About","about.title":"A growing premium visual brand with heart.","about.text1":"Kirubel Photo & Video 4U is built around elegant storytelling, human connection and respect for meaningful traditions.","about.text2":"The ambition is simple: to become a trusted visual name for weddings, culture-led moments and refined portraits in Switzerland.",
-    "contact.eyebrow":"Contact","contact.title":"Let’s create something meaningful.","contact.sub":"Send your date, city and short event details. The message opens directly in WhatsApp.","contact.name":"Name","contact.type":"Event type","contact.date":"Date","contact.city":"City / Location","contact.msg":"Message","contact.submit":"WhatsApp Inquiry",
-    "form.opt1":"Wedding","form.opt2":"Engagement","form.opt3":"Baptism","form.opt4":"Celebration/Event","form.opt5":"Portrait",
-    "footer.text":"Wedding • Culture • Portrait Storytelling"
+    "hero.p1":"Elegant wedding and engagement storytelling","hero.p2":"Respectful love for culture and identity","hero.p3":"Refined portraits with polished editing",
+    "services.eyebrow":"Services","services.title":"Coverage shaped by calm direction, emotional presence and polished delivery.",
+    "services.s1t":"Weddings","services.s1d":"From bridal preparation to portraits, ceremony and celebration — captured with elegance and intention.",
+    "services.s2t":"Culture-led storytelling","services.s2d":"Traditional attire, family honour and meaningful details documented with respect and premium presentation.",
+    "services.s3t":"Portrait sessions","services.s3d":"Refined portraits for couples, bridal beauty and milestone moments with clean, flattering direction.",
+    "packages.eyebrow":"Packages","packages.title":"Simple collections to start the conversation beautifully.","packages.badge":"Most requested",
+    "packages.p1t":"Signature","packages.p1a":"Elegant ceremony and portrait coverage","packages.p1b":"Edited online gallery","packages.p1c":"Ideal for intimate celebrations",
+    "packages.p2t":"Premium","packages.p2a":"Wedding story from preparation to party","packages.p2b":"Portrait direction and highlight moments","packages.p2c":"Premium selection and polished edit",
+    "packages.p3t":"Culture & Portrait","packages.p3a":"Traditional dress and family storytelling","packages.p3b":"Portrait focused session","packages.p3c":"Beautiful gallery for sharing",
+    "gallery.eyebrow":"Gallery","gallery.title":"Real moments, presented with a cleaner and more elegant rhythm.","gallery.sub":"Open any image for a premium preview. Zoom in, zoom out, reset and move through the gallery with ease.","gallery.reset":"Reset",
+    "showreel.eyebrow":"Showreel","showreel.title":"Photography with cinematic presence.","showreel.text":"A future wedding film, teaser or short highlight piece can sit here beautifully. For now, the section keeps the website fast, clean and ready for the next level.","showreel.cta":"Ask for film coverage",
+    "reviews.eyebrow":"Testimonials","reviews.title":"Five refined client voice examples to present trust, warmth and care.","reviews.note":"These can be replaced with your exact real client words any time.",
+    "reviews.r1q":"“Kirubel made us feel calm and confident. The final images looked elegant, soft and premium.”","reviews.r1n":"Wedding client",
+    "reviews.r2q":"“The direction was gentle, professional and natural. Every important detail was beautifully seen.”","reviews.r2n":"Portrait client",
+    "reviews.r3q":"“Communication was easy and the whole experience felt organised, respectful and high quality.”","reviews.r3n":"Celebration client",
+    "reviews.r4q":"“The cultural atmosphere was captured with dignity. The images feel meaningful and timeless.”","reviews.r4n":"Culture client",
+    "reviews.r5q":"“A beautiful eye for emotion, beauty and composition. We would gladly recommend Kirubel again.”","reviews.r5n":"Bridal client",
+    "about.eyebrow":"About","about.title":"A growing visual brand with ambition, refinement and heart.","about.p1":"Kirubel Photo & Video 4U is built around elegant storytelling, human connection and respect for meaningful traditions.","about.p2":"The ambition is to become a trusted premium visual name in Switzerland for weddings, culture-led moments and refined portraits.",
+    "contact.eyebrow":"Contact","contact.title":"Send a clean and simple inquiry.","contact.sub":"Choose the event type, add your date and location, then send your message directly by WhatsApp.","contact.name":"Name","contact.type":"Event type","contact.date":"Date","contact.place":"City / Location","contact.msg":"Message","contact.submit":"WhatsApp Inquiry",
+    "form.wedding":"Wedding","form.engagement":"Engagement","form.baptism":"Baptism","form.event":"Celebration / Event","form.portrait":"Portrait",
+    "footer.copy":"Wedding • Culture • Portrait Storytelling"
   },
   de: {
-    "topbar.left":"Schweiz • Hochzeiten • Kultur • Porträts",
+    "topbar.copy":"Schweiz • Hochzeiten • Kultur • Porträts",
     "brand.sub":"Hochzeit • Kultur • Porträt Storytelling",
     "nav.services":"Services","nav.packages":"Pakete","nav.gallery":"Galerie","nav.showreel":"Showreel","nav.testimonials":"Testimonials","nav.about":"Über mich","nav.contact":"Kontakt","nav.cta":"WhatsApp Anfrage",
     "hero.eyebrow":"Kirubel Photo & Video 4U • Schweiz",
-    "hero.title":"Elegantes visuelles Storytelling für Hochzeiten, Kultur und bedeutungsvolle Momente.",
-    "hero.text":"Eine verfeinerte visuelle Marke, geschaffen um Schönheit, Würde, Freude und Identität mit einem hochwertigen cineastischen Gefühl festzuhalten.",
+    "hero.title":"Elegantes visuelles Storytelling für Hochzeiten, Kultur und unvergessliche menschliche Momente.",
+    "hero.text":"Eine verfeinerte Premium-Marke, geschaffen um Schönheit, Würde, Freude und Identität mit einem ruhigen Swiss-Luxury-Gefühl festzuhalten.",
     "hero.cta1":"Anfrage senden","hero.cta2":"Galerie ansehen",
-    "hero.point1":"Elegantes Storytelling für Hochzeit und Verlobung","hero.point2":"Respektvolle Liebe für Kultur und Identität","hero.point3":"Natürliche Porträts mit veredelter Bearbeitung",
-    "services.eyebrow":"Services","services.title":"Begleitung mit ruhiger Führung, starken Emotionen und polierter Lieferung.",
-    "services.card1.title":"Hochzeiten","services.card1.text":"Komplette Hochzeitsbegleitung mit Porträts, Details, Zeremonie und freudigen Festmomenten.",
-    "services.card2.title":"Kulturelles Storytelling","services.card2.text":"Wunderschöne Begleitung traditioneller Kleidung, Familienwürde und kultureller Identität.",
-    "services.card3.title":"Porträts","services.card3.text":"Verfeinerte Porträts für Paare, Bridal Beauty, Personal Branding und besondere Meilensteine.",
-    "packages.eyebrow":"Pakete","packages.title":"Einfache Kollektionen als Start für das Gespräch.","packages.badge":"Meist gewählt",
-    "packages.one.title":"Signature","packages.one.li1":"Elegante Zeremonie- und Porträtbegleitung","packages.one.li2":"Bearbeitete Online-Galerie","packages.one.li3":"Ideal für intime Events",
-    "packages.two.title":"Premium","packages.two.li1":"Hochzeitsgeschichte von Vorbereitung bis Feier","packages.two.li2":"Porträtführung und Highlight-Momente","packages.two.li3":"Verfeinerte Bildauswahl und Premium-Bearbeitung",
-    "packages.three.title":"Kultur & Porträt","packages.three.li1":"Traditionelle Kleidung und Familien-Storytelling","packages.three.li2":"Porträtfokussierte Session","packages.three.li3":"Wunderschöne finale Galerie zum Teilen",
-    "gallery.eyebrow":"Galerie","gallery.title":"Eine kuratierte Galerie aus Kirubels visueller Welt.","gallery.sub":"Öffne ein Bild für Vorschau, vergrössere, verkleinere und bewege dich ganz einfach durch die Galerie.","gallery.preview":"Vorschau","gallery.reset":"Zurücksetzen",
-    "showreel.eyebrow":"Showreel","showreel.title":"Fotografie mit cineastischem Blick.","showreel.text":"Dein stärkster Hochzeitsfilm oder Teaser kann später hier platziert werden. Für jetzt bleibt die Website schnell und elegant – bereit für das nächste Upgrade.","showreel.cta":"Film-Begleitung anfragen",
-    "testimonials.eyebrow":"Testimonials","testimonials.title":"Ein Kundenerlebnis aufgebaut auf Vertrauen, Ruhe und Sorgfalt.","testimonials.q1":"„Warme Führung, schöne Präsenz und Bilder, die sowohl elegant als auch persönlich wirkten.“","testimonials.n1":"Hochzeitskunde","testimonials.q2":"„Die kulturellen Details wurden mit echtem Respekt und einer hochwertigen künstlerischen Note eingefangen.“","testimonials.n2":"Porträtkunde","testimonials.q3":"„Schnelle Kommunikation, ruhiger Ablauf und Fotos, die den ganzen Tag wieder lebendig machten.“","testimonials.n3":"Eventkunde",
-    "about.eyebrow":"Über mich","about.title":"Eine wachsende Premium-Visual-Marke mit Herz.","about.text1":"Kirubel Photo & Video 4U basiert auf elegantem Storytelling, menschlicher Verbindung und Respekt für bedeutungsvolle Traditionen.","about.text2":"Das Ziel ist klar: ein vertrauenswürdiger visueller Name für Hochzeiten, kulturgeprägte Momente und verfeinerte Porträts in der Schweiz zu werden.",
-    "contact.eyebrow":"Kontakt","contact.title":"Lass uns etwas Bedeutungsvolles schaffen.","contact.sub":"Sende dein Datum, deine Stadt und kurze Event-Details. Die Nachricht öffnet sich direkt in WhatsApp.","contact.name":"Name","contact.type":"Event-Typ","contact.date":"Datum","contact.city":"Stadt / Ort","contact.msg":"Nachricht","contact.submit":"WhatsApp Anfrage",
-    "form.opt1":"Hochzeit","form.opt2":"Verlobung","form.opt3":"Taufe","form.opt4":"Feier/Event","form.opt5":"Porträt",
-    "footer.text":"Hochzeit • Kultur • Porträt Storytelling"
+    "hero.p1":"Elegantes Storytelling für Hochzeit und Verlobung","hero.p2":"Respektvolle Liebe für Kultur und Identität","hero.p3":"Verfeinerte Porträts mit polierter Bearbeitung",
+    "services.eyebrow":"Services","services.title":"Begleitung mit ruhiger Führung, emotionaler Präsenz und hochwertiger Lieferung.",
+    "services.s1t":"Hochzeiten","services.s1d":"Von der Vorbereitung über Porträts und Zeremonie bis zur Feier — mit Eleganz und Intention festgehalten.",
+    "services.s2t":"Kulturelles Storytelling","services.s2d":"Traditionelle Kleidung, Familienwürde und bedeutungsvolle Details werden mit Respekt und Premium-Präsentation dokumentiert.",
+    "services.s3t":"Porträt-Sessions","services.s3d":"Verfeinerte Porträts für Paare, Bridal Beauty und besondere Momente mit klarer, schmeichelnder Führung.",
+    "packages.eyebrow":"Pakete","packages.title":"Einfache Kollektionen für einen schönen Gesprächsstart.","packages.badge":"Meist gewählt",
+    "packages.p1t":"Signature","packages.p1a":"Elegante Zeremonie- und Porträtbegleitung","packages.p1b":"Bearbeitete Online-Galerie","packages.p1c":"Ideal für intime Feiern",
+    "packages.p2t":"Premium","packages.p2a":"Hochzeitsgeschichte von Vorbereitung bis Party","packages.p2b":"Porträtführung und Highlight-Momente","packages.p2c":"Premium-Auswahl und polierte Bearbeitung",
+    "packages.p3t":"Kultur & Porträt","packages.p3a":"Traditionelle Kleidung und Familien-Storytelling","packages.p3b":"Porträtfokussierte Session","packages.p3c":"Wunderschöne Galerie zum Teilen",
+    "gallery.eyebrow":"Galerie","gallery.title":"Echte Momente, sauberer und eleganter präsentiert.","gallery.sub":"Öffne ein Bild für eine Premium-Vorschau. Vergrössere, verkleinere, setze zurück und bewege dich ganz einfach durch die Galerie.","gallery.reset":"Zurücksetzen",
+    "showreel.eyebrow":"Showreel","showreel.title":"Fotografie mit cineastischer Präsenz.","showreel.text":"Ein zukünftiger Hochzeitsfilm, Teaser oder kurzer Highlight-Film kann hier wunderschön stehen. Im Moment bleibt die Website so schnell, sauber und bereit für das nächste Level.","showreel.cta":"Film-Begleitung anfragen",
+    "reviews.eyebrow":"Testimonials","reviews.title":"Fünf verfeinerte Beispielstimmen, um Vertrauen, Wärme und Sorgfalt zu zeigen.","reviews.note":"Diese können jederzeit mit deinen echten Kundenworten ersetzt werden.",
+    "reviews.r1q":"„Kirubel gab uns Ruhe und Sicherheit. Die finalen Bilder wirkten elegant, weich und hochwertig.“","reviews.r1n":"Hochzeitskunde",
+    "reviews.r2q":"„Die Führung war sanft, professionell und natürlich. Jedes wichtige Detail wurde wunderschön gesehen.“","reviews.r2n":"Porträtkunde",
+    "reviews.r3q":"„Die Kommunikation war einfach und der ganze Ablauf fühlte sich organisiert, respektvoll und hochwertig an.“","reviews.r3n":"Eventkunde",
+    "reviews.r4q":"„Die kulturelle Atmosphäre wurde mit Würde festgehalten. Die Bilder wirken bedeutungsvoll und zeitlos.“","reviews.r4n":"Kulturkunde",
+    "reviews.r5q":"„Ein wunderschöner Blick für Emotion, Schönheit und Komposition. Wir würden Kirubel jederzeit wieder empfehlen.“","reviews.r5n":"Bridal Kunde",
+    "about.eyebrow":"Über mich","about.title":"Eine wachsende visuelle Marke mit Ambition, Veredelung und Herz.","about.p1":"Kirubel Photo & Video 4U basiert auf elegantem Storytelling, menschlicher Verbindung und Respekt für bedeutungsvolle Traditionen.","about.p2":"Die Ambition ist klar: ein vertrauenswürdiger Premium-Name in der Schweiz für Hochzeiten, kulturgeprägte Momente und verfeinerte Porträts zu werden.",
+    "contact.eyebrow":"Kontakt","contact.title":"Sende eine saubere und einfache Anfrage.","contact.sub":"Wähle den Event-Typ, füge Datum und Ort hinzu und sende deine Nachricht direkt per WhatsApp.","contact.name":"Name","contact.type":"Event-Typ","contact.date":"Datum","contact.place":"Stadt / Ort","contact.msg":"Nachricht","contact.submit":"WhatsApp Anfrage",
+    "form.wedding":"Hochzeit","form.engagement":"Verlobung","form.baptism":"Taufe","form.event":"Feier / Event","form.portrait":"Porträt",
+    "footer.copy":"Hochzeit • Kultur • Porträt Storytelling"
   }
 };
 
-const langButtons = document.querySelectorAll('.lang');
-let currentLang = localStorage.getItem('kv_lang') || 'en';
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// language
+const langButtons = document.querySelectorAll('.lang-btn');
+let currentLang = localStorage.getItem('kirubel_lang') || 'en';
 function applyTranslations(lang){
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    if(translations[lang] && translations[lang][key]) el.textContent = translations[lang][key];
+    if (translations[lang]?.[key]) el.textContent = translations[lang][key];
   });
-  document.querySelectorAll('.lang').forEach(btn => btn.classList.toggle('is-active', btn.dataset.lang===lang));
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('is-active', btn.dataset.lang === lang));
   document.documentElement.lang = lang;
+  const select = document.querySelector('select[name="type"]');
+  if(select){
+    [...select.options].forEach(opt => {
+      const k = opt.getAttribute('data-i18n');
+      if(k && translations[lang]?.[k]) opt.textContent = translations[lang][k];
+    });
+  }
 }
 applyTranslations(currentLang);
-
 langButtons.forEach(btn => btn.addEventListener('click', () => {
   currentLang = btn.dataset.lang;
-  localStorage.setItem('kv_lang', currentLang);
+  localStorage.setItem('kirubel_lang', currentLang);
   applyTranslations(currentLang);
 }));
 
+// header hide on scroll down, show on up
+const header = document.querySelector('.site-header');
+let lastY = window.scrollY;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  header.classList.toggle('is-scrolled', y > 10);
+  if (y > lastY && y > 140) header.classList.add('is-hidden');
+  else header.classList.remove('is-hidden');
+  lastY = y;
+}, {passive:true});
+
+// mobile menu
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.getElementById('mobileMenu');
 menuToggle?.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('is-open');
-  menuToggle.classList.toggle('is-open', open);
-  menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  const isOpen = mobileMenu.classList.toggle('is-open');
+  menuToggle.classList.toggle('is-open', isOpen);
+  menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
 mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   mobileMenu.classList.remove('is-open');
@@ -84,81 +114,66 @@ mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () =>
   menuToggle.setAttribute('aria-expanded','false');
 }));
 
-// Contact form -> WhatsApp
-document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+// contact form -> whatsapp
+const form = document.getElementById('contactForm');
+form?.addEventListener('submit', (e) => {
   e.preventDefault();
-  const fd = new FormData(e.currentTarget);
+  const fd = new FormData(form);
   const lines = [
-    'Hello Kirubel,',
+    currentLang === 'de' ? 'Hallo Kirubel,' : 'Hello Kirubel,',
     '',
-    `Name: ${fd.get('name') || ''}`,
-    `Event type: ${fd.get('type') || ''}`,
-    `Date: ${fd.get('date') || ''}`,
-    `City / Location: ${fd.get('city') || ''}`,
-    `Message: ${fd.get('msg') || ''}`,
+    `${currentLang === 'de' ? 'Name' : 'Name'}: ${fd.get('name') || ''}`,
+    `${currentLang === 'de' ? 'Event-Typ' : 'Event type'}: ${fd.get('type') || ''}`,
+    `${currentLang === 'de' ? 'Datum' : 'Date'}: ${fd.get('date') || ''}`,
+    `${currentLang === 'de' ? 'Ort' : 'Location'}: ${fd.get('place') || ''}`,
+    `${currentLang === 'de' ? 'Nachricht' : 'Message'}: ${fd.get('message') || ''}`,
   ];
   const url = 'https://wa.me/41765221262?text=' + encodeURIComponent(lines.join('\n'));
   window.open(url, '_blank', 'noopener');
 });
 
-// Lightbox
-const items = Array.from(document.querySelectorAll('.gallery-item'));
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lbImg');
-const btnPrev = document.getElementById('lbPrev');
-const btnNext = document.getElementById('lbNext');
-const btnClose = document.getElementById('lbClose');
-const zoomIn = document.getElementById('zoomIn');
-const zoomOut = document.getElementById('zoomOut');
-const zoomReset = document.getElementById('zoomReset');
-
-let index = 0;
+// lightbox
+const galleryItems = Array.from(document.querySelectorAll('.gallery-card'));
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const prevBtn = document.getElementById('lightboxPrev');
+const nextBtn = document.getElementById('lightboxNext');
+const closeBtn = document.getElementById('lightboxClose');
+const zoomInBtn = document.getElementById('zoomIn');
+const zoomOutBtn = document.getElementById('zoomOut');
+const zoomResetBtn = document.getElementById('zoomReset');
+let activeIndex = 0;
 let scale = 1;
-
 function renderLightbox(){
-  if(!items.length) return;
-  lbImg.src = items[index].dataset.src;
-  lbImg.alt = items[index].dataset.alt || '';
+  const item = galleryItems[activeIndex];
+  lightboxImg.src = item.dataset.src;
+  lightboxImg.alt = item.dataset.alt || '';
   scale = 1;
-  lbImg.style.transform = 'scale(1)';
+  lightboxImg.style.transform = 'scale(1)';
 }
-function openLightbox(i){
-  index = i;
-  renderLightbox();
-  lb.classList.add('is-open');
-  lb.setAttribute('aria-hidden','false');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox(){
-  lb.classList.remove('is-open');
-  lb.setAttribute('aria-hidden','true');
-  document.body.style.overflow = '';
-}
-function nextImg(){ index = (index + 1) % items.length; renderLightbox(); }
-function prevImg(){ index = (index - 1 + items.length) % items.length; renderLightbox(); }
+function openLightbox(i){ activeIndex = i; renderLightbox(); lightbox.classList.add('is-open'); lightbox.setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden'; }
+function closeLightbox(){ lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; lightboxImg.src=''; }
+function nextLightbox(){ activeIndex = (activeIndex + 1) % galleryItems.length; renderLightbox(); }
+function prevLightbox(){ activeIndex = (activeIndex - 1 + galleryItems.length) % galleryItems.length; renderLightbox(); }
+galleryItems.forEach((item,i)=>item.addEventListener('click', ()=>openLightbox(i)));
+closeBtn?.addEventListener('click', closeLightbox);
+nextBtn?.addEventListener('click', nextLightbox);
+prevBtn?.addEventListener('click', prevLightbox);
+lightbox?.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
+zoomInBtn?.addEventListener('click', ()=>{ scale = Math.min(3, +(scale + .25).toFixed(2)); lightboxImg.style.transform = `scale(${scale})`; });
+zoomOutBtn?.addEventListener('click', ()=>{ scale = Math.max(1, +(scale - .25).toFixed(2)); lightboxImg.style.transform = `scale(${scale})`; });
+zoomResetBtn?.addEventListener('click', ()=>{ scale = 1; lightboxImg.style.transform = 'scale(1)'; });
 
-items.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
-btnClose?.addEventListener('click', closeLightbox);
-btnNext?.addEventListener('click', nextImg);
-btnPrev?.addEventListener('click', prevImg);
-lb?.addEventListener('click', (e) => { if(e.target === lb) closeLightbox(); });
-
-zoomIn?.addEventListener('click', () => { scale = Math.min(3, +(scale + 0.25).toFixed(2)); lbImg.style.transform = `scale(${scale})`; });
-zoomOut?.addEventListener('click', () => { scale = Math.max(1, +(scale - 0.25).toFixed(2)); lbImg.style.transform = `scale(${scale})`; });
-zoomReset?.addEventListener('click', () => { scale = 1; lbImg.style.transform = 'scale(1)'; });
-
-document.addEventListener('keydown', (e) => {
-  if(!lb.classList.contains('is-open')) return;
+document.addEventListener('keydown', e => {
+  if(!lightbox.classList.contains('is-open')) return;
   if(e.key === 'Escape') closeLightbox();
-  if(e.key === 'ArrowRight') nextImg();
-  if(e.key === 'ArrowLeft') prevImg();
+  if(e.key === 'ArrowRight') nextLightbox();
+  if(e.key === 'ArrowLeft') prevLightbox();
 });
-
-// touch swipe
-let touchX = 0;
-lbImg?.addEventListener('touchstart', (e) => touchX = e.touches[0].clientX, {passive:true});
-lbImg?.addEventListener('touchend', (e) => {
-  const dx = e.changedTouches[0].clientX - touchX;
-  if(Math.abs(dx) < 40) return;
-  dx < 0 ? nextImg() : prevImg();
+let touchStartX = 0;
+lightboxImg?.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX, {passive:true});
+lightboxImg?.addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].clientX - touchStartX;
+  if(Math.abs(diff) < 40) return;
+  diff < 0 ? nextLightbox() : prevLightbox();
 }, {passive:true});
