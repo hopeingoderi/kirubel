@@ -1,4 +1,4 @@
-Kirubel Photo & Video 4U final package
+Kirubel Final Luxury Polish Version
 
 Files:
 - index.html
@@ -6,18 +6,16 @@ Files:
 - script.js
 - assets/
 
-Notes:
-- English is the default language.
-- Main menu stays visible; on small screens it scrolls horizontally instead of hiding.
-- Footer partner links are already added:
-  https://roraproduction.com
-  https://www.haben-beauty.ch
+Highlights:
+- uses your real logo
+- uses only real original photos
+- no screenshot images
+- mobile hamburger menu
+- DE / EN language switch
+- contact form near the end
+- clickable gallery with preview + zoom in/out + reset
+- lighter performance and cleaner layout
+
+Contact:
 - Email: info@kirubel.ch
 - WhatsApp: +41 76 522 12 62
-
-Assets included:
-- Improved transparent logo
-- 12-second cinematic background video
-- Selected real gallery photos
-
-Open index.html in a browser to preview.
