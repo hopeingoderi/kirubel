@@ -1,178 +1,209 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kirubel Photo & Video 4U | Wedding Photography & Film in Switzerland</title>
-  <meta name="description" content="Kirubel Photo & Video 4U creates elegant wedding, engagement and cultural visual stories with a cinematic eye, refined editing and heartfelt storytelling across Switzerland." />
-  <meta name="robots" content="index,follow" />
-  <meta name="author" content="Kirubel Photo & Video 4U" />
-  <meta property="og:title" content="Kirubel Photo & Video 4U" />
-  <meta property="og:description" content="Elegant wedding, engagement and cultural visual stories in Switzerland." />
-  <meta property="og:image" content="assets/hero.jpg" />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#140d11" />
-  <link rel="icon" href="assets/favicon.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kirubel Photo & Video 4U</title>
+  <meta name="description" content="Elegant wedding, culture and portrait storytelling in Switzerland.">
+  <meta name="theme-color" content="#171416">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preload" as="image" href="assets/logo.png">
+  <link rel="preload" as="image" href="assets/hero.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="loader" id="loader">
-    <img src="assets/logo-transparent.png" alt="Kirubel Photo & Video 4U" />
-  </div>
-
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <div class="topbar__left" data-i18n="topline">Switzerland • Weddings • Culture • Portraits</div>
-      <div class="topbar__right">
+  <header class="site-header">
+    <div class="container top-line">
+      <div class="top-copy" data-i18n="topline">Switzerland • Weddings • Culture • Portraits</div>
+      <div class="top-contact">
         <a href="mailto:info@kirubel.ch">info@kirubel.ch</a>
         <span>•</span>
-        <a href="https://wa.me/41765221262" target="_blank" rel="noopener">WhatsApp: +41 76 522 12 62</a>
-        <div class="lang-switch" role="group" aria-label="Language switch">
-          <button class="lang-btn active" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="de">DE</button>
+        <a href="https://wa.me/41765221262" target="_blank" rel="noopener">WhatsApp/Call: +41 76 522 12 62</a>
+        <div class="lang-switch" aria-label="Language switch">
+          <button class="lang-btn" data-lang="de" type="button">DE</button>
+          <button class="lang-btn active" data-lang="en" type="button">EN</button>
         </div>
       </div>
     </div>
-  </div>
-
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="#top">
-        <img src="assets/logo-transparent.png" alt="Kirubel Photo & Video 4U logo" />
+    <div class="container nav-wrap">
+      <a href="#top" class="brand">
+        <img src="assets/logo.png" alt="Kirubel Photo &amp; Video 4U logo">
+        <div class="brand-text">
+          <strong>Kirubel Photo &amp; Video 4U</strong>
+          <span data-i18n="brand.sub">Wedding • Culture • Portrait Storytelling</span>
+        </div>
       </a>
-      <nav class="nav" aria-label="Main navigation">
+      <nav class="main-nav" aria-label="Main navigation">
         <a href="#services" data-i18n="nav.services">Services</a>
-        <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-        <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#vision" data-i18n="nav.vision">Vision</a>
+        <a href="#packages" data-i18n="nav.packages">Packages</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#showreel" data-i18n="nav.showreel">Showreel</a>
+        <a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
+        <a href="#about" data-i18n="nav.about">About me</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a class="wa-btn" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="nav.cta">WhatsApp Inquiry</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero" id="top">
-    <video class="hero__video" autoplay muted loop playsinline poster="assets/hero.jpg">
-      <source src="assets/cinematic.mp4" type="video/mp4">
-    </video>
-    <div class="hero__overlay"></div>
-    <div class="container hero__inner reveal">
-      <div class="hero__copy">
-        <p class="eyebrow" data-i18n="hero.eyebrow">Kirubel Photo & Video 4U</p>
-        <h1 data-i18n="hero.title">Visual stories for love, culture and unforgettable celebration.</h1>
-        <p class="hero__text" data-i18n="hero.text">My brand is built on elegance, presence and ambition — capturing weddings, traditional moments and portraits with warmth, precision and cinematic beauty.</p>
-        <div class="hero__actions">
-          <a class="btn btn--gold" href="https://wa.me/41765221262" target="_blank" rel="noopener" data-i18n="hero.cta1">Check availability</a>
-          <a class="btn btn--ghost" href="#portfolio" data-i18n="hero.cta2">View portfolio</a>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow" data-i18n="hero.eyebrow">KIRUBEL PHOTO &amp; VIDEO 4U • SWITZERLAND</div>
+          <h1 data-i18n="hero.title">Elegant visual storytelling for weddings, culture and meaningful moments.</h1>
+          <p class="lead" data-i18n="hero.text">A refined visual brand built to capture beauty, dignity, joy and identity with premium cinematic care.</p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#contact" data-i18n="hero.cta1">Send inquiry</a>
+            <a class="ghost-btn" href="#gallery" data-i18n="hero.cta2">View gallery</a>
+          </div>
+          <div class="hero-points">
+            <div class="hero-chip" data-i18n="hero.chip1">Reliable</div>
+            <div class="hero-chip" data-i18n="hero.chip2">Elegant editing</div>
+            <div class="hero-chip" data-i18n="hero.chip3">Calm direction</div>
+          </div>
+        </div>
+        <aside class="inquiry-card" id="contact">
+          <h2 data-i18n="form.title">Quick inquiry</h2>
+          <p data-i18n="form.text">Send your date + place. I reply quickly.</p>
+          <form id="inquiryForm">
+            <label>
+              <span data-i18n="form.name">Name</span>
+              <input type="text" name="name" required data-i18n-placeholder="form.namePh" placeholder="Your name">
+            </label>
+            <label>
+              <span data-i18n="form.event">Event type</span>
+              <select name="event" id="eventSelect"></select>
+            </label>
+            <label>
+              <span data-i18n="form.date">Event date</span>
+              <input type="date" name="date" required>
+            </label>
+            <label>
+              <span data-i18n="form.place">Place</span>
+              <input type="text" name="place" required data-i18n-placeholder="form.placePh" placeholder="Zurich / Basel / ...">
+            </label>
+            <label>
+              <span data-i18n="form.message">Message</span>
+              <textarea name="message" rows="4" data-i18n-placeholder="form.messagePh" placeholder="Hours, wishes, language etc."></textarea>
+            </label>
+            <button class="primary-btn full" type="submit" data-i18n="form.submit">Send WhatsApp inquiry</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="services.eyebrow">SERVICES</div>
+          <h2 data-i18n="services.title">Story-driven coverage with a refined premium look.</h2>
+          <p data-i18n="services.text">The service concept you loved — now cleaner, faster and more stable.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card featured"><span>01</span><h3 data-i18n="services.s1t">Wedding Stories</h3><p data-i18n="services.s1d">From preparation to portraits and celebration highlights, your day is documented with calm direction and elegant timing.</p></article>
+          <article class="service-card"><span>02</span><h3 data-i18n="services.s2t">Engagement &amp; Couple</h3><p data-i18n="services.s2d">Warm, stylish portrait sessions focused on connection, chemistry and natural confidence.</p></article>
+          <article class="service-card"><span>03</span><h3 data-i18n="services.s3t">Culture &amp; Portraits</h3><p data-i18n="services.s3d">Visuals that honour heritage, fashion, dignity and personal identity with artistic care.</p></article>
         </div>
       </div>
-      <div class="hero__card">
-        <div class="info-card">
-          <h3 data-i18n="card.title">Why clients choose Kirubel</h3>
-          <ul>
-            <li data-i18n="card.1">Cinematic wedding and engagement storytelling</li>
-            <li data-i18n="card.2">Strong appreciation for culture and tradition</li>
-            <li data-i18n="card.3">Natural portraits with refined editing</li>
-            <li data-i18n="card.4">Reliable communication and personal care</li>
-          </ul>
+    </section>
+
+    <section class="section soft" id="packages">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="packages.eyebrow">PACKAGES</div>
+          <h2 data-i18n="packages.title">Flexible options for your day.</h2>
+        </div>
+        <div class="package-grid">
+          <article class="package-card"><h3 data-i18n="packages.p1t">Essential</h3><p data-i18n="packages.p1d">Ceremony, portraits and a polished gallery for intimate celebrations.</p></article>
+          <article class="package-card featured"><h3 data-i18n="packages.p2t">Signature</h3><p data-i18n="packages.p2d">The balanced choice for weddings with elegant coverage, portraits and refined editing.</p></article>
+          <article class="package-card"><h3 data-i18n="packages.p3t">Legacy</h3><p data-i18n="packages.p3d">Full-day storytelling for couples who want a complete and memorable visual story.</p></article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section reveal" id="services">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
-        <h2 data-i18n="services.title">A brand focused on memorable human stories.</h2>
-        <p data-i18n="services.text">From wedding days to bridal preparation, engagement portraits and cultural elegance, every gallery is shaped to feel heartfelt, clean and timeless.</p>
-      </div>
-      <div class="service-grid">
-        <article class="service-card">
-          <h3 data-i18n="services.s1t">Weddings</h3>
-          <p data-i18n="services.s1d">Full-day coverage, bridal preparation, couple portraits and key celebration moments documented with cinematic calm.</p>
-        </article>
-        <article class="service-card">
-          <h3 data-i18n="services.s2t">Engagement & Couple</h3>
-          <p data-i18n="services.s2d">Warm, elegant sessions that highlight connection, style and personality in a natural way.</p>
-        </article>
-        <article class="service-card">
-          <h3 data-i18n="services.s3t">Cultural Portraits</h3>
-          <p data-i18n="services.s3d">Visuals that honour heritage, beauty and identity with respect, detail and artistic pride.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--soft reveal" id="portfolio">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow" data-i18n="portfolio.eyebrow">Portfolio</p>
-        <h2 data-i18n="portfolio.title">A curated selection from Kirubel’s visual world.</h2>
-        <p data-i18n="portfolio.text">Preview any image, then zoom in, zoom out and move through the gallery in full screen.</p>
-      </div>
-      <div class="gallery">
-        <a class="gallery-item" href="assets/g1.jpg" data-caption="Bride and groom portrait on bench"><img src="assets/g1.jpg" alt="Bride and groom portrait on bench" loading="lazy"></a>
-        <a class="gallery-item" href="assets/g2.jpg" data-caption="Groom portrait on stairs"><img src="assets/g2.jpg" alt="Groom portrait on stairs" loading="lazy"></a>
-        <a class="gallery-item" href="assets/g3.jpg" data-caption="Bride close-up with earrings"><img src="assets/g3.jpg" alt="Bride close-up with earrings" loading="lazy"></a>
-        <a class="gallery-item" href="assets/g4.jpg" data-caption="Bride seated smiling"><img src="assets/g4.jpg" alt="Bride seated smiling" loading="lazy"></a>
-        <a class="gallery-item" href="assets/g5.jpg" data-caption="Bride and groom intimate portrait"><img src="assets/g5.jpg" alt="Bride and groom intimate portrait" loading="lazy"></a>
-        <a class="gallery-item" href="assets/g6.jpg" data-caption="Cultural portrait in traditional clothing"><img src="assets/g6.jpg" alt="Cultural portrait in traditional clothing" loading="lazy"></a>
-        <a class="gallery-item" href="assets/g7.jpg" data-caption="Couple in traditional black and gold attire"><img src="assets/g7.jpg" alt="Couple in traditional black and gold attire" loading="lazy"></a>
-        <a class="gallery-item" href="assets/g8.jpg" data-caption="Bridal beauty portrait"><img src="assets/g8.jpg" alt="Bridal beauty portrait" loading="lazy"></a>
-        <a class="gallery-item" href="assets/g9.jpg" data-caption="Bride and groom bouquet portrait"><img src="assets/g9.jpg" alt="Bride and groom bouquet portrait" loading="lazy"></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal" id="about">
-    <div class="container about">
-      <div class="about__media">
-        <img src="assets/about.jpg" alt="Kirubel wedding photography sample" />
-      </div>
-      <div class="about__copy">
-        <p class="eyebrow" data-i18n="about.eyebrow">About the brand</p>
-        <h2 data-i18n="about.title">Ambition with heart.</h2>
-        <p data-i18n="about.p1">Kirubel Photo & Video 4U exists to create visuals that feel personal, polished and proud. The ambition is not only to take beautiful photos, but to build a recognizable visual signature that clients trust for life’s most meaningful moments.</p>
-        <p data-i18n="about.p2">The brand stands for elegance, reliability, cultural appreciation and a constant desire to grow into a stronger creative standard — one story, one family and one celebration at a time.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--dark reveal" id="vision">
-    <div class="container vision">
-      <div>
-        <p class="eyebrow" data-i18n="vision.eyebrow">Vision</p>
-        <h2 data-i18n="vision.title">To become a trusted visual name for weddings, portraits and culture-led storytelling.</h2>
-      </div>
-      <div>
-        <p data-i18n="vision.text">This website is designed to express your ambition clearly: a modern Swiss-based creative brand with a premium feel, stronger identity, and a growing portfolio that reflects love, beauty, dignity and celebration.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal" id="contact">
-    <div class="container contact">
-      <div class="contact-card">
-        <h2 data-i18n="contact.title">Let’s create something meaningful.</h2>
-        <p data-i18n="contact.text">For wedding dates, collaboration or questions, reach out by email or WhatsApp.</p>
-        <div class="contact-links">
-          <a class="btn btn--gold" href="mailto:info@kirubel.ch">info@kirubel.ch</a>
-          <a class="btn btn--ghost" href="https://wa.me/41765221262" target="_blank" rel="noopener">+41 76 522 12 62</a>
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="gallery.eyebrow">GALLERY</div>
+          <h2 data-i18n="gallery.title">A fine collection of real moments.</h2>
+          <p data-i18n="gallery.text">Every image opens in a premium preview with easy zoom in, zoom out and reset.</p>
+        </div>
+        <div class="gallery-grid">
+          <a class="gallery-item" href="assets/g1.jpg" data-caption="Bride and groom portrait on bench"><img src="assets/g1-thumb.jpg" alt="Bride and groom portrait on bench" loading="lazy"></a>
+          <a class="gallery-item" href="assets/g2.jpg" data-caption="Groom portrait on stairs"><img src="assets/g2-thumb.jpg" alt="Groom portrait on stairs" loading="lazy"></a>
+          <a class="gallery-item" href="assets/g3.jpg" data-caption="Bride close-up with earrings"><img src="assets/g3-thumb.jpg" alt="Bride close-up with earrings" loading="lazy"></a>
+          <a class="gallery-item" href="assets/g4.jpg" data-caption="Bride seated smiling"><img src="assets/g4-thumb.jpg" alt="Bride seated smiling" loading="lazy"></a>
+          <a class="gallery-item" href="assets/g5.jpg" data-caption="Bride and groom intimate portrait"><img src="assets/g5-thumb.jpg" alt="Bride and groom intimate portrait" loading="lazy"></a>
+          <a class="gallery-item" href="assets/g6.jpg" data-caption="Cultural portrait"><img src="assets/g6-thumb.jpg" alt="Cultural portrait" loading="lazy"></a>
+          <a class="gallery-item" href="assets/g7.jpg" data-caption="Traditional couple portrait"><img src="assets/g7-thumb.jpg" alt="Traditional couple portrait" loading="lazy"></a>
+          <a class="gallery-item" href="assets/g8.jpg" data-caption="Bridal beauty portrait"><img src="assets/g8-thumb.jpg" alt="Bridal beauty portrait" loading="lazy"></a>
+          <a class="gallery-item" href="assets/g9.jpg" data-caption="Wedding car moment"><img src="assets/g9-thumb.jpg" alt="Wedding car moment" loading="lazy"></a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div>
-        <img class="footer-logo" src="assets/logo-transparent.png" alt="Kirubel Photo & Video 4U logo">
-        <p>© <span id="year"></span> Kirubel Photo & Video 4U</p>
+    <section class="section soft" id="showreel">
+      <div class="container showreel-box">
+        <div>
+          <div class="eyebrow" data-i18n="showreel.eyebrow">SHOWREEL</div>
+          <h2 data-i18n="showreel.title">A clean place for your film highlights.</h2>
+          <p data-i18n="showreel.text">This section is ready for your future wedding trailer, Instagram reel or Vimeo/YouTube embed.</p>
+        </div>
+        <div class="showreel-card">
+          <img src="assets/hero.jpg" alt="Showreel preview" loading="lazy">
+        </div>
       </div>
-      <div class="partners">
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="testimonials.eyebrow">TESTIMONIALS</div>
+          <h2 data-i18n="testimonials.title">A client experience built on trust, calm and care.</h2>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card"><p data-i18n="testimonials.t1">Warm direction, beautiful presence and images that felt both elegant and personal.</p><strong data-i18n="testimonials.n1">Wedding client</strong></article>
+          <article class="testimonial-card"><p data-i18n="testimonials.t2">The cultural details were handled with respect and the final photos looked clean, premium and full of life.</p><strong data-i18n="testimonials.n2">Portrait client</strong></article>
+          <article class="testimonial-card"><p data-i18n="testimonials.t3">Reliable communication, beautiful editing and a creative eye that made the day feel special again.</p><strong data-i18n="testimonials.n3">Celebration client</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <div class="eyebrow" data-i18n="about.eyebrow">ABOUT ME</div>
+          <h2 data-i18n="about.title">Ambition with heart and identity.</h2>
+          <p data-i18n="about.p1">Kirubel Photo &amp; Video 4U is a growing visual brand with the ambition to become a trusted creative name for weddings, portraits and culture-led storytelling in Switzerland and beyond.</p>
+          <p data-i18n="about.p2">The brand is built on elegance, warmth, reliability and a desire to improve, so every project feels more polished, more intentional and more memorable.</p>
+        </div>
+        <div class="about-photo"><img src="assets/about.jpg" alt="Kirubel wedding photography sample" loading="lazy"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Kirubel Photo &amp; Video 4U logo">
+        <div>
+          <strong>Kirubel Photo &amp; Video 4U</strong>
+          <span data-i18n="brand.sub">Wedding • Culture • Portrait Storytelling</span>
+        </div>
+      </div>
+      <nav class="footer-nav">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#packages" data-i18n="nav.packages">Packages</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
+        <a href="#about" data-i18n="nav.about">About me</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="footer-links">
         <a href="https://roraproduction.com" target="_blank" rel="noopener">Rora Production</a>
         <a href="https://www.haben-beauty.ch" target="_blank" rel="noopener">Haben Beauty</a>
       </div>
@@ -180,20 +211,20 @@
   </footer>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox__close" id="lbClose" aria-label="Close">×</button>
-    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous">‹</button>
-    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next">›</button>
-    <div class="lightbox__content">
+    <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Previous">‹</button>
+    <div class="lb-panel">
       <img id="lbImage" alt="">
-      <div class="lightbox__bar">
+      <div class="lb-bar">
         <div id="lbCaption"></div>
-        <div class="lightbox__actions">
-          <button id="zoomOut">−</button>
-          <button id="zoomReset">100%</button>
-          <button id="zoomIn">+</button>
+        <div class="lb-controls">
+          <button type="button" id="zoomOut">−</button>
+          <button type="button" id="zoomReset" data-i18n="lightbox.reset">Reset</button>
+          <button type="button" id="zoomIn">+</button>
         </div>
       </div>
     </div>
+    <button class="lb-nav next" id="lbNext" aria-label="Next">›</button>
   </div>
 
   <script src="script.js"></script>
