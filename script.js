@@ -89,15 +89,12 @@ langButtons.forEach(btn => btn.addEventListener('click', () => {
   applyTranslations(currentLang);
 }));
 
-// header hide on scroll down, show on up
+// header stays visible while scrolling
 const header = document.querySelector('.site-header');
-let lastY = window.scrollY;
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
   header.classList.toggle('is-scrolled', y > 10);
-  if (y > lastY && y > 140) header.classList.add('is-hidden');
-  else header.classList.remove('is-hidden');
-  lastY = y;
+  header.classList.remove('is-hidden');
 }, {passive:true});
 
 // mobile menu
