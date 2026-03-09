@@ -1,15 +1,23 @@
-Kirubel Photo & Video 4U — studio refresh package
+Kirubel Photo & Video 4U final package
 
-Included:
-- no blocking intro loader (site opens immediately)
-- improved logo/header brand presentation
-- Gallery menu name
-- Testimonials section
-- Inquiry form (WhatsApp prefilled)
-- fixed footer menu + partner links
-- photo preview + zoom in/out
-- English default, German optional
+Files:
+- index.html
+- styles.css
+- script.js
+- assets/
 
-Contact:
-Email: info@kirubel.ch
-WhatsApp: +41 76 522 12 62
+Notes:
+- English is the default language.
+- Main menu stays visible; on small screens it scrolls horizontally instead of hiding.
+- Footer partner links are already added:
+  https://roraproduction.com
+  https://www.haben-beauty.ch
+- Email: info@kirubel.ch
+- WhatsApp: +41 76 522 12 62
+
+Assets included:
+- Improved transparent logo
+- 12-second cinematic background video
+- Selected real gallery photos
+
+Open index.html in a browser to preview.
