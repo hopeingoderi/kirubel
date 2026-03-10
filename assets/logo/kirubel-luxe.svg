@@ -1,0 +1,15 @@
+<svg width="760" height="220" viewBox="0 0 760 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="220" fill="none"/>
+  <g transform="translate(32 38)">
+    <rect x="0.75" y="0.75" width="110.5" height="110.5" rx="28" stroke="#D8C29D" stroke-width="1.5"/>
+    <path d="M34 75V40.5C34 33.5964 39.5964 28 46.5 28H66.5C73.4036 28 79 33.5964 79 40.5V75" stroke="#F7F3EC" stroke-width="4" stroke-linecap="round"/>
+    <path d="M24 79C24 73.4772 28.4772 69 34 69H79C84.5228 69 89 73.4772 89 79V84C89 89.5228 84.5228 94 79 94H34C28.4772 94 24 89.5228 24 84V79Z" stroke="#F7F3EC" stroke-width="4"/>
+    <circle cx="57" cy="81.5" r="13.5" stroke="#D8C29D" stroke-width="4"/>
+    <path d="M48 25L51.6 17L55.2 25L63 28.6L55.2 32.2L51.6 40L48 32.2L40.2 28.6L48 25Z" fill="#D8C29D"/>
+  </g>
+  <g fill="#F7F3EC">
+    <text x="176" y="98" font-size="68" font-family="Georgia, 'Times New Roman', serif" font-style="italic" letter-spacing="1.2">Kirubel</text>
+    <text x="182" y="138" font-size="18" font-family="Inter, Arial, sans-serif" letter-spacing="6.5">PHOTO  •  FILM  •  WEDDINGS</text>
+    <text x="182" y="168" font-size="15" font-family="Inter, Arial, sans-serif" fill="#D8C29D" letter-spacing="4">SWITZERLAND</text>
+  </g>
+</svg>

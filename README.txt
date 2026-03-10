@@ -1,22 +1,32 @@
-Kirubel Photo & Video 4U - Swiss Luxury Final
+Kirubel Premium Redesign V3
 
-What was improved:
-- cleaned brand presentation with your logo mark in the header and full logo in the footer
-- sticky header that hides on scroll down and returns on scroll up
-- premium Swiss-inspired dark/gold color palette
-- uniform gallery with only real original photos
-- lightbox preview with zoom in, zoom out, reset and swipe
-- 5 testimonial cards with reviewer photos (editable sample text)
-- improved contact form styling with visible select and date picker
-- footer with copyright and email
-- DE / EN translation kept
+Included in this package:
+1. New premium homepage (index.html)
+2. Apple-style animated hero with slideshow + transparent header
+3. Complete portfolio gallery page (portfolio.html)
+4. Modern transparent logo redesign in SVG
+   - assets/logo/kirubel-luxe.svg
+   - assets/logo/kirubel-monogram.svg
+5. Real wedding photos already inserted into the design
 
-Files:
-- index.html
-- styles.css
-- script.js
-- assets/
+How to use:
+- Upload all files to your hosting root or a test folder.
+- Open index.html to preview locally.
+- Replace texts, package prices, contact form action, and final brand details as needed.
+- If you later want your exact original logo, replace the SVG files in assets/logo.
 
-Contact used:
-- info@kirubel.ch
-- +41 76 522 12 62
+Photo mapping used in the site:
+- Hero: bench couple, red vintage car, fountain couple
+- About: groom portrait on stairs
+- Portfolio page: all major provided wedding images
+
+Note:
+The logo redesign is a new luxury SVG concept made to work on transparent dark headers and modern footers.
+
+
+Updated in this version:
+- Uses the real uploaded logo in header/footer assets
+- Header navigation: Home | Gallery | Services | About | Contact
+- Cinematic fullscreen hero slideshow
+- Luxury masonry gallery and animated scroll reveals
+- Stronger Apple-style premium layout
