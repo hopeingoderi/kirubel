@@ -1,1 +1,1 @@
-Kirubel V6 Luxury Dark
+Updated from V6 with transparent logo, hero/header fix, form additions, dynamic footer, copyright, partners.
